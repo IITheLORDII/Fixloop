@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FixLoop, teknik sorunları cihazınıza özel, doğrulanmış ve adım adım çözüm akışlarına dönüştürür.">
+  <meta name="theme-color" content="#f5f3ed">
+  <title>FixLoop — Sorunu anlat, çözümü birlikte bulalım</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="FixLoop ana sayfa">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span>FixLoop</span>
+    </a>
+    <nav aria-label="Ana menü">
+      <a href="#how">Nasıl çalışır?</a>
+      <a href="#proof">Neden FixLoop?</a>
+    </nav>
+    <a class="header-cta" href="#solver">Sorunumu çöz <span>→</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> Teknik bilgi gerektirmez</div>
+        <h1>Sorunu anlat.<br><em>Çözüme ulaş.</em></h1>
+        <p>Uzun forum yazıları ve rastgele öneriler yok. Cihazına özel, gerçek kullanıcı sonuçlarıyla doğrulanmış adımları sırayla dene.</p>
+        <div class="hero-trust">
+          <span><b>✓</b> Kısa ve güvenli adımlar</span>
+          <span><b>✓</b> Ücretsiz başla</span>
+        </div>
+      </div>
+
+      <div class="solver-shell" id="solver">
+        <div class="solver-topbar">
+          <span class="mini-brand"><span class="brand-mark small" aria-hidden="true"><i></i><i></i></span> FixLoop</span>
+          <button class="icon-button" type="button" aria-label="Yardım">?</button>
+        </div>
+
+        <div class="solver-view active" data-view="input">
+          <div class="solver-heading">
+            <span class="step-label">Hadi başlayalım</span>
+            <h2>Neyin çalışmıyor?</h2>
+            <p>Sorunu kendi cümlelerinle anlat veya ekran görüntüsü yükle.</p>
+          </div>
+          <label class="problem-input">
+            <span class="sr-only">Sorununuzu yazın</span>
+            <textarea id="problemText" rows="4">Bluetooth kulaklığım bağlanıyor ama ses gelmiyor</textarea>
+            <span class="char-note">Ne kadar ayrıntı, o kadar iyi çözüm.</span>
+          </label>
+          <label class="upload-zone" for="screenshotInput">
+            <input id="screenshotInput" type="file" accept="image/png,image/jpeg" hidden>
+            <span class="upload-icon" aria-hidden="true">↥</span>
+            <span><strong>Ekran görüntüsü ekle</strong><small>PNG veya JPG · Hassas bilgiler gizlenebilir</small></span>
+            <span class="file-state" id="fileState">Seç</span>
+          </label>
+          <button class="primary-button" id="startButton" type="button">Çözümümü bul <span>→</span></button>
+          <p class="privacy-note">🔒 Verilerin reklam amacıyla paylaşılmaz.</p>
+        </div>
+
+        <div class="solver-view" data-view="device">
+          <button class="back-button" type="button" data-back="input">← Geri</button>
+          <div class="progress"><i style="width: 38%"></i></div>
+          <div class="solver-heading compact">
+            <span class="step-label">2 / 3 · Cihaz bilgisi</span>
+            <h2>Sana özel çözümü bulalım</h2>
+            <p>Hangi cihazda bu sorunu yaşıyorsun?</p>
+          </div>
+          <div class="device-grid" role="group" aria-label="Cihaz seçimi">
+            <button class="device-card selected" type="button" data-device="Windows 11"><span>▣</span><b>Windows</b><small>Windows 11</small></button>
+            <button class="device-card" type="button" data-device="Android"><span>◫</span><b>Android</b><small>Telefon / tablet</small></button>
+            <button class="device-card" type="button" data-device="macOS"><span>◉</span><b>macOS</b><small>Mac bilgisayar</small></button>
+            <button class="device-card" type="button" data-device="iOS"><span>▯</span><b>iPhone</b><small>iOS</small></button>
+          </div>
+          <label class="select-label">Kulaklık markası <span>isteğe bağlı</span>
+            <select id="brandSelect"><option>Markayı seçin</option><option>AirPods</option><option>JBL</option><option>Samsung</option><option>Sony</option><option>Diğer</option></select>
+          </label>
+          <button class="primary-button" id="analyzeButton" type="button">Sorunu analiz et <span>→</span></button>
+        </div>
+
+        <div class="solver-view" data-view="loading" aria-live="polite">
+          <div class="loading-orbit"><span></span><i></i></div>
+          <h2>En olası çözüm aranıyor…</h2>
+          <p id="loadingText">Cihaz ve sorun eşleşmeleri inceleniyor</p>
+          <div class="scan-list"><span class="done">✓ Sorun türü belirlendi</span><span id="scanDevice">○ Cihaz sürümü eşleştiriliyor</span><span id="scanSolutions">○ Doğrulanmış çözümler sıralanıyor</span></div>
+        </div>
+
+        <div class="solver-view" data-view="solution">
+          <div class="solution-status"><span>✓</span><div><small>En güçlü eşleşme</small><b id="solutionDevice">Windows 11 · Bluetooth ses</b></div><em>%87 olasılık</em></div>
+          <div class="solver-heading compact solution-title">
+            <span class="step-label">1. çözüm · 2 dakika</span>
+            <h2 id="solutionTitle">Ses çıkışını kulaklığına yönlendir</h2>
+            <p id="solutionDescription">Windows bazen bağlantıyı kurar ancak sesi eski hoparlörde bırakır.</p>
+          </div>
+          <div class="instruction-card">
+            <span class="instruction-number">1</span>
+            <div><b id="stepOneTitle">Görev çubuğundaki ses simgesine tıkla</b><p id="stepOneDescription">Saatin yanındaki hoparlör simgesini bul.</p></div>
+            <div class="mini-ui"><span>⌁</span><i></i><b>⌄</b></div>
+          </div>
+          <div class="instruction-card muted-step">
+            <span class="instruction-number">2</span>
+            <div><b id="stepTwoTitle">Ses çıkışı listesini aç</b><p id="stepTwoDescription">Ses düzeyi çubuğunun yanındaki oka tıkla.</p></div>
+          </div>
+          <div class="feedback-box">
+            <p>Bu adım sorunu çözdü mü?</p>
+            <div><button class="success-button" id="fixedButton" type="button">✓ Düzeldi</button><button class="outline-button" id="notFixedButton" type="button">Düzelmedi →</button></div>
+          </div>
+          <p class="proof-note"><span>◉</span> Bu çözüm benzer cihazlarda <b>1.248 kez</b> işe yaradı <small>Temsili demo verisi</small></p>
+        </div>
+
+        <div class="solver-view" data-view="success">
+          <div class="success-burst"><span>✓</span></div>
+          <span class="step-label">Harika haber</span>
+          <h2>Sorun çözüldü!</h2>
+          <p>Geri bildirimin, aynı cihazdaki bir sonraki kişinin doğru çözüme daha hızlı ulaşmasına yardımcı olacak.</p>
+          <div class="impact-card"><strong>+1</strong><span>doğrulanmış çözüm sonucu</span></div>
+          <button class="primary-button" type="button" data-restart>Yeni bir sorun çöz</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="FixLoop faydaları">
+      <div><strong>01</strong><span>Cihazına özel<br>teşhis</span></div>
+      <div><strong>02</strong><span>Güvenli, sıralı<br>adımlar</span></div>
+      <div><strong>03</strong><span>Gerçek sonuçlarla<br>öğrenen sistem</span></div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="section-intro">
+        <span class="eyebrow dark">Nasıl çalışır?</span>
+        <h2>Forum kalabalığını<br><em>çözüm akışına</em> çeviriyoruz.</h2>
+        <p>FixLoop, sorunu anlamaktan işe yarayan çözümü doğrulamaya kadar tüm süreci sadeleştirir.</p>
+      </div>
+      <div class="loop-steps">
+        <article><span>01</span><div class="step-icon">⌨</div><h3>Anlat veya yükle</h3><p>Sorunu yaz. İstersen ekran görüntüsünü ekle; hassas alanları gizle.</p></article>
+        <article><span>02</span><div class="step-icon">⌁</div><h3>Akıllı eşleştirme</h3><p>Cihaz, sürüm ve belirti bilgileri en yakın doğrulanmış çözümle eşleşir.</p></article>
+        <article><span>03</span><div class="step-icon">✓</div><h3>Dene ve doğrula</h3><p>Kısa adımları sırayla uygula. Sonucu bildir; sistem herkes için gelişsin.</p></article>
+      </div>
+    </section>
+
+    <section class="proof-section" id="proof">
+      <div class="proof-copy">
+        <span class="eyebrow light">FixLoop farkı</span>
+        <h2>Bir cevap değil.<br><em>Kanıtlanmış bir yol.</em></h2>
+        <p>Genel bir yapay zekâ yanıtı tek seferlik olabilir. FixLoop her denemeden öğrenir; cihaz ve sürüm özelinde neyin gerçekten işe yaradığını biriktirir.</p>
+        <div class="comparison">
+          <div><span>Geleneksel arama</span><b>Uzun içerik</b><b>Genel öneri</b><b>Belirsiz sonuç</b></div>
+          <div class="our-way"><span>FixLoop</span><b>Kısa akış</b><b>Cihaza özel</b><b>Doğrulanmış sonuç</b></div>
+        </div>
+      </div>
+      <div class="data-visual" aria-label="Çözümlerin kullanıcı sonuçlarıyla gelişmesini gösteren şema">
+        <div class="ring ring-one"></div><div class="ring ring-two"></div>
+        <div class="core"><span class="brand-mark inverted" aria-hidden="true"><i></i><i></i></span><b>FixLoop</b><small>öğreniyor</small></div>
+        <span class="node n1">Sorun<br><b>tanımı</b></span><span class="node n2">Cihaz +<br><b>sürüm</b></span><span class="node n3">Çözüm<br><b>sonucu</b></span><span class="node n4">Doğruluk<br><b>puanı</b></span>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <span class="eyebrow">Bir şey mi çalışmıyor?</span>
+      <h2>Sorununu döngüden çıkar.</h2>
+      <a href="#solver">Çözmeye başla <span>→</span></a>
+      <p>Ücretsiz · Üyelik gerekmez · 2 dakikada başla</p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span><span>FixLoop</span></a><p>Teknik sorunların en kısa yolu.</p><span>© 2026 · MVP demo</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
