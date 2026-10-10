@@ -56,9 +56,17 @@
               <label class="upload-zone" for="screenshotInput">
                 <input class="sr-only" id="screenshotInput" type="file" accept="image/png,image/jpeg">
                 <span class="upload-icon" aria-hidden="true">＋</span>
-                <span><strong>Hata ekranı ekle</strong><small>İsteğe bağlı · Yalnızca dosya adı tanıya eklenir</small></span>
+                <span><strong>Hata ekranını yerelde oku</strong><small>PNG veya JPG · Görsel cihazından çıkmaz</small></span>
                 <span class="file-state" id="fileState">Seç</span>
               </label>
+              <div class="ocr-result" id="ocrResult" hidden>
+                <div class="ocr-result-head">
+                  <span><i aria-hidden="true">◎</i><b id="ocrStatus">Yerel OCR hazırlanıyor</b></span>
+                  <span id="ocrProgress">%0</span>
+                </div>
+                <div class="ocr-progress" aria-hidden="true"><i id="ocrProgressBar"></i></div>
+                <p id="ocrPreview">Görseldeki Türkçe ve İngilizce metin okunacak.</p>
+              </div>
               <button class="primary-button" id="startButton" type="button">Cihazı seç <span>→</span></button>
               <p class="privacy-note"><b>● Yalnızca bu cihazda</b> · Görsel karşıya yüklenmez</p>
             </div>
@@ -228,6 +236,8 @@
     <span>© 2026</span>
   </footer>
 
+  <script src="vendor/tesseract/tesseract.min.js"></script>
+  <script src="ocr-utils.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

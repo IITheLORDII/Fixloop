@@ -13,6 +13,7 @@ FixLoop; GPT, API anahtarı, üyelik veya çalışma anında internet bağlantı
 - En fazla üç ayırıcı soru
 - Duman, şişmiş batarya, elektrik, gaz, kaynar su ve açık gerilim için doğrudan acil akış
 - 29 benzersiz resmî üretici destek kaynağı
+- Tarayıcı içinde çalışan Türkçe + İngilizce yerel OCR
 
 Otomotiv, medikal ve endüstriyel sistemler katalog kapsamı dışındadır. Kasa açma, güvenlik kilidi aşma, gaz hattı, yüksek gerilim ve ileri elektronik onarım adımları verilmez.
 
@@ -35,7 +36,13 @@ Ardından `http://127.0.0.1:4173` adresini açın.
 - Eşleşmeyen sorunlar: `data/runtime/missing-catalog.json`
 - Önceki v2 veri dosyası: `data/knowledge-base.json` (yalnızca ilk çalışma verisi göçü için korunur)
 
-Ekran görüntüsünün kendisi kaydedilmez veya gönderilmez; yalnızca seçilen dosyanın adı yerel deneme kaydına eklenir.
+Ekran görüntüsü tarayıcı içinde Tesseract.js ile okunur; görselin kendisi kaydedilmez veya gönderilmez. Okunan metindeki e-posta, telefon, IBAN, kart numarası ve açıkça etiketlenmiş parola/anahtar değerleri tanıya eklenmeden önce maskelenir. Türkçe ve İngilizce dil modelleri `dist/vendor/tesseract` altında yerel olarak paketlenir.
+
+Bağımlılıkları yeniden kurduktan sonra OCR varlıklarını elle eşitlemek gerekirse:
+
+```powershell
+npm run ocr:sync
+```
 
 ## Katalog komutları
 

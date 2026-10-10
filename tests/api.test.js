@@ -48,6 +48,13 @@ test('yerel API tanı, feedback, atomik kayıt ve yeniden başlatmada kalıcıl�
     if (runtime.startsWith(os.tmpdir())) fs.rmSync(runtime, { recursive: true, force: true });
   });
   await startServer();
+  const coreScript = await fetch(`http://127.0.0.1:${port}/vendor/tesseract/core/tesseract-core-relaxedsimd-lstm.wasm.js`);
+  assert.equal(coreScript.status, 200);
+  assert.match(coreScript.headers.get('content-type') || '', /text\/javascript/);
+  assert.match(coreScript.headers.get('content-security-policy') || '', /wasm-unsafe-eval/);
+  const coreWasm = await fetch(`http://127.0.0.1:${port}/vendor/tesseract/core/tesseract-core-relaxedsimd-lstm.wasm`);
+  assert.equal(coreWasm.status, 200);
+  assert.match(coreWasm.headers.get('content-type') || '', /application\/wasm/);
   const catalog = await api('/api/catalog');
   assert.ok(catalog.issueCount >= 500);
   assert.equal(catalog.deviceTypes.length, 13);

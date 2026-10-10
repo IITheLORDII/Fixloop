@@ -1,8 +1,84 @@
 const views = [...document.querySelectorAll('.solver-view')];
 const state = {
   deviceTypes: [], deviceType: 'computer', subType: '', deviceLabel: 'Bilgisayar / laptop', subTypeLabel: '',
-  answers: [], question: null, sessionId: '', result: null, solutionIndex: 0, attemptId: '', screenshotName: ''
+  answers: [], question: null, sessionId: '', result: null, solutionIndex: 0, attemptId: '',
+  screenshotName: '', ocrText: '', ocrBusy: false
 };
+let ocrWorkerPromise = null;
+
+const OCR_STATUS_LABELS = {
+  'loading tesseract core': 'OCR motoru yükleniyor',
+  'initializing tesseract': 'OCR motoru başlatılıyor',
+  'loading language traineddata': 'Türkçe ve İngilizce hazırlanıyor',
+  'initializing api': 'Metin okuyucu hazırlanıyor',
+  'recognizing text': 'Görseldeki metin okunuyor'
+};
+
+function updateOcrProgress(status, progress = 0) {
+  const percent = Math.max(0, Math.min(100, Math.round(progress * 100)));
+  document.querySelector('#ocrStatus').textContent = OCR_STATUS_LABELS[status] || status;
+  document.querySelector('#ocrProgress').textContent = `%${percent}`;
+  document.querySelector('#ocrProgressBar').style.width = `${percent}%`;
+}
+
+function getOcrWorker() {
+  if (!window.Tesseract?.createWorker) return Promise.reject(new Error('Yerel OCR dosyaları bulunamadı.'));
+  if (!ocrWorkerPromise) {
+    ocrWorkerPromise = window.Tesseract.createWorker(['tur', 'eng'], 1, {
+      workerPath: '/vendor/tesseract/worker.min.js',
+      corePath: '/vendor/tesseract/core',
+      langPath: '/vendor/tesseract/lang-data',
+      workerBlobURL: false,
+      logger: (message) => updateOcrProgress(message.status, message.progress)
+    }).catch((error) => {
+      ocrWorkerPromise = null;
+      throw error;
+    });
+  }
+  return ocrWorkerPromise;
+}
+
+async function readScreenshot(file) {
+  const resultBox = document.querySelector('#ocrResult');
+  const preview = document.querySelector('#ocrPreview');
+  const startButton = document.querySelector('#startButton');
+  const validation = window.FixLoopOCR.validateImageFile(file);
+  state.ocrText = '';
+  resultBox.hidden = false;
+  if (!validation.valid) {
+    updateOcrProgress('Görsel okunamadı', 0);
+    preview.textContent = validation.error;
+    document.querySelector('#fileState').textContent = 'Geçersiz';
+    document.querySelector('#screenshotInput').value = '';
+    return;
+  }
+
+  state.ocrBusy = true;
+  startButton.disabled = true;
+  document.querySelector('#fileState').textContent = 'Okunuyor…';
+  updateOcrProgress('Yerel OCR hazırlanıyor', 0);
+  preview.textContent = 'Görsel yalnızca bu tarayıcı sekmesinde işleniyor.';
+  try {
+    const worker = await getOcrWorker();
+    const recognition = await worker.recognize(file);
+    const text = window.FixLoopOCR.cleanOcrText(recognition.data?.text || '');
+    if (!text) throw new Error('Görselde okunabilir metin bulunamadı.');
+    state.ocrText = text;
+    const problemInput = document.querySelector('#problemText');
+    problemInput.value = window.FixLoopOCR.mergeProblemText(problemInput.value, text);
+    updateOcrProgress('Metin yerelde okundu', 1);
+    preview.textContent = text.length > 180 ? `${text.slice(0, 177)}…` : text;
+    document.querySelector('#fileState').textContent = 'Okundu ✓';
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error || 'OCR başlatılamadı.');
+    updateOcrProgress('Görsel okunamadı', 0);
+    preview.textContent = `${reason} Sorunu metin olarak yazmaya devam edebilirsin.`;
+    document.querySelector('#fileState').textContent = 'Okunamadı';
+  } finally {
+    state.ocrBusy = false;
+    startButton.disabled = false;
+  }
+}
 
 const showView = (name) => {
   views.forEach((view) => view.classList.toggle('active', view.dataset.view === name));
@@ -51,11 +127,11 @@ async function loadLocalCatalog() {
 function diagnosisPayload() {
   const file = document.querySelector('#screenshotInput').files[0];
   return {
-    problem: document.querySelector('#problemText').value.trim(),
+    problem: window.FixLoopOCR.mergeProblemText(document.querySelector('#problemText').value, state.ocrText),
     deviceType: state.deviceType,
     subType: state.subType,
     brandModel: document.querySelector('#brandInput').value.trim(),
-    screenshotName: file?.name || '',
+    screenshotName: file ? '[yerel görsel]' : '',
     answers: state.answers,
     sessionId: state.sessionId
   };
@@ -182,16 +258,23 @@ async function saveFeedback(outcome) {
 }
 
 document.querySelector('#startButton').addEventListener('click', () => {
+  if (state.ocrBusy) return;
   const text = document.querySelector('#problemText').value.trim();
   if (!text) return document.querySelector('#problemText').focus();
   if (!state.deviceTypes.length) return;
   showView('device');
 });
 
-document.querySelector('#screenshotInput').addEventListener('change', (event) => {
+document.querySelector('#screenshotInput').addEventListener('change', async (event) => {
   const file = event.target.files[0];
   state.screenshotName = file?.name || '';
-  document.querySelector('#fileState').textContent = file ? (file.name.length > 16 ? `${file.name.slice(0, 13)}…` : file.name) : 'Seç';
+  if (!file) {
+    state.ocrText = '';
+    document.querySelector('#fileState').textContent = 'Seç';
+    document.querySelector('#ocrResult').hidden = true;
+    return;
+  }
+  await readScreenshot(file);
 });
 
 document.querySelector('#deviceTypeSelect').addEventListener('change', (event) => {
@@ -216,6 +299,11 @@ document.querySelector('#analyzeButton').addEventListener('click', async () => {
   state.sessionId = '';
   state.result = null;
   state.attemptId = '';
+  state.ocrText = '';
+  state.screenshotName = '';
+  document.querySelector('#screenshotInput').value = '';
+  document.querySelector('#fileState').textContent = 'Seç';
+  document.querySelector('#ocrResult').hidden = true;
   await runDiagnosis(true);
 });
 

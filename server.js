@@ -18,7 +18,8 @@ const MAX_BODY_BYTES = 64 * 1024;
 const contentTypes = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8',
-  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml'
+  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml',
+  '.wasm': 'application/wasm', '.gz': 'application/gzip'
 };
 
 function readJson(filePath, fallback = []) {
@@ -214,7 +215,7 @@ function serveStatic(response, pathname) {
     response.writeHead(200, {
       'Content-Type': contentTypes[path.extname(filePath).toLowerCase()] || 'application/octet-stream',
       'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
-      'Content-Security-Policy': "default-src 'self'; img-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'"
+      'Content-Security-Policy': "default-src 'self'; img-src 'self' blob: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'"
     });
     fs.createReadStream(filePath).pipe(response);
   });
