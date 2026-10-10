@@ -1,0 +1,3927 @@
+{
+  "schemaVersion": 3,
+  "id": "core-wearable",
+  "label": "Akıllı saat / giyilebilir",
+  "generatedAt": "2026-10-10T13:17:34.577Z",
+  "deviceTypes": [
+    {
+      "id": "wearable",
+      "label": "Akıllı saat / giyilebilir",
+      "subtypes": [
+        {
+          "id": "smartwatch",
+          "label": "Akıllı saat",
+          "brands": [
+            "Apple",
+            "Samsung",
+            "Huawei",
+            "Xiaomi",
+            "Garmin",
+            "Amazfit"
+          ],
+          "models": [
+            "Apple Watch",
+            "Galaxy Watch",
+            "Watch GT",
+            "Mi Watch"
+          ]
+        },
+        {
+          "id": "fitness-band",
+          "label": "Akıllı bileklik",
+          "brands": [
+            "Xiaomi",
+            "Huawei",
+            "Fitbit",
+            "Garmin",
+            "Samsung"
+          ],
+          "models": [
+            "Mi Band",
+            "Smart Band",
+            "Fitbit",
+            "Vivosmart"
+          ]
+        },
+        {
+          "id": "gps-tracker",
+          "label": "GPS takip cihazı",
+          "brands": [
+            "Apple",
+            "Samsung",
+            "Garmin",
+            "Tile",
+            "Chipolo"
+          ],
+          "models": [
+            "AirTag",
+            "SmartTag",
+            "InReach"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "smartwatch-no-power",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "power",
+      "title": "akıllı saat hiç açılmıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "akıllı saat açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "akıllı saat will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "akıllı saat hiç açılmıyor",
+        "akıllı saat açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "akıllı saat will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/no-power"
+    },
+    {
+      "id": "smartwatch-not-charging",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "battery",
+      "title": "akıllı saat şarj olmuyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "akıllı saat şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/not-charging"
+    },
+    {
+      "id": "smartwatch-battery-drain",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "battery",
+      "title": "akıllı saat pili hızlı bitiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "pil hızlı bitiyor",
+          "şarj çabuk tükeniyor",
+          "batarya dayanmıyor"
+        ],
+        "en": [
+          "battery drains fast",
+          "poor battery life",
+          "battery runs out quickly"
+        ]
+      },
+      "aliases": [
+        "akıllı saat pili hızlı bitiyor",
+        "pil hızlı bitiyor",
+        "şarj çabuk tükeniyor",
+        "batarya dayanmıyor",
+        "battery drains fast",
+        "poor battery life",
+        "battery runs out quickly"
+      ],
+      "typoVariants": [
+        "sarji cabuk bitiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "battery",
+        "performance"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-battery-drain-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "battery",
+                "performance"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-battery-drain-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "battery",
+                "performance"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-battery-drain-safe-check",
+          "title": "Pil tüketimini ölç",
+          "description": "Yüksek tüketen özellikleri belirleyip yazılım kaynaklı yükü azalt.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Pil kullanımını incele",
+              "detail": "Ayarlar içindeki pil kullanımında olağan dışı tüketen uygulama veya özelliği bul."
+            },
+            {
+              "title": "Gereksiz yükleri azalt",
+              "detail": "Ekran parlaklığı, arka plan yenileme ve kullanılmayan bağlantıları azalt."
+            },
+            {
+              "title": "Güncelle ve tekrar ölç",
+              "detail": "Resmî güncellemeyi kur, yeniden başlat ve bir tam kullanım döngüsü gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-battery-drain-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/battery-drain"
+    },
+    {
+      "id": "smartwatch-pairing-failed",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "connection",
+      "title": "akıllı saat eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "akıllı saat eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/pairing-failed"
+    },
+    {
+      "id": "smartwatch-notifications-missing",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "notifications",
+      "title": "akıllı saat bildirim göstermiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "bildirim gelmiyor",
+          "uyarı görünmüyor",
+          "titreşim yok"
+        ],
+        "en": [
+          "notifications missing",
+          "no alerts",
+          "no vibration"
+        ]
+      },
+      "aliases": [
+        "akıllı saat bildirim göstermiyor",
+        "bildirim gelmiyor",
+        "uyarı görünmüyor",
+        "titreşim yok",
+        "notifications missing",
+        "no alerts",
+        "no vibration"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "notifications",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-notifications-missing-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "notifications",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-notifications-missing-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "notifications",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-notifications-missing-safe-check",
+          "title": "Bildirim zincirini kontrol et",
+          "description": "İzin, rahatsız etme modu ve bağlantı durumunu doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Rahatsız etme modunu kontrol et",
+              "detail": "Sessiz veya odak modunun bildirimi engellemediğini doğrula."
+            },
+            {
+              "title": "Uygulama izinlerini aç",
+              "detail": "Cihazın resmî uygulaması için bildirim iznini kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Eşlik eden telefonla bağlantıyı kapatıp yeniden aç."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-notifications-missing-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/notifications-missing"
+    },
+    {
+      "id": "smartwatch-sync-failed",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "sync",
+      "title": "akıllı saat verileri eşitlemiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "akıllı saat verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/sync-failed"
+    },
+    {
+      "id": "smartwatch-sensor-inaccurate",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "sensor",
+      "title": "akıllı saat sensörü yanlış ölçüyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "sensör yanlış",
+          "ölçüm hatalı",
+          "değer değişmiyor"
+        ],
+        "en": [
+          "sensor inaccurate",
+          "wrong reading",
+          "measurement stuck"
+        ]
+      },
+      "aliases": [
+        "akıllı saat sensörü yanlış ölçüyor",
+        "sensör yanlış",
+        "ölçüm hatalı",
+        "değer değişmiyor",
+        "sensor inaccurate",
+        "wrong reading",
+        "measurement stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "sensor",
+        "measurement"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-sensor-inaccurate-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sensor",
+                "measurement"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-sensor-inaccurate-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sensor",
+                "measurement"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-sensor-inaccurate-safe-check",
+          "title": "Sensör koşullarını kontrol et",
+          "description": "Konum, temizlik ve resmî kalibrasyon seçeneğini doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sensörü engelleyen yüzeyi kontrol et",
+              "detail": "Üreticinin dış temizlik talimatına göre görünür yüzeyi nazikçe temizle."
+            },
+            {
+              "title": "Konumu değiştir",
+              "detail": "Isı, buhar, doğrudan güneş veya manyetik parazit kaynağından uzaklaştır."
+            },
+            {
+              "title": "Resmî kalibrasyonu uygula",
+              "detail": "Varsa uygulamadaki kalibrasyon veya yeniden ölçüm adımını kullan."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-sensor-inaccurate-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/sensor-inaccurate"
+    },
+    {
+      "id": "smartwatch-update-failed",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "category": "software",
+      "title": "akıllı saat güncellenmiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Huawei",
+        "Xiaomi",
+        "Garmin",
+        "Amazfit"
+      ],
+      "modelPatterns": [
+        "Apple Watch",
+        "Galaxy Watch",
+        "Watch GT",
+        "Mi Watch"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "akıllı saat güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "smartwatch",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "smartwatch-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smartwatch-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "smartwatch-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Watch Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/update-failed"
+    },
+    {
+      "id": "fitness-band-no-power",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "power",
+      "title": "akıllı bileklik hiç açılmıyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "akıllı bileklik açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "akıllı bileklik will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik hiç açılmıyor",
+        "akıllı bileklik açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "akıllı bileklik will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/no-power"
+    },
+    {
+      "id": "fitness-band-not-charging",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "battery",
+      "title": "akıllı bileklik şarj olmuyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/not-charging"
+    },
+    {
+      "id": "fitness-band-battery-drain",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "battery",
+      "title": "akıllı bileklik pili hızlı bitiyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "pil hızlı bitiyor",
+          "şarj çabuk tükeniyor",
+          "batarya dayanmıyor"
+        ],
+        "en": [
+          "battery drains fast",
+          "poor battery life",
+          "battery runs out quickly"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik pili hızlı bitiyor",
+        "pil hızlı bitiyor",
+        "şarj çabuk tükeniyor",
+        "batarya dayanmıyor",
+        "battery drains fast",
+        "poor battery life",
+        "battery runs out quickly"
+      ],
+      "typoVariants": [
+        "sarji cabuk bitiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "battery",
+        "performance"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-battery-drain-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "battery",
+                "performance"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-battery-drain-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "battery",
+                "performance"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-battery-drain-safe-check",
+          "title": "Pil tüketimini ölç",
+          "description": "Yüksek tüketen özellikleri belirleyip yazılım kaynaklı yükü azalt.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Pil kullanımını incele",
+              "detail": "Ayarlar içindeki pil kullanımında olağan dışı tüketen uygulama veya özelliği bul."
+            },
+            {
+              "title": "Gereksiz yükleri azalt",
+              "detail": "Ekran parlaklığı, arka plan yenileme ve kullanılmayan bağlantıları azalt."
+            },
+            {
+              "title": "Güncelle ve tekrar ölç",
+              "detail": "Resmî güncellemeyi kur, yeniden başlat ve bir tam kullanım döngüsü gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-battery-drain-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/battery-drain"
+    },
+    {
+      "id": "fitness-band-pairing-failed",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "connection",
+      "title": "akıllı bileklik eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/pairing-failed"
+    },
+    {
+      "id": "fitness-band-notifications-missing",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "notifications",
+      "title": "akıllı bileklik bildirim göstermiyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "bildirim gelmiyor",
+          "uyarı görünmüyor",
+          "titreşim yok"
+        ],
+        "en": [
+          "notifications missing",
+          "no alerts",
+          "no vibration"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik bildirim göstermiyor",
+        "bildirim gelmiyor",
+        "uyarı görünmüyor",
+        "titreşim yok",
+        "notifications missing",
+        "no alerts",
+        "no vibration"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "notifications",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-notifications-missing-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "notifications",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-notifications-missing-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "notifications",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-notifications-missing-safe-check",
+          "title": "Bildirim zincirini kontrol et",
+          "description": "İzin, rahatsız etme modu ve bağlantı durumunu doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Rahatsız etme modunu kontrol et",
+              "detail": "Sessiz veya odak modunun bildirimi engellemediğini doğrula."
+            },
+            {
+              "title": "Uygulama izinlerini aç",
+              "detail": "Cihazın resmî uygulaması için bildirim iznini kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Eşlik eden telefonla bağlantıyı kapatıp yeniden aç."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-notifications-missing-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/notifications-missing"
+    },
+    {
+      "id": "fitness-band-sync-failed",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "sync",
+      "title": "akıllı bileklik verileri eşitlemiyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/sync-failed"
+    },
+    {
+      "id": "fitness-band-sensor-inaccurate",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "sensor",
+      "title": "akıllı bileklik sensörü yanlış ölçüyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "sensör yanlış",
+          "ölçüm hatalı",
+          "değer değişmiyor"
+        ],
+        "en": [
+          "sensor inaccurate",
+          "wrong reading",
+          "measurement stuck"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik sensörü yanlış ölçüyor",
+        "sensör yanlış",
+        "ölçüm hatalı",
+        "değer değişmiyor",
+        "sensor inaccurate",
+        "wrong reading",
+        "measurement stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "sensor",
+        "measurement"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-sensor-inaccurate-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sensor",
+                "measurement"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-sensor-inaccurate-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sensor",
+                "measurement"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-sensor-inaccurate-safe-check",
+          "title": "Sensör koşullarını kontrol et",
+          "description": "Konum, temizlik ve resmî kalibrasyon seçeneğini doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sensörü engelleyen yüzeyi kontrol et",
+              "detail": "Üreticinin dış temizlik talimatına göre görünür yüzeyi nazikçe temizle."
+            },
+            {
+              "title": "Konumu değiştir",
+              "detail": "Isı, buhar, doğrudan güneş veya manyetik parazit kaynağından uzaklaştır."
+            },
+            {
+              "title": "Resmî kalibrasyonu uygula",
+              "detail": "Varsa uygulamadaki kalibrasyon veya yeniden ölçüm adımını kullan."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-sensor-inaccurate-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/sensor-inaccurate"
+    },
+    {
+      "id": "fitness-band-update-failed",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "category": "software",
+      "title": "akıllı bileklik güncellenmiyor",
+      "brandPatterns": [
+        "Xiaomi",
+        "Huawei",
+        "Fitbit",
+        "Garmin",
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "Mi Band",
+        "Smart Band",
+        "Fitbit",
+        "Vivosmart"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "akıllı bileklik güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "fitness-band",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "fitness-band-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "fitness-band-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "fitness-band-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/update-failed"
+    },
+    {
+      "id": "gps-tracker-no-power",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "power",
+      "title": "gps takip cihazı hiç açılmıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "gps takip cihazı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "gps takip cihazı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı hiç açılmıyor",
+        "gps takip cihazı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "gps takip cihazı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/no-power"
+    },
+    {
+      "id": "gps-tracker-not-charging",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "battery",
+      "title": "gps takip cihazı şarj olmuyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/not-charging"
+    },
+    {
+      "id": "gps-tracker-battery-drain",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "battery",
+      "title": "gps takip cihazı pili hızlı bitiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "pil hızlı bitiyor",
+          "şarj çabuk tükeniyor",
+          "batarya dayanmıyor"
+        ],
+        "en": [
+          "battery drains fast",
+          "poor battery life",
+          "battery runs out quickly"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı pili hızlı bitiyor",
+        "pil hızlı bitiyor",
+        "şarj çabuk tükeniyor",
+        "batarya dayanmıyor",
+        "battery drains fast",
+        "poor battery life",
+        "battery runs out quickly"
+      ],
+      "typoVariants": [
+        "sarji cabuk bitiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "battery",
+        "performance"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-battery-drain-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "battery",
+                "performance"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-battery-drain-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "battery",
+                "performance"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-battery-drain-safe-check",
+          "title": "Pil tüketimini ölç",
+          "description": "Yüksek tüketen özellikleri belirleyip yazılım kaynaklı yükü azalt.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Pil kullanımını incele",
+              "detail": "Ayarlar içindeki pil kullanımında olağan dışı tüketen uygulama veya özelliği bul."
+            },
+            {
+              "title": "Gereksiz yükleri azalt",
+              "detail": "Ekran parlaklığı, arka plan yenileme ve kullanılmayan bağlantıları azalt."
+            },
+            {
+              "title": "Güncelle ve tekrar ölç",
+              "detail": "Resmî güncellemeyi kur, yeniden başlat ve bir tam kullanım döngüsü gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-battery-drain-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/battery-drain"
+    },
+    {
+      "id": "gps-tracker-pairing-failed",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "connection",
+      "title": "gps takip cihazı eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/pairing-failed"
+    },
+    {
+      "id": "gps-tracker-notifications-missing",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "notifications",
+      "title": "gps takip cihazı bildirim göstermiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "bildirim gelmiyor",
+          "uyarı görünmüyor",
+          "titreşim yok"
+        ],
+        "en": [
+          "notifications missing",
+          "no alerts",
+          "no vibration"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı bildirim göstermiyor",
+        "bildirim gelmiyor",
+        "uyarı görünmüyor",
+        "titreşim yok",
+        "notifications missing",
+        "no alerts",
+        "no vibration"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "notifications",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-notifications-missing-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "notifications",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-notifications-missing-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "notifications",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-notifications-missing-safe-check",
+          "title": "Bildirim zincirini kontrol et",
+          "description": "İzin, rahatsız etme modu ve bağlantı durumunu doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Rahatsız etme modunu kontrol et",
+              "detail": "Sessiz veya odak modunun bildirimi engellemediğini doğrula."
+            },
+            {
+              "title": "Uygulama izinlerini aç",
+              "detail": "Cihazın resmî uygulaması için bildirim iznini kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Eşlik eden telefonla bağlantıyı kapatıp yeniden aç."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-notifications-missing-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/notifications-missing"
+    },
+    {
+      "id": "gps-tracker-sync-failed",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "sync",
+      "title": "gps takip cihazı verileri eşitlemiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/sync-failed"
+    },
+    {
+      "id": "gps-tracker-sensor-inaccurate",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "sensor",
+      "title": "gps takip cihazı sensörü yanlış ölçüyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "sensör yanlış",
+          "ölçüm hatalı",
+          "değer değişmiyor"
+        ],
+        "en": [
+          "sensor inaccurate",
+          "wrong reading",
+          "measurement stuck"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı sensörü yanlış ölçüyor",
+        "sensör yanlış",
+        "ölçüm hatalı",
+        "değer değişmiyor",
+        "sensor inaccurate",
+        "wrong reading",
+        "measurement stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "sensor",
+        "measurement"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-sensor-inaccurate-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sensor",
+                "measurement"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-sensor-inaccurate-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sensor",
+                "measurement"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-sensor-inaccurate-safe-check",
+          "title": "Sensör koşullarını kontrol et",
+          "description": "Konum, temizlik ve resmî kalibrasyon seçeneğini doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sensörü engelleyen yüzeyi kontrol et",
+              "detail": "Üreticinin dış temizlik talimatına göre görünür yüzeyi nazikçe temizle."
+            },
+            {
+              "title": "Konumu değiştir",
+              "detail": "Isı, buhar, doğrudan güneş veya manyetik parazit kaynağından uzaklaştır."
+            },
+            {
+              "title": "Resmî kalibrasyonu uygula",
+              "detail": "Varsa uygulamadaki kalibrasyon veya yeniden ölçüm adımını kullan."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-sensor-inaccurate-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/sensor-inaccurate"
+    },
+    {
+      "id": "gps-tracker-update-failed",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "category": "software",
+      "title": "gps takip cihazı güncellenmiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Garmin",
+        "Tile",
+        "Chipolo"
+      ],
+      "modelPatterns": [
+        "AirTag",
+        "SmartTag",
+        "InReach"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "gps takip cihazı güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "wearable",
+        "gps-tracker",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "gps-tracker-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "gps-tracker-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "gps-tracker-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Garmin Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "wearable/update-failed"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "smartwatch-safe-fallback",
+      "deviceType": "wearable",
+      "subType": "smartwatch",
+      "title": "Akıllı saat için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "apple-watch",
+          "title": "Apple Watch Destek",
+          "url": "https://support.apple.com/watch",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "fitness-band-safe-fallback",
+      "deviceType": "wearable",
+      "subType": "fitness-band",
+      "title": "Akıllı bileklik için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "gps-tracker-safe-fallback",
+      "deviceType": "wearable",
+      "subType": "gps-tracker",
+      "title": "GPS takip cihazı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "garmin-support",
+          "title": "Garmin Destek",
+          "url": "https://support.garmin.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}

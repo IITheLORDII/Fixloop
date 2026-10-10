@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 3,
+  "id": "core-emergency",
+  "label": "Acil güvenlik akışları",
+  "generatedAt": "2026-10-10T13:17:34.603Z",
+  "deviceTypes": [],
+  "issues": [
+    {
+      "id": "emergency-swollen-battery",
+      "deviceType": "any",
+      "subType": "any",
+      "category": "emergency",
+      "title": "Şişmiş batarya veya açılmış kasa",
+      "brandPatterns": [],
+      "modelPatterns": [],
+      "symptoms": {
+        "tr": [
+          "batarya şişti",
+          "pil şişti",
+          "kasa şişti",
+          "ekran kasadan ayrılıyor"
+        ],
+        "en": [
+          "swollen battery",
+          "battery bulging"
+        ]
+      },
+      "aliases": [
+        "batarya şişti",
+        "pil şişti",
+        "kasa şişti",
+        "ekran kasadan ayrılıyor",
+        "swollen battery",
+        "battery bulging"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "emergency",
+        "battery",
+        "swelling"
+      ],
+      "questions": [],
+      "solutions": [
+        {
+          "id": "emergency-swollen-battery-immediate-action",
+          "title": "Hemen güvenliği sağla",
+          "description": "Cihazı kullanmayı ve şarj etmeyi bırak. Sıkıştırma, delme veya taşıma yapma; yanıcı maddelerden uzak güvenli bir alanda yetkili destekle görüş.",
+          "duration": "Hemen",
+          "steps": [
+            {
+              "title": "Kullanmayı bırak",
+              "detail": "Cihaza yeniden güç verme, şarj etme veya çalıştırma."
+            },
+            {
+              "title": "İnsanları uzaklaştır",
+              "detail": "Kendini, çocukları ve evcil hayvanları güvenli mesafeye al."
+            },
+            {
+              "title": "Uzman yardımını çağır",
+              "detail": "Cihazı kullanmayı ve şarj etmeyi bırak. Sıkıştırma, delme veya taşıma yapma; yanıcı maddelerden uzak güvenli bir alanda yetkili destekle görüş."
+            }
+          ]
+        }
+      ],
+      "safety": "emergency",
+      "serviceThreshold": "Bu akışta kullanıcı onarımı yoktur; acil veya yetkili uzman desteği gerekir.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "emergency-definition"
+    },
+    {
+      "id": "emergency-smoke-fire",
+      "deviceType": "any",
+      "subType": "any",
+      "category": "emergency",
+      "title": "Duman, alev veya yanık kokusu",
+      "brandPatterns": [],
+      "modelPatterns": [],
+      "symptoms": {
+        "tr": [
+          "duman çıkıyor",
+          "alev aldı",
+          "yanık kokusu"
+        ],
+        "en": [
+          "burning smell",
+          "smoke coming out",
+          "on fire"
+        ]
+      },
+      "aliases": [
+        "duman çıkıyor",
+        "alev aldı",
+        "yanık kokusu",
+        "burning smell",
+        "smoke coming out",
+        "on fire"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "emergency",
+        "smoke",
+        "fire"
+      ],
+      "questions": [],
+      "solutions": [
+        {
+          "id": "emergency-smoke-fire-immediate-action",
+          "title": "Hemen güvenliği sağla",
+          "description": "Cihaza dokunma. Güvenliyse ana enerjiyi uzaktan kes, ortamı boşalt ve yerel acil yardım birimini ara.",
+          "duration": "Hemen",
+          "steps": [
+            {
+              "title": "Kullanmayı bırak",
+              "detail": "Cihaza yeniden güç verme, şarj etme veya çalıştırma."
+            },
+            {
+              "title": "İnsanları uzaklaştır",
+              "detail": "Kendini, çocukları ve evcil hayvanları güvenli mesafeye al."
+            },
+            {
+              "title": "Uzman yardımını çağır",
+              "detail": "Cihaza dokunma. Güvenliyse ana enerjiyi uzaktan kes, ortamı boşalt ve yerel acil yardım birimini ara."
+            }
+          ]
+        }
+      ],
+      "safety": "emergency",
+      "serviceThreshold": "Bu akışta kullanıcı onarımı yoktur; acil veya yetkili uzman desteği gerekir.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "emergency-definition"
+    },
+    {
+      "id": "emergency-electric-shock",
+      "deviceType": "any",
+      "subType": "any",
+      "category": "emergency",
+      "title": "Elektrik çarpması, kıvılcım veya ıslak elektrik",
+      "brandPatterns": [],
+      "modelPatterns": [],
+      "symptoms": {
+        "tr": [
+          "elektrik çarpıyor",
+          "kıvılcım çıkarıyor",
+          "priz ıslandı",
+          "kaçak elektrik"
+        ],
+        "en": [
+          "electric shock",
+          "sparking",
+          "wet outlet"
+        ]
+      },
+      "aliases": [
+        "elektrik çarpıyor",
+        "kıvılcım çıkarıyor",
+        "priz ıslandı",
+        "kaçak elektrik",
+        "electric shock",
+        "sparking",
+        "wet outlet"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "emergency",
+        "electric",
+        "shock"
+      ],
+      "questions": [],
+      "solutions": [
+        {
+          "id": "emergency-electric-shock-immediate-action",
+          "title": "Hemen güvenliği sağla",
+          "description": "Cihaza ve suya dokunma. Güvenli mesafeden ilgili sigortayı kapatabiliyorsan kapat ve yetkili elektrikçi çağır.",
+          "duration": "Hemen",
+          "steps": [
+            {
+              "title": "Kullanmayı bırak",
+              "detail": "Cihaza yeniden güç verme, şarj etme veya çalıştırma."
+            },
+            {
+              "title": "İnsanları uzaklaştır",
+              "detail": "Kendini, çocukları ve evcil hayvanları güvenli mesafeye al."
+            },
+            {
+              "title": "Uzman yardımını çağır",
+              "detail": "Cihaza ve suya dokunma. Güvenli mesafeden ilgili sigortayı kapatabiliyorsan kapat ve yetkili elektrikçi çağır."
+            }
+          ]
+        }
+      ],
+      "safety": "emergency",
+      "serviceThreshold": "Bu akışta kullanıcı onarımı yoktur; acil veya yetkili uzman desteği gerekir.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "emergency-definition"
+    },
+    {
+      "id": "emergency-gas-smell",
+      "deviceType": "any",
+      "subType": "any",
+      "category": "emergency",
+      "title": "Gaz kokusu veya gaz kaçağı şüphesi",
+      "brandPatterns": [],
+      "modelPatterns": [],
+      "symptoms": {
+        "tr": [
+          "gaz kokusu",
+          "gaz kaçağı",
+          "doğalgaz kokusu"
+        ],
+        "en": [
+          "smell gas",
+          "gas leak"
+        ]
+      },
+      "aliases": [
+        "gaz kokusu",
+        "gaz kaçağı",
+        "doğalgaz kokusu",
+        "smell gas",
+        "gas leak"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "emergency",
+        "gas",
+        "leak"
+      ],
+      "questions": [],
+      "solutions": [
+        {
+          "id": "emergency-gas-smell-immediate-action",
+          "title": "Hemen güvenliği sağla",
+          "description": "Elektrik düğmesi, telefon veya ateş kullanma. Pencereyi güvenliyse aç, binayı terk et ve dışarıdan gaz acil hattını ara.",
+          "duration": "Hemen",
+          "steps": [
+            {
+              "title": "Kullanmayı bırak",
+              "detail": "Cihaza yeniden güç verme, şarj etme veya çalıştırma."
+            },
+            {
+              "title": "İnsanları uzaklaştır",
+              "detail": "Kendini, çocukları ve evcil hayvanları güvenli mesafeye al."
+            },
+            {
+              "title": "Uzman yardımını çağır",
+              "detail": "Elektrik düğmesi, telefon veya ateş kullanma. Pencereyi güvenliyse aç, binayı terk et ve dışarıdan gaz acil hattını ara."
+            }
+          ]
+        }
+      ],
+      "safety": "emergency",
+      "serviceThreshold": "Bu akışta kullanıcı onarımı yoktur; acil veya yetkili uzman desteği gerekir.",
+      "sources": [
+        {
+          "id": "arcelik-support",
+          "title": "Arçelik Destek ve Kullanım Kılavuzları",
+          "url": "https://www.arcelik.com.tr/destek/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "emergency-definition"
+    },
+    {
+      "id": "emergency-scalding-water",
+      "deviceType": "any",
+      "subType": "any",
+      "category": "emergency",
+      "title": "Kontrolsüz kaynar su veya buhar",
+      "brandPatterns": [],
+      "modelPatterns": [],
+      "symptoms": {
+        "tr": [
+          "kaynar su fışkırıyor",
+          "çok sıcak su akıyor",
+          "buhar kaçırıyor"
+        ],
+        "en": [
+          "boiling water leak",
+          "scalding water",
+          "steam leak"
+        ]
+      },
+      "aliases": [
+        "kaynar su fışkırıyor",
+        "çok sıcak su akıyor",
+        "buhar kaçırıyor",
+        "boiling water leak",
+        "scalding water",
+        "steam leak"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "emergency",
+        "hot-water",
+        "steam"
+      ],
+      "questions": [],
+      "solutions": [
+        {
+          "id": "emergency-scalding-water-immediate-action",
+          "title": "Hemen güvenliği sağla",
+          "description": "Yaklaşma ve kapağı açma. Güvenliyse uzaktan enerjiyi kes, alanı boş tut ve yetkili servis çağır.",
+          "duration": "Hemen",
+          "steps": [
+            {
+              "title": "Kullanmayı bırak",
+              "detail": "Cihaza yeniden güç verme, şarj etme veya çalıştırma."
+            },
+            {
+              "title": "İnsanları uzaklaştır",
+              "detail": "Kendini, çocukları ve evcil hayvanları güvenli mesafeye al."
+            },
+            {
+              "title": "Uzman yardımını çağır",
+              "detail": "Yaklaşma ve kapağı açma. Güvenliyse uzaktan enerjiyi kes, alanı boş tut ve yetkili servis çağır."
+            }
+          ]
+        }
+      ],
+      "safety": "emergency",
+      "serviceThreshold": "Bu akışta kullanıcı onarımı yoktur; acil veya yetkili uzman desteği gerekir.",
+      "sources": [
+        {
+          "id": "arcelik-support",
+          "title": "Arçelik Destek ve Kullanım Kılavuzları",
+          "url": "https://www.arcelik.com.tr/destek/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "emergency-definition"
+    },
+    {
+      "id": "emergency-high-voltage",
+      "deviceType": "any",
+      "subType": "any",
+      "category": "emergency",
+      "title": "Açık yüksek gerilim parçası",
+      "brandPatterns": [],
+      "modelPatterns": [],
+      "symptoms": {
+        "tr": [
+          "açık kablo var",
+          "çıplak tel",
+          "yüksek gerilim açıkta"
+        ],
+        "en": [
+          "exposed wire",
+          "exposed high voltage",
+          "live wire"
+        ]
+      },
+      "aliases": [
+        "açık kablo var",
+        "çıplak tel",
+        "yüksek gerilim açıkta",
+        "exposed wire",
+        "exposed high voltage",
+        "live wire"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "emergency",
+        "electric",
+        "high-voltage"
+      ],
+      "questions": [],
+      "solutions": [
+        {
+          "id": "emergency-high-voltage-immediate-action",
+          "title": "Hemen güvenliği sağla",
+          "description": "Cihaza yaklaşma veya müdahale etme. Güvenli mesafeden ana enerjiyi kes ve yetkili elektrikçi çağır.",
+          "duration": "Hemen",
+          "steps": [
+            {
+              "title": "Kullanmayı bırak",
+              "detail": "Cihaza yeniden güç verme, şarj etme veya çalıştırma."
+            },
+            {
+              "title": "İnsanları uzaklaştır",
+              "detail": "Kendini, çocukları ve evcil hayvanları güvenli mesafeye al."
+            },
+            {
+              "title": "Uzman yardımını çağır",
+              "detail": "Cihaza yaklaşma veya müdahale etme. Güvenli mesafeden ana enerjiyi kes ve yetkili elektrikçi çağır."
+            }
+          ]
+        }
+      ],
+      "safety": "emergency",
+      "serviceThreshold": "Bu akışta kullanıcı onarımı yoktur; acil veya yetkili uzman desteği gerekir.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "emergency-definition"
+    }
+  ],
+  "fallbacks": []
+}

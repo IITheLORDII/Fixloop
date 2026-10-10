@@ -1,0 +1,5305 @@
+{
+  "schemaVersion": 3,
+  "id": "core-tv",
+  "label": "TV / monitör / projektör",
+  "generatedAt": "2026-10-10T13:17:34.557Z",
+  "deviceTypes": [
+    {
+      "id": "tv",
+      "label": "TV / monitör / projektör",
+      "subtypes": [
+        {
+          "id": "smart-tv",
+          "label": "Akıllı TV",
+          "brands": [
+            "Samsung",
+            "LG",
+            "Sony",
+            "Philips",
+            "TCL",
+            "Hisense",
+            "Vestel",
+            "Regal",
+            "Grundig",
+            "Beko",
+            "Arçelik"
+          ],
+          "models": [
+            "QLED",
+            "OLED",
+            "Bravia",
+            "Ambilight",
+            "Smart TV"
+          ]
+        },
+        {
+          "id": "streaming-device",
+          "label": "Medya oynatıcı",
+          "brands": [
+            "Google",
+            "Apple",
+            "Amazon",
+            "Xiaomi",
+            "Roku"
+          ],
+          "models": [
+            "Chromecast",
+            "Apple TV",
+            "Fire TV",
+            "Mi Box"
+          ]
+        },
+        {
+          "id": "projector",
+          "label": "Projektör",
+          "brands": [
+            "Epson",
+            "BenQ",
+            "ViewSonic",
+            "LG",
+            "Samsung",
+            "Xiaomi"
+          ],
+          "models": [
+            "CineBeam",
+            "The Freestyle"
+          ]
+        },
+        {
+          "id": "external-monitor",
+          "label": "Harici monitör",
+          "brands": [
+            "Dell",
+            "LG",
+            "Samsung",
+            "Asus",
+            "Acer",
+            "MSI",
+            "ViewSonic"
+          ],
+          "models": [
+            "UltraSharp",
+            "Odyssey",
+            "ProArt"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "smart-tv-no-power",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "power",
+      "title": "akıllı tv hiç açılmıyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "akıllı tv açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "akıllı tv will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "akıllı tv hiç açılmıyor",
+        "akıllı tv açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "akıllı tv will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-power"
+    },
+    {
+      "id": "smart-tv-no-display",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "display",
+      "title": "akıllı tv görüntü vermiyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "akıllı tv görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-display"
+    },
+    {
+      "id": "smart-tv-no-audio",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "audio",
+      "title": "akıllı tv ses vermiyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "ses yok",
+          "ses gelmiyor",
+          "hoparlör çalışmıyor"
+        ],
+        "en": [
+          "no sound",
+          "no audio",
+          "speaker not working"
+        ]
+      },
+      "aliases": [
+        "akıllı tv ses vermiyor",
+        "ses yok",
+        "ses gelmiyor",
+        "hoparlör çalışmıyor",
+        "no sound",
+        "no audio",
+        "speaker not working"
+      ],
+      "typoVariants": [
+        "ses gelmiyo"
+      ],
+      "negativeSignals": [
+        "mikrofon çalışmıyor"
+      ],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "audio",
+        "output"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-no-audio-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-no-audio-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-no-audio-safe-check",
+          "title": "Ses çıkışını doğrula",
+          "description": "Sessiz modu, ses düzeyini ve seçili çıkışı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sessiz modu ve sesi kontrol et",
+              "detail": "Sesin kapalı olmadığını ve düzeyin duyulabilir olduğunu doğrula."
+            },
+            {
+              "title": "Doğru çıkışı seç",
+              "detail": "Ayarlar içinden kullandığın hoparlör veya kulaklığı aktif çıkış yap."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Harici ses cihazını çıkarıp yeniden bağla ve kısa bir test sesi çal."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-no-audio-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-audio"
+    },
+    {
+      "id": "smart-tv-controls-not-working",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "input",
+      "title": "akıllı tv tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "akıllı tv tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/controls-not-working"
+    },
+    {
+      "id": "smart-tv-network-offline",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "network",
+      "title": "akıllı tv internete bağlanmıyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "akıllı tv internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/network-offline"
+    },
+    {
+      "id": "smart-tv-app-error",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "software",
+      "title": "akıllı tv uygulaması hata veriyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "akıllı tv uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/app-error"
+    },
+    {
+      "id": "smart-tv-update-failed",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "software",
+      "title": "akıllı tv güncellenmiyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "akıllı tv güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/update-failed"
+    },
+    {
+      "id": "smart-tv-intermittent",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "category": "stability",
+      "title": "akıllı tv ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Samsung",
+        "LG",
+        "Sony",
+        "Philips",
+        "TCL",
+        "Hisense",
+        "Vestel",
+        "Regal",
+        "Grundig",
+        "Beko",
+        "Arçelik"
+      ],
+      "modelPatterns": [
+        "QLED",
+        "OLED",
+        "Bravia",
+        "Ambilight",
+        "Smart TV"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "akıllı tv ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "smart-tv",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "smart-tv-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "smart-tv-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "smart-tv-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Vestel Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/intermittent"
+    },
+    {
+      "id": "streaming-device-no-power",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "power",
+      "title": "medya oynatıcı hiç açılmıyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "medya oynatıcı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "medya oynatıcı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı hiç açılmıyor",
+        "medya oynatıcı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "medya oynatıcı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-power"
+    },
+    {
+      "id": "streaming-device-no-display",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "display",
+      "title": "medya oynatıcı görüntü vermiyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-display"
+    },
+    {
+      "id": "streaming-device-no-audio",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "audio",
+      "title": "medya oynatıcı ses vermiyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "ses yok",
+          "ses gelmiyor",
+          "hoparlör çalışmıyor"
+        ],
+        "en": [
+          "no sound",
+          "no audio",
+          "speaker not working"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı ses vermiyor",
+        "ses yok",
+        "ses gelmiyor",
+        "hoparlör çalışmıyor",
+        "no sound",
+        "no audio",
+        "speaker not working"
+      ],
+      "typoVariants": [
+        "ses gelmiyo"
+      ],
+      "negativeSignals": [
+        "mikrofon çalışmıyor"
+      ],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "audio",
+        "output"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-no-audio-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-no-audio-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-no-audio-safe-check",
+          "title": "Ses çıkışını doğrula",
+          "description": "Sessiz modu, ses düzeyini ve seçili çıkışı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sessiz modu ve sesi kontrol et",
+              "detail": "Sesin kapalı olmadığını ve düzeyin duyulabilir olduğunu doğrula."
+            },
+            {
+              "title": "Doğru çıkışı seç",
+              "detail": "Ayarlar içinden kullandığın hoparlör veya kulaklığı aktif çıkış yap."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Harici ses cihazını çıkarıp yeniden bağla ve kısa bir test sesi çal."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-no-audio-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-audio"
+    },
+    {
+      "id": "streaming-device-controls-not-working",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "input",
+      "title": "medya oynatıcı tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/controls-not-working"
+    },
+    {
+      "id": "streaming-device-network-offline",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "network",
+      "title": "medya oynatıcı internete bağlanmıyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/network-offline"
+    },
+    {
+      "id": "streaming-device-app-error",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "software",
+      "title": "medya oynatıcı uygulaması hata veriyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/app-error"
+    },
+    {
+      "id": "streaming-device-update-failed",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "software",
+      "title": "medya oynatıcı güncellenmiyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/update-failed"
+    },
+    {
+      "id": "streaming-device-intermittent",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "category": "stability",
+      "title": "medya oynatıcı ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Google",
+        "Apple",
+        "Amazon",
+        "Xiaomi",
+        "Roku"
+      ],
+      "modelPatterns": [
+        "Chromecast",
+        "Apple TV",
+        "Fire TV",
+        "Mi Box"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "medya oynatıcı ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "streaming-device",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "streaming-device-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "streaming-device-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "streaming-device-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Google Nest Yardım içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/intermittent"
+    },
+    {
+      "id": "projector-no-power",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "power",
+      "title": "projektör hiç açılmıyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "projektör açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "projektör will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "projektör hiç açılmıyor",
+        "projektör açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "projektör will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "projector-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "projector-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-power"
+    },
+    {
+      "id": "projector-no-display",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "display",
+      "title": "projektör görüntü vermiyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "projektör görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "projector-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "projector-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-display"
+    },
+    {
+      "id": "projector-no-audio",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "audio",
+      "title": "projektör ses vermiyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "ses yok",
+          "ses gelmiyor",
+          "hoparlör çalışmıyor"
+        ],
+        "en": [
+          "no sound",
+          "no audio",
+          "speaker not working"
+        ]
+      },
+      "aliases": [
+        "projektör ses vermiyor",
+        "ses yok",
+        "ses gelmiyor",
+        "hoparlör çalışmıyor",
+        "no sound",
+        "no audio",
+        "speaker not working"
+      ],
+      "typoVariants": [
+        "ses gelmiyo"
+      ],
+      "negativeSignals": [
+        "mikrofon çalışmıyor"
+      ],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "audio",
+        "output"
+      ],
+      "questions": [
+        {
+          "id": "projector-no-audio-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-no-audio-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-no-audio-safe-check",
+          "title": "Ses çıkışını doğrula",
+          "description": "Sessiz modu, ses düzeyini ve seçili çıkışı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sessiz modu ve sesi kontrol et",
+              "detail": "Sesin kapalı olmadığını ve düzeyin duyulabilir olduğunu doğrula."
+            },
+            {
+              "title": "Doğru çıkışı seç",
+              "detail": "Ayarlar içinden kullandığın hoparlör veya kulaklığı aktif çıkış yap."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Harici ses cihazını çıkarıp yeniden bağla ve kısa bir test sesi çal."
+            }
+          ]
+        },
+        {
+          "id": "projector-no-audio-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-audio"
+    },
+    {
+      "id": "projector-controls-not-working",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "input",
+      "title": "projektör tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "projektör tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "projector-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "projector-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/controls-not-working"
+    },
+    {
+      "id": "projector-network-offline",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "network",
+      "title": "projektör internete bağlanmıyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "projektör internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "projector-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "projector-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/network-offline"
+    },
+    {
+      "id": "projector-app-error",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "software",
+      "title": "projektör uygulaması hata veriyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "projektör uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "projector-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "projector-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/app-error"
+    },
+    {
+      "id": "projector-update-failed",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "software",
+      "title": "projektör güncellenmiyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "projektör güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "projector-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "projector-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/update-failed"
+    },
+    {
+      "id": "projector-intermittent",
+      "deviceType": "tv",
+      "subType": "projector",
+      "category": "stability",
+      "title": "projektör ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Epson",
+        "BenQ",
+        "ViewSonic",
+        "LG",
+        "Samsung",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "CineBeam",
+        "The Freestyle"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "projektör ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "projector",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "projector-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projector-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "projector-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "projector-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "LG Elektronik Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/intermittent"
+    },
+    {
+      "id": "external-monitor-no-power",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "power",
+      "title": "harici monitör hiç açılmıyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "harici monitör açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "harici monitör will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "harici monitör hiç açılmıyor",
+        "harici monitör açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "harici monitör will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-power"
+    },
+    {
+      "id": "external-monitor-no-display",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "display",
+      "title": "harici monitör görüntü vermiyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "harici monitör görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-display"
+    },
+    {
+      "id": "external-monitor-no-audio",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "audio",
+      "title": "harici monitör ses vermiyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "ses yok",
+          "ses gelmiyor",
+          "hoparlör çalışmıyor"
+        ],
+        "en": [
+          "no sound",
+          "no audio",
+          "speaker not working"
+        ]
+      },
+      "aliases": [
+        "harici monitör ses vermiyor",
+        "ses yok",
+        "ses gelmiyor",
+        "hoparlör çalışmıyor",
+        "no sound",
+        "no audio",
+        "speaker not working"
+      ],
+      "typoVariants": [
+        "ses gelmiyo"
+      ],
+      "negativeSignals": [
+        "mikrofon çalışmıyor"
+      ],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "audio",
+        "output"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-no-audio-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-no-audio-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "audio",
+                "output"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-no-audio-safe-check",
+          "title": "Ses çıkışını doğrula",
+          "description": "Sessiz modu, ses düzeyini ve seçili çıkışı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sessiz modu ve sesi kontrol et",
+              "detail": "Sesin kapalı olmadığını ve düzeyin duyulabilir olduğunu doğrula."
+            },
+            {
+              "title": "Doğru çıkışı seç",
+              "detail": "Ayarlar içinden kullandığın hoparlör veya kulaklığı aktif çıkış yap."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Harici ses cihazını çıkarıp yeniden bağla ve kısa bir test sesi çal."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-no-audio-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/no-audio"
+    },
+    {
+      "id": "external-monitor-controls-not-working",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "input",
+      "title": "harici monitör tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "harici monitör tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/controls-not-working"
+    },
+    {
+      "id": "external-monitor-network-offline",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "network",
+      "title": "harici monitör internete bağlanmıyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "harici monitör internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/network-offline"
+    },
+    {
+      "id": "external-monitor-app-error",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "software",
+      "title": "harici monitör uygulaması hata veriyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "harici monitör uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/app-error"
+    },
+    {
+      "id": "external-monitor-update-failed",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "software",
+      "title": "harici monitör güncellenmiyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "harici monitör güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/update-failed"
+    },
+    {
+      "id": "external-monitor-intermittent",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "category": "stability",
+      "title": "harici monitör ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Dell",
+        "LG",
+        "Samsung",
+        "Asus",
+        "Acer",
+        "MSI",
+        "ViewSonic"
+      ],
+      "modelPatterns": [
+        "UltraSharp",
+        "Odyssey",
+        "ProArt"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "harici monitör ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "tv",
+        "external-monitor",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "external-monitor-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-monitor-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "external-monitor-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Dell Monitör Sorun Giderme içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "display/intermittent"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "smart-tv-safe-fallback",
+      "deviceType": "tv",
+      "subType": "smart-tv",
+      "title": "Akıllı TV için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "vestel-support",
+          "title": "Vestel Destek",
+          "url": "https://www.vestel.com.tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "streaming-device-safe-fallback",
+      "deviceType": "tv",
+      "subType": "streaming-device",
+      "title": "Medya oynatıcı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "google-nest",
+          "title": "Google Nest Yardım",
+          "url": "https://support.google.com/googlenest/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "projector-safe-fallback",
+      "deviceType": "tv",
+      "subType": "projector",
+      "title": "Projektör için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "external-monitor-safe-fallback",
+      "deviceType": "tv",
+      "subType": "external-monitor",
+      "title": "Harici monitör için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "dell-monitor",
+          "title": "Dell Monitör Sorun Giderme",
+          "url": "https://www.dell.com/support/kbdoc/en-us/000132354/how-to-troubleshoot-display-or-video-issues-on-a-dell-monitor",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}

@@ -1,0 +1,5233 @@
+{
+  "schemaVersion": 3,
+  "id": "core-network",
+  "label": "Modem / router / Wi-Fi",
+  "generatedAt": "2026-10-10T13:17:34.550Z",
+  "deviceTypes": [
+    {
+      "id": "network",
+      "label": "Modem / router / Wi-Fi",
+      "subtypes": [
+        {
+          "id": "router",
+          "label": "Router / modem",
+          "brands": [
+            "TP-Link",
+            "Asus",
+            "Keenetic",
+            "Zyxel",
+            "Huawei",
+            "ZTE",
+            "Tenda",
+            "Netgear"
+          ],
+          "models": [
+            "Archer",
+            "Deco",
+            "Keenetic",
+            "Nighthawk"
+          ]
+        },
+        {
+          "id": "mesh",
+          "label": "Mesh Wi-Fi sistemi",
+          "brands": [
+            "TP-Link",
+            "Google",
+            "Asus",
+            "Netgear",
+            "Keenetic"
+          ],
+          "models": [
+            "Deco",
+            "Nest Wifi",
+            "Orbi",
+            "ZenWiFi"
+          ]
+        },
+        {
+          "id": "wifi-extender",
+          "label": "Wi-Fi menzil genişletici",
+          "brands": [
+            "TP-Link",
+            "Xiaomi",
+            "Tenda",
+            "Mercusys",
+            "Netgear"
+          ],
+          "models": [
+            "RE",
+            "Mi Range Extender"
+          ]
+        },
+        {
+          "id": "mobile-hotspot",
+          "label": "Mobil modem / hotspot",
+          "brands": [
+            "TP-Link",
+            "Huawei",
+            "ZTE",
+            "Netgear"
+          ],
+          "models": [
+            "Mifi",
+            "Mobile WiFi",
+            "Nighthawk M"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "router-no-power",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "power",
+      "title": "router / modem hiç açılmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "router / modem açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "router / modem will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "router / modem hiç açılmıyor",
+        "router / modem açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "router / modem will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "router-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "router-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/no-power"
+    },
+    {
+      "id": "router-network-offline",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "network",
+      "title": "router / modem internete bağlanmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "router / modem internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "router-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "router-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-offline"
+    },
+    {
+      "id": "router-wifi-weak",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "network",
+      "title": "router / modem Wi-Fi sinyali zayıf",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi zayıf",
+          "çekmiyor",
+          "sinyal düşük"
+        ],
+        "en": [
+          "weak wifi",
+          "poor signal",
+          "low signal strength"
+        ]
+      },
+      "aliases": [
+        "router / modem Wi-Fi sinyali zayıf",
+        "wifi zayıf",
+        "çekmiyor",
+        "sinyal düşük",
+        "weak wifi",
+        "poor signal",
+        "low signal strength"
+      ],
+      "typoVariants": [
+        "wifi cekmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "wifi",
+        "signal"
+      ],
+      "questions": [
+        {
+          "id": "router-wifi-weak-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-wifi-weak-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-wifi-weak-safe-check",
+          "title": "Kablosuz kapsama alanını iyileştir",
+          "description": "Konum, bant ve parazit etkenlerini güvenli biçimde değiştir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır",
+              "detail": "Router ile istemci arasındaki duvar ve metal engelleri azalt."
+            },
+            {
+              "title": "Açık bir konum seç",
+              "detail": "Ağ cihazını zeminden yükselt ve kapalı dolap içine koyma."
+            },
+            {
+              "title": "Bantları karşılaştır",
+              "detail": "Yakında 5 GHz, daha uzakta 2.4 GHz ağını ayrı ayrı dene."
+            }
+          ]
+        },
+        {
+          "id": "router-wifi-weak-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/wifi-weak"
+    },
+    {
+      "id": "router-internet-slow",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "performance",
+      "title": "router / modem interneti yavaş",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "internet yavaş",
+          "indirme hızı düşük",
+          "gecikme yüksek"
+        ],
+        "en": [
+          "slow internet",
+          "low download speed",
+          "high latency"
+        ]
+      },
+      "aliases": [
+        "router / modem interneti yavaş",
+        "internet yavaş",
+        "indirme hızı düşük",
+        "gecikme yüksek",
+        "slow internet",
+        "low download speed",
+        "high latency"
+      ],
+      "typoVariants": [
+        "internet yavas"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "performance",
+        "latency"
+      ],
+      "questions": [
+        {
+          "id": "router-internet-slow-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-internet-slow-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-internet-slow-safe-check",
+          "title": "Yavaşlığın kapsamını ölç",
+          "description": "Tek cihaz, yerel Wi-Fi ve internet hattını birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağda ve aynı konumda ikinci bir cihazla kısa hız testi yap."
+            },
+            {
+              "title": "Yoğun kullanımı durdur",
+              "detail": "Büyük indirme ve yedeklemeleri geçici olarak durdur."
+            },
+            {
+              "title": "Ağ cihazını normal yeniden başlat",
+              "detail": "Modem veya routerı kapatıp 30 saniye sonra aç."
+            }
+          ]
+        },
+        {
+          "id": "router-internet-slow-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/internet-slow"
+    },
+    {
+      "id": "router-network-drops",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "stability",
+      "title": "router / modem bağlantıyı sık sık kesiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi kopuyor",
+          "internet gidip geliyor",
+          "bağlantı düşüyor"
+        ],
+        "en": [
+          "wifi keeps dropping",
+          "internet disconnects",
+          "unstable connection"
+        ]
+      },
+      "aliases": [
+        "router / modem bağlantıyı sık sık kesiyor",
+        "wifi kopuyor",
+        "internet gidip geliyor",
+        "bağlantı düşüyor",
+        "wifi keeps dropping",
+        "internet disconnects",
+        "unstable connection"
+      ],
+      "typoVariants": [
+        "wifi kopuyo"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "stability",
+        "wifi",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "router-network-drops-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-network-drops-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-network-drops-safe-check",
+          "title": "Kopmanın kaynağını ayır",
+          "description": "Kablo, sinyal ve ağ cihazının çalışma durumunu karşılaştır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kabloları kontrol et",
+              "detail": "Gevşek güç veya internet kablosunu yeniden tak; hasarlı kabloyu değiştir."
+            },
+            {
+              "title": "Sinyali karşılaştır",
+              "detail": "Ağ cihazına yakınken kopmanın sürüp sürmediğini gözlemle."
+            },
+            {
+              "title": "Yazılımı resmî kanaldan güncelle",
+              "detail": "Ağ cihazının yönetim ekranındaki üretici güncellemesini kontrol et."
+            }
+          ]
+        },
+        {
+          "id": "router-network-drops-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-drops"
+    },
+    {
+      "id": "router-update-failed",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "software",
+      "title": "router / modem güncellenmiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "router / modem güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "router-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "router-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/update-failed"
+    },
+    {
+      "id": "router-app-error",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "software",
+      "title": "router / modem uygulaması hata veriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "router / modem uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "router-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "router-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/app-error"
+    },
+    {
+      "id": "router-error-message",
+      "deviceType": "network",
+      "subType": "router",
+      "category": "error",
+      "title": "router / modem hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Asus",
+        "Keenetic",
+        "Zyxel",
+        "Huawei",
+        "ZTE",
+        "Tenda",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Archer",
+        "Deco",
+        "Keenetic",
+        "Nighthawk"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "router / modem hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "router",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "router-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "router-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "router-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "router-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/error-message"
+    },
+    {
+      "id": "mesh-no-power",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "power",
+      "title": "mesh wi-fi sistemi hiç açılmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "mesh wi-fi sistemi açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "mesh wi-fi sistemi will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi hiç açılmıyor",
+        "mesh wi-fi sistemi açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "mesh wi-fi sistemi will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "mesh-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "mesh-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/no-power"
+    },
+    {
+      "id": "mesh-network-offline",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "network",
+      "title": "mesh wi-fi sistemi internete bağlanmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "mesh-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "mesh-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-offline"
+    },
+    {
+      "id": "mesh-wifi-weak",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "network",
+      "title": "mesh wi-fi sistemi Wi-Fi sinyali zayıf",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi zayıf",
+          "çekmiyor",
+          "sinyal düşük"
+        ],
+        "en": [
+          "weak wifi",
+          "poor signal",
+          "low signal strength"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi Wi-Fi sinyali zayıf",
+        "wifi zayıf",
+        "çekmiyor",
+        "sinyal düşük",
+        "weak wifi",
+        "poor signal",
+        "low signal strength"
+      ],
+      "typoVariants": [
+        "wifi cekmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "wifi",
+        "signal"
+      ],
+      "questions": [
+        {
+          "id": "mesh-wifi-weak-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-wifi-weak-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-wifi-weak-safe-check",
+          "title": "Kablosuz kapsama alanını iyileştir",
+          "description": "Konum, bant ve parazit etkenlerini güvenli biçimde değiştir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır",
+              "detail": "Router ile istemci arasındaki duvar ve metal engelleri azalt."
+            },
+            {
+              "title": "Açık bir konum seç",
+              "detail": "Ağ cihazını zeminden yükselt ve kapalı dolap içine koyma."
+            },
+            {
+              "title": "Bantları karşılaştır",
+              "detail": "Yakında 5 GHz, daha uzakta 2.4 GHz ağını ayrı ayrı dene."
+            }
+          ]
+        },
+        {
+          "id": "mesh-wifi-weak-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/wifi-weak"
+    },
+    {
+      "id": "mesh-internet-slow",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "performance",
+      "title": "mesh wi-fi sistemi interneti yavaş",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "internet yavaş",
+          "indirme hızı düşük",
+          "gecikme yüksek"
+        ],
+        "en": [
+          "slow internet",
+          "low download speed",
+          "high latency"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi interneti yavaş",
+        "internet yavaş",
+        "indirme hızı düşük",
+        "gecikme yüksek",
+        "slow internet",
+        "low download speed",
+        "high latency"
+      ],
+      "typoVariants": [
+        "internet yavas"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "performance",
+        "latency"
+      ],
+      "questions": [
+        {
+          "id": "mesh-internet-slow-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-internet-slow-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-internet-slow-safe-check",
+          "title": "Yavaşlığın kapsamını ölç",
+          "description": "Tek cihaz, yerel Wi-Fi ve internet hattını birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağda ve aynı konumda ikinci bir cihazla kısa hız testi yap."
+            },
+            {
+              "title": "Yoğun kullanımı durdur",
+              "detail": "Büyük indirme ve yedeklemeleri geçici olarak durdur."
+            },
+            {
+              "title": "Ağ cihazını normal yeniden başlat",
+              "detail": "Modem veya routerı kapatıp 30 saniye sonra aç."
+            }
+          ]
+        },
+        {
+          "id": "mesh-internet-slow-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/internet-slow"
+    },
+    {
+      "id": "mesh-network-drops",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "stability",
+      "title": "mesh wi-fi sistemi bağlantıyı sık sık kesiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi kopuyor",
+          "internet gidip geliyor",
+          "bağlantı düşüyor"
+        ],
+        "en": [
+          "wifi keeps dropping",
+          "internet disconnects",
+          "unstable connection"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi bağlantıyı sık sık kesiyor",
+        "wifi kopuyor",
+        "internet gidip geliyor",
+        "bağlantı düşüyor",
+        "wifi keeps dropping",
+        "internet disconnects",
+        "unstable connection"
+      ],
+      "typoVariants": [
+        "wifi kopuyo"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "stability",
+        "wifi",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "mesh-network-drops-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-network-drops-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-network-drops-safe-check",
+          "title": "Kopmanın kaynağını ayır",
+          "description": "Kablo, sinyal ve ağ cihazının çalışma durumunu karşılaştır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kabloları kontrol et",
+              "detail": "Gevşek güç veya internet kablosunu yeniden tak; hasarlı kabloyu değiştir."
+            },
+            {
+              "title": "Sinyali karşılaştır",
+              "detail": "Ağ cihazına yakınken kopmanın sürüp sürmediğini gözlemle."
+            },
+            {
+              "title": "Yazılımı resmî kanaldan güncelle",
+              "detail": "Ağ cihazının yönetim ekranındaki üretici güncellemesini kontrol et."
+            }
+          ]
+        },
+        {
+          "id": "mesh-network-drops-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-drops"
+    },
+    {
+      "id": "mesh-update-failed",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "software",
+      "title": "mesh wi-fi sistemi güncellenmiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "mesh-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "mesh-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/update-failed"
+    },
+    {
+      "id": "mesh-app-error",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "software",
+      "title": "mesh wi-fi sistemi uygulaması hata veriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "mesh-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "mesh-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/app-error"
+    },
+    {
+      "id": "mesh-error-message",
+      "deviceType": "network",
+      "subType": "mesh",
+      "category": "error",
+      "title": "mesh wi-fi sistemi hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Google",
+        "Asus",
+        "Netgear",
+        "Keenetic"
+      ],
+      "modelPatterns": [
+        "Deco",
+        "Nest Wifi",
+        "Orbi",
+        "ZenWiFi"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "mesh wi-fi sistemi hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mesh",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "mesh-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mesh-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mesh-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "mesh-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/error-message"
+    },
+    {
+      "id": "wifi-extender-no-power",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "power",
+      "title": "wi-fi menzil genişletici hiç açılmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "wi-fi menzil genişletici açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "wi-fi menzil genişletici will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici hiç açılmıyor",
+        "wi-fi menzil genişletici açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "wi-fi menzil genişletici will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/no-power"
+    },
+    {
+      "id": "wifi-extender-network-offline",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "network",
+      "title": "wi-fi menzil genişletici internete bağlanmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-offline"
+    },
+    {
+      "id": "wifi-extender-wifi-weak",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "network",
+      "title": "wi-fi menzil genişletici Wi-Fi sinyali zayıf",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi zayıf",
+          "çekmiyor",
+          "sinyal düşük"
+        ],
+        "en": [
+          "weak wifi",
+          "poor signal",
+          "low signal strength"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici Wi-Fi sinyali zayıf",
+        "wifi zayıf",
+        "çekmiyor",
+        "sinyal düşük",
+        "weak wifi",
+        "poor signal",
+        "low signal strength"
+      ],
+      "typoVariants": [
+        "wifi cekmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "wifi",
+        "signal"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-wifi-weak-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-wifi-weak-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-wifi-weak-safe-check",
+          "title": "Kablosuz kapsama alanını iyileştir",
+          "description": "Konum, bant ve parazit etkenlerini güvenli biçimde değiştir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır",
+              "detail": "Router ile istemci arasındaki duvar ve metal engelleri azalt."
+            },
+            {
+              "title": "Açık bir konum seç",
+              "detail": "Ağ cihazını zeminden yükselt ve kapalı dolap içine koyma."
+            },
+            {
+              "title": "Bantları karşılaştır",
+              "detail": "Yakında 5 GHz, daha uzakta 2.4 GHz ağını ayrı ayrı dene."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-wifi-weak-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/wifi-weak"
+    },
+    {
+      "id": "wifi-extender-internet-slow",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "performance",
+      "title": "wi-fi menzil genişletici interneti yavaş",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "internet yavaş",
+          "indirme hızı düşük",
+          "gecikme yüksek"
+        ],
+        "en": [
+          "slow internet",
+          "low download speed",
+          "high latency"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici interneti yavaş",
+        "internet yavaş",
+        "indirme hızı düşük",
+        "gecikme yüksek",
+        "slow internet",
+        "low download speed",
+        "high latency"
+      ],
+      "typoVariants": [
+        "internet yavas"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "performance",
+        "latency"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-internet-slow-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-internet-slow-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-internet-slow-safe-check",
+          "title": "Yavaşlığın kapsamını ölç",
+          "description": "Tek cihaz, yerel Wi-Fi ve internet hattını birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağda ve aynı konumda ikinci bir cihazla kısa hız testi yap."
+            },
+            {
+              "title": "Yoğun kullanımı durdur",
+              "detail": "Büyük indirme ve yedeklemeleri geçici olarak durdur."
+            },
+            {
+              "title": "Ağ cihazını normal yeniden başlat",
+              "detail": "Modem veya routerı kapatıp 30 saniye sonra aç."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-internet-slow-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/internet-slow"
+    },
+    {
+      "id": "wifi-extender-network-drops",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "stability",
+      "title": "wi-fi menzil genişletici bağlantıyı sık sık kesiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi kopuyor",
+          "internet gidip geliyor",
+          "bağlantı düşüyor"
+        ],
+        "en": [
+          "wifi keeps dropping",
+          "internet disconnects",
+          "unstable connection"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici bağlantıyı sık sık kesiyor",
+        "wifi kopuyor",
+        "internet gidip geliyor",
+        "bağlantı düşüyor",
+        "wifi keeps dropping",
+        "internet disconnects",
+        "unstable connection"
+      ],
+      "typoVariants": [
+        "wifi kopuyo"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "stability",
+        "wifi",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-network-drops-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-network-drops-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-network-drops-safe-check",
+          "title": "Kopmanın kaynağını ayır",
+          "description": "Kablo, sinyal ve ağ cihazının çalışma durumunu karşılaştır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kabloları kontrol et",
+              "detail": "Gevşek güç veya internet kablosunu yeniden tak; hasarlı kabloyu değiştir."
+            },
+            {
+              "title": "Sinyali karşılaştır",
+              "detail": "Ağ cihazına yakınken kopmanın sürüp sürmediğini gözlemle."
+            },
+            {
+              "title": "Yazılımı resmî kanaldan güncelle",
+              "detail": "Ağ cihazının yönetim ekranındaki üretici güncellemesini kontrol et."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-network-drops-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-drops"
+    },
+    {
+      "id": "wifi-extender-update-failed",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "software",
+      "title": "wi-fi menzil genişletici güncellenmiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/update-failed"
+    },
+    {
+      "id": "wifi-extender-app-error",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "software",
+      "title": "wi-fi menzil genişletici uygulaması hata veriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/app-error"
+    },
+    {
+      "id": "wifi-extender-error-message",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "category": "error",
+      "title": "wi-fi menzil genişletici hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Xiaomi",
+        "Tenda",
+        "Mercusys",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "RE",
+        "Mi Range Extender"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "wi-fi menzil genişletici hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "wifi-extender",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "wifi-extender-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wifi-extender-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "wifi-extender-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/error-message"
+    },
+    {
+      "id": "mobile-hotspot-no-power",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "power",
+      "title": "mobil modem / hotspot hiç açılmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "mobil modem / hotspot açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "mobil modem / hotspot will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot hiç açılmıyor",
+        "mobil modem / hotspot açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "mobil modem / hotspot will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/no-power"
+    },
+    {
+      "id": "mobile-hotspot-network-offline",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "network",
+      "title": "mobil modem / hotspot internete bağlanmıyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-offline"
+    },
+    {
+      "id": "mobile-hotspot-wifi-weak",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "network",
+      "title": "mobil modem / hotspot Wi-Fi sinyali zayıf",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi zayıf",
+          "çekmiyor",
+          "sinyal düşük"
+        ],
+        "en": [
+          "weak wifi",
+          "poor signal",
+          "low signal strength"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot Wi-Fi sinyali zayıf",
+        "wifi zayıf",
+        "çekmiyor",
+        "sinyal düşük",
+        "weak wifi",
+        "poor signal",
+        "low signal strength"
+      ],
+      "typoVariants": [
+        "wifi cekmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "wifi",
+        "signal"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-wifi-weak-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-wifi-weak-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "signal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-wifi-weak-safe-check",
+          "title": "Kablosuz kapsama alanını iyileştir",
+          "description": "Konum, bant ve parazit etkenlerini güvenli biçimde değiştir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır",
+              "detail": "Router ile istemci arasındaki duvar ve metal engelleri azalt."
+            },
+            {
+              "title": "Açık bir konum seç",
+              "detail": "Ağ cihazını zeminden yükselt ve kapalı dolap içine koyma."
+            },
+            {
+              "title": "Bantları karşılaştır",
+              "detail": "Yakında 5 GHz, daha uzakta 2.4 GHz ağını ayrı ayrı dene."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-wifi-weak-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/wifi-weak"
+    },
+    {
+      "id": "mobile-hotspot-internet-slow",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "performance",
+      "title": "mobil modem / hotspot interneti yavaş",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "internet yavaş",
+          "indirme hızı düşük",
+          "gecikme yüksek"
+        ],
+        "en": [
+          "slow internet",
+          "low download speed",
+          "high latency"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot interneti yavaş",
+        "internet yavaş",
+        "indirme hızı düşük",
+        "gecikme yüksek",
+        "slow internet",
+        "low download speed",
+        "high latency"
+      ],
+      "typoVariants": [
+        "internet yavas"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "performance",
+        "latency"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-internet-slow-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-internet-slow-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "performance",
+                "latency"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-internet-slow-safe-check",
+          "title": "Yavaşlığın kapsamını ölç",
+          "description": "Tek cihaz, yerel Wi-Fi ve internet hattını birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağda ve aynı konumda ikinci bir cihazla kısa hız testi yap."
+            },
+            {
+              "title": "Yoğun kullanımı durdur",
+              "detail": "Büyük indirme ve yedeklemeleri geçici olarak durdur."
+            },
+            {
+              "title": "Ağ cihazını normal yeniden başlat",
+              "detail": "Modem veya routerı kapatıp 30 saniye sonra aç."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-internet-slow-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/internet-slow"
+    },
+    {
+      "id": "mobile-hotspot-network-drops",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "stability",
+      "title": "mobil modem / hotspot bağlantıyı sık sık kesiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "wifi kopuyor",
+          "internet gidip geliyor",
+          "bağlantı düşüyor"
+        ],
+        "en": [
+          "wifi keeps dropping",
+          "internet disconnects",
+          "unstable connection"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot bağlantıyı sık sık kesiyor",
+        "wifi kopuyor",
+        "internet gidip geliyor",
+        "bağlantı düşüyor",
+        "wifi keeps dropping",
+        "internet disconnects",
+        "unstable connection"
+      ],
+      "typoVariants": [
+        "wifi kopuyo"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "stability",
+        "wifi",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-network-drops-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-network-drops-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-network-drops-safe-check",
+          "title": "Kopmanın kaynağını ayır",
+          "description": "Kablo, sinyal ve ağ cihazının çalışma durumunu karşılaştır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kabloları kontrol et",
+              "detail": "Gevşek güç veya internet kablosunu yeniden tak; hasarlı kabloyu değiştir."
+            },
+            {
+              "title": "Sinyali karşılaştır",
+              "detail": "Ağ cihazına yakınken kopmanın sürüp sürmediğini gözlemle."
+            },
+            {
+              "title": "Yazılımı resmî kanaldan güncelle",
+              "detail": "Ağ cihazının yönetim ekranındaki üretici güncellemesini kontrol et."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-network-drops-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/network-drops"
+    },
+    {
+      "id": "mobile-hotspot-update-failed",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "software",
+      "title": "mobil modem / hotspot güncellenmiyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/update-failed"
+    },
+    {
+      "id": "mobile-hotspot-app-error",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "software",
+      "title": "mobil modem / hotspot uygulaması hata veriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/app-error"
+    },
+    {
+      "id": "mobile-hotspot-error-message",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "category": "error",
+      "title": "mobil modem / hotspot hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "TP-Link",
+        "Huawei",
+        "ZTE",
+        "Netgear"
+      ],
+      "modelPatterns": [
+        "Mifi",
+        "Mobile WiFi",
+        "Nighthawk M"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "mobil modem / hotspot hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "network",
+        "mobile-hotspot",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "mobile-hotspot-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "mobile-hotspot-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "mobile-hotspot-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "TP-Link Resmî Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "network/error-message"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "router-safe-fallback",
+      "deviceType": "network",
+      "subType": "router",
+      "title": "Router / modem için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "mesh-safe-fallback",
+      "deviceType": "network",
+      "subType": "mesh",
+      "title": "Mesh Wi-Fi sistemi için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "wifi-extender-safe-fallback",
+      "deviceType": "network",
+      "subType": "wifi-extender",
+      "title": "Wi-Fi menzil genişletici için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "mobile-hotspot-safe-fallback",
+      "deviceType": "network",
+      "subType": "mobile-hotspot",
+      "title": "Mobil modem / hotspot için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "tplink-network",
+          "title": "TP-Link Resmî Destek",
+          "url": "https://www.tp-link.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log*
+
+# Kullanıcıya ait yerel tanı ve geri bildirim kayıtları
+data/runtime/*.json
+!data/runtime/.gitkeep
+
+# Atomik yazım sırasında oluşabilecek geçici dosyalar
+data/runtime/.*.tmp
+

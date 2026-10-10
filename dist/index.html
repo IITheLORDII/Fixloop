@@ -3,172 +3,231 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FixLoop, teknik sorunları cihazınıza özel, doğrulanmış ve adım adım çözüm akışlarına dönüştürür.">
-  <meta name="theme-color" content="#f5f3ed">
-  <title>FixLoop — Sorunu anlat, çözümü birlikte bulalım</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="FixLoop, cihaz sorunlarını tamamen yerel katalogla eşleştirip güvenli çözüm adımları sunar.">
+  <meta name="theme-color" content="#172dff">
+  <title>FixLoop — Sorunu yaz, döngüyü kır</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="FixLoop ana sayfa">
-      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
-      <span>FixLoop</span>
+  <header class="site-header container">
+    <a class="wordmark" href="#top" aria-label="FixLoop ana sayfa">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m17 3 1 4-4 .5M7 21l-1-4 4-.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      FixLoop
     </a>
-    <nav aria-label="Ana menü">
-      <a href="#how">Nasıl çalışır?</a>
-      <a href="#proof">Neden FixLoop?</a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="#coverage">Cihazlar</a>
+      <a href="#flow">Nasıl çalışır?</a>
+      <a href="#safety">Güvenlik</a>
+      <a class="top-action" href="#diagnose">Sorunumu çöz</a>
     </nav>
-    <a class="header-cta" href="#solver">Sorunumu çöz <span>→</span></a>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse"></span> Teknik bilgi gerektirmez</div>
-        <h1>Sorunu anlat.<br><em>Çözüme ulaş.</em></h1>
-        <p>Uzun forum yazıları ve rastgele öneriler yok. Cihazına özel, gerçek kullanıcı sonuçlarıyla doğrulanmış adımları sırayla dene.</p>
-        <div class="hero-trust">
-          <span><b>✓</b> Kısa ve güvenli adımlar</span>
-          <span><b>✓</b> Ücretsiz başla</span>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <span class="eyebrow">Tamamen yerel tanılama</span>
+          <h1 id="hero-title">Sorunu yaz.<span>Döngüyü kır.</span></h1>
+          <p>Teknik terim bilmeden cihazındaki sorunu anlat. FixLoop cihaz türünü, belirtiyi ve hata kodunu yerel kataloğuyla eşleştirip güvenli çözüm akışını sıraya koyar.</p>
+          <div class="hero-proof" aria-label="Ürün özellikleri">
+            <span><b>✓</b> GPT yok</span>
+            <span><b>✓</b> Üyelik yok</span>
+            <span><b>✓</b> Veri gönderimi yok</span>
+          </div>
         </div>
+
+        <section class="diagnostic-shell" id="diagnose" aria-label="Yerel sorun tanılama">
+          <div class="panel-top">
+            <span class="mini-wordmark">FixLoop / Tanı</span>
+            <span class="local-status" id="localBadge"><i></i> Yerel katalog yükleniyor</span>
+          </div>
+          <div class="solver" id="solver" aria-live="polite">
+            <div class="solver-view active" data-view="input">
+              <span class="step-kicker">01 · Sorunu anlat</span>
+              <h2>Neyin çalışmıyor?</h2>
+              <p>Kendi cümlelerin yeterli. Hata kodu varsa aynen yaz.</p>
+              <label class="problem-box" for="problemText">
+                <span class="sr-only">Sorunu anlat</span>
+                <textarea id="problemText" rows="4" maxlength="1000" placeholder="Örn. Bluetooth kulaklığım bağlanıyor ama ses gelmiyor"></textarea>
+                <span class="input-note"><span>TR + EN eşleşme</span><span>Yerel işlem</span></span>
+              </label>
+              <label class="upload-zone" for="screenshotInput">
+                <input class="sr-only" id="screenshotInput" type="file" accept="image/png,image/jpeg">
+                <span class="upload-icon" aria-hidden="true">＋</span>
+                <span><strong>Hata ekranı ekle</strong><small>İsteğe bağlı · Yalnızca dosya adı tanıya eklenir</small></span>
+                <span class="file-state" id="fileState">Seç</span>
+              </label>
+              <button class="primary-button" id="startButton" type="button">Cihazı seç <span>→</span></button>
+              <p class="privacy-note"><b>● Yalnızca bu cihazda</b> · Görsel karşıya yüklenmez</p>
+            </div>
+
+            <div class="solver-view" data-view="device">
+              <button class="back-button" type="button" data-back="input">← Soruna dön</button>
+              <div class="progress" aria-hidden="true"><i style="width:42%"></i></div>
+              <span class="step-kicker">02 · Cihazı tanımla</span>
+              <h2>Hangi cihazda oluyor?</h2>
+              <p>Doğru cihaz ailesi çözüm sırasını daha isabetli yapar.</p>
+              <div class="field-grid">
+                <label class="field" for="deviceTypeSelect">Cihaz ailesi
+                  <select id="deviceTypeSelect" class="text-select"><option>Yükleniyor…</option></select>
+                </label>
+                <label class="field" for="subTypeSelect">Cihaz alt türü
+                  <select id="subTypeSelect" class="text-select"><option>Yükleniyor…</option></select>
+                </label>
+              </div>
+              <label class="field brand-field" for="brandInput">Marka / model
+                <input id="brandInput" class="text-input" type="text" maxlength="120" placeholder="Örn. Sony WH-1000XM5">
+                <small class="field-help">Bilmiyorsan boş bırakabilirsin.</small>
+              </label>
+              <button class="primary-button" id="analyzeButton" type="button">Yerel çözümü bul <span>→</span></button>
+            </div>
+
+            <div class="solver-view loading-view" data-view="loading">
+              <div class="loading-orbit" aria-hidden="true"><span></span><i></i></div>
+              <span class="step-kicker">Yerel katalog taranıyor</span>
+              <h2>Kanıtları eşleştiriyoruz</h2>
+              <p>Hata kodu, cihaz, marka ve belirtiler birlikte değerlendiriliyor.</p>
+              <div class="scan-list">
+                <span class="done">✓ Belirti dili çözümlendi</span>
+                <span id="scanDevice">○ Cihaz alt türü eşleştiriliyor</span>
+                <span id="scanSolutions">○ Yerel çözümler sıralanıyor</span>
+              </div>
+            </div>
+
+            <div class="solver-view" data-view="question">
+              <button class="back-button" type="button" data-back="device">← Cihazı değiştir</button>
+              <div class="progress" aria-hidden="true"><i id="questionProgress" style="width:68%"></i></div>
+              <span class="step-kicker" id="questionMeta">Tanı sorusu</span>
+              <h2 id="questionText">Belirtiyi biraz daha ayıralım</h2>
+              <p>En yakın çözümler arasındaki farkı bulmak için bir seçenek seç.</p>
+              <div class="question-options" id="questionOptions"></div>
+            </div>
+
+            <div class="solver-view" data-view="solution">
+              <button class="back-button" type="button" data-back="device">← Cihazı değiştir</button>
+              <div class="solution-status">
+                <span aria-hidden="true">✓</span>
+                <span><small>Yerel katalog eşleşmesi</small><b id="solutionDevice">Cihaz · Sorun</b></span>
+                <em id="confidenceLabel">Hesaplanıyor</em>
+              </div>
+              <div class="solution-copy">
+                <span class="step-kicker" id="solutionMeta">Yerel çözüm</span>
+                <h2 id="solutionTitle">Güvenli çözüm adımları</h2>
+                <p id="solutionDescription"></p>
+              </div>
+              <div class="instruction-list" id="instructionList"></div>
+              <div class="source-list" id="sourceList"></div>
+              <div class="feedback-box">
+                <p>Bu çözüm işe yaradı mı?</p>
+                <div>
+                  <button class="success-button" id="fixedButton" type="button">✓ Düzeldi</button>
+                  <button class="outline-button" id="notFixedButton" type="button">Düzelmedi →</button>
+                </div>
+              </div>
+              <p class="proof-note"><span>●</span> Sonucun yalnızca yerel çalışma verisine yazılır.</p>
+            </div>
+
+            <div class="solver-view success-view" data-view="success">
+              <div class="success-burst" aria-hidden="true"><span>✓</span></div>
+              <span class="step-kicker">Döngü tamamlandı</span>
+              <h2>Sorunun çözüldü.</h2>
+              <p>Geri bildirimin aynı cihaz ve belirti için doğru çözümü öne çıkarmaya yardım edecek.</p>
+              <div class="impact-card"><strong id="localSolvedCount">+1</strong><span>yerel başarılı sonuç</span></div>
+              <button class="primary-button" type="button" data-restart>Başka bir sorun çöz <span>↻</span></button>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <div class="solver-shell" id="solver">
-        <div class="solver-topbar">
-          <span class="mini-brand"><span class="brand-mark small" aria-hidden="true"><i></i><i></i></span> FixLoop</span>
-          <button class="icon-button" type="button" aria-label="Yardım">?</button>
-        </div>
+      <div class="ticker container" aria-label="Katalog özeti">
+        <div><strong id="catalogIssueCount">590</strong><span>Sorun akışı</span></div>
+        <div><strong>72</strong><span>Cihaz alt türü</span></div>
+        <div><strong>13</strong><span>Ana cihaz ailesi</span></div>
+        <div><strong>3</strong><span>En fazla tanı sorusu</span></div>
+      </div>
+    </section>
 
-        <div class="solver-view active" data-view="input">
-          <div class="solver-heading">
-            <span class="step-label">Hadi başlayalım</span>
-            <h2>Neyin çalışmıyor?</h2>
-            <p>Sorunu kendi cümlelerinle anlat veya ekran görüntüsü yükle.</p>
-          </div>
-          <label class="problem-input">
-            <span class="sr-only">Sorununuzu yazın</span>
-            <textarea id="problemText" rows="4">Bluetooth kulaklığım bağlanıyor ama ses gelmiyor</textarea>
-            <span class="char-note">Ne kadar ayrıntı, o kadar iyi çözüm.</span>
-          </label>
-          <label class="upload-zone" for="screenshotInput">
-            <input id="screenshotInput" type="file" accept="image/png,image/jpeg" hidden>
-            <span class="upload-icon" aria-hidden="true">↥</span>
-            <span><strong>Ekran görüntüsü ekle</strong><small>PNG veya JPG · Hassas bilgiler gizlenebilir</small></span>
-            <span class="file-state" id="fileState">Seç</span>
-          </label>
-          <button class="primary-button" id="startButton" type="button">Çözümümü bul <span>→</span></button>
-          <p class="privacy-note">🔒 Verilerin reklam amacıyla paylaşılmaz.</p>
-        </div>
+    <section class="section container" id="coverage" aria-labelledby="coverage-title">
+      <div class="section-head">
+        <div><span class="eyebrow">Kapsama alanı</span><h2 id="coverage-title">Evde olan ne varsa.</h2></div>
+        <p>FixLoop tek bir teknoloji kategorisine sıkışmaz. Cihaz ailesinden alt türe iner; aynı belirtiyi farklı cihazlarda aynı çözüm sanmaz.</p>
+      </div>
+      <div class="coverage-grid">
+        <article class="coverage-card featured" data-count="123 akış"><span class="device-icon" aria-hidden="true">◫</span><h3>Beyaz eşya ve ev aletleri</h3><p>Çamaşır, bulaşık, buzdolabı, fırın, klima ve küçük ev aletleri.</p></article>
+        <article class="coverage-card" data-count="58 akış"><span class="device-icon" aria-hidden="true">▣</span><h3>Bilgisayar</h3><p>Windows, MacBook, Chromebook ve çevre birimleri.</p></article>
+        <article class="coverage-card" data-count="40 akış"><span class="device-icon" aria-hidden="true">▯</span><h3>Telefon / tablet</h3><p>Android, iPhone, iPad ve e-kitap okuyucular.</p></article>
+        <article class="coverage-card" data-count="49 akış"><span class="device-icon" aria-hidden="true">⌘</span><h3>Oyun ve VR</h3><p>PlayStation, Xbox, Switch, kontrolcü ve VR başlıklar.</p></article>
+        <article class="coverage-card" data-count="56 akış"><span class="device-icon" aria-hidden="true">⌂</span><h3>Akıllı ev</h3><p>Kamera, kilit, priz, ampul, robot süpürge ve termostat.</p></article>
+        <article class="coverage-card featured" data-count="264 akış"><span class="device-icon" aria-hidden="true">＋</span><h3>Ve dokuz cihaz ailesi daha</h3><p>Ağ, yazıcı, TV, ses, giyilebilir, kamera, depolama ve güç ürünleri.</p></article>
+      </div>
+    </section>
 
-        <div class="solver-view" data-view="device">
-          <button class="back-button" type="button" data-back="input">← Geri</button>
-          <div class="progress"><i style="width: 38%"></i></div>
-          <div class="solver-heading compact">
-            <span class="step-label">2 / 3 · Cihaz bilgisi</span>
-            <h2>Sana özel çözümü bulalım</h2>
-            <p>Hangi cihazda bu sorunu yaşıyorsun?</p>
-          </div>
-          <div class="device-grid" role="group" aria-label="Cihaz seçimi">
-            <button class="device-card selected" type="button" data-device="Windows 11"><span>▣</span><b>Windows</b><small>Windows 11</small></button>
-            <button class="device-card" type="button" data-device="Android"><span>◫</span><b>Android</b><small>Telefon / tablet</small></button>
-            <button class="device-card" type="button" data-device="macOS"><span>◉</span><b>macOS</b><small>Mac bilgisayar</small></button>
-            <button class="device-card" type="button" data-device="iOS"><span>▯</span><b>iPhone</b><small>iOS</small></button>
-          </div>
-          <label class="select-label">Kulaklık markası <span>isteğe bağlı</span>
-            <select id="brandSelect"><option>Markayı seçin</option><option>AirPods</option><option>JBL</option><option>Samsung</option><option>Sony</option><option>Diğer</option></select>
-          </label>
-          <button class="primary-button" id="analyzeButton" type="button">Sorunu analiz et <span>→</span></button>
+    <section class="flow-section section" id="flow" aria-labelledby="flow-title">
+      <div class="flow-layout container">
+        <div class="flow-sticky">
+          <span class="eyebrow">Tanı döngüsü</span>
+          <h2 id="flow-title">Bir cevap değil. Kontrollü bir yol.</h2>
+          <p>Önce kesin kanıt aranır. Belirti belirsizse en fazla üç kısa soru sorulur. Sonuç hâlâ net değilse sistem tahmin yürütmez; güvenli fallback gösterir.</p>
         </div>
-
-        <div class="solver-view" data-view="loading" aria-live="polite">
-          <div class="loading-orbit"><span></span><i></i></div>
-          <h2>En olası çözüm aranıyor…</h2>
-          <p id="loadingText">Cihaz ve sorun eşleşmeleri inceleniyor</p>
-          <div class="scan-list"><span class="done">✓ Sorun türü belirlendi</span><span id="scanDevice">○ Cihaz sürümü eşleştiriliyor</span><span id="scanSolutions">○ Doğrulanmış çözümler sıralanıyor</span></div>
-        </div>
-
-        <div class="solver-view" data-view="solution">
-          <div class="solution-status"><span>✓</span><div><small>En güçlü eşleşme</small><b id="solutionDevice">Windows 11 · Bluetooth ses</b></div><em>%87 olasılık</em></div>
-          <div class="solver-heading compact solution-title">
-            <span class="step-label">1. çözüm · 2 dakika</span>
-            <h2 id="solutionTitle">Ses çıkışını kulaklığına yönlendir</h2>
-            <p id="solutionDescription">Windows bazen bağlantıyı kurar ancak sesi eski hoparlörde bırakır.</p>
-          </div>
-          <div class="instruction-card">
-            <span class="instruction-number">1</span>
-            <div><b id="stepOneTitle">Görev çubuğundaki ses simgesine tıkla</b><p id="stepOneDescription">Saatin yanındaki hoparlör simgesini bul.</p></div>
-            <div class="mini-ui"><span>⌁</span><i></i><b>⌄</b></div>
-          </div>
-          <div class="instruction-card muted-step">
-            <span class="instruction-number">2</span>
-            <div><b id="stepTwoTitle">Ses çıkışı listesini aç</b><p id="stepTwoDescription">Ses düzeyi çubuğunun yanındaki oka tıkla.</p></div>
-          </div>
-          <div class="feedback-box">
-            <p>Bu adım sorunu çözdü mü?</p>
-            <div><button class="success-button" id="fixedButton" type="button">✓ Düzeldi</button><button class="outline-button" id="notFixedButton" type="button">Düzelmedi →</button></div>
-          </div>
-          <p class="proof-note"><span>◉</span> Bu çözüm benzer cihazlarda <b>1.248 kez</b> işe yaradı <small>Temsili demo verisi</small></p>
-        </div>
-
-        <div class="solver-view" data-view="success">
-          <div class="success-burst"><span>✓</span></div>
-          <span class="step-label">Harika haber</span>
-          <h2>Sorun çözüldü!</h2>
-          <p>Geri bildirimin, aynı cihazdaki bir sonraki kişinin doğru çözüme daha hızlı ulaşmasına yardımcı olacak.</p>
-          <div class="impact-card"><strong>+1</strong><span>doğrulanmış çözüm sonucu</span></div>
-          <button class="primary-button" type="button" data-restart>Yeni bir sorun çöz</button>
+        <div class="flow-list">
+          <article class="flow-item"><span class="flow-number">01</span><div><h3>Kanıtı yakala</h3><p>Hata kodu, cihaz alt türü, marka, model ve iki dilde belirti eşleşmesi birlikte puanlanır.</p><span class="flow-tag">Kesin kod → doğrudan çözüm</span></div></article>
+          <article class="flow-item"><span class="flow-number">02</span><div><h3>Belirsizliği azalt</h3><p>Birden fazla olası arıza varsa kullanıcıya teknik olmayan, ayırıcı seçenekler gösterilir.</p><span class="flow-tag">En fazla 3 soru</span></div></article>
+          <article class="flow-item"><span class="flow-number">03</span><div><h3>Sonucu öğren</h3><p>“Düzeldi / Düzelmedi” geri bildirimi yalnızca yerel dosyaya yazılır ve sonraki sıralamayı iyileştirir.</p><span class="flow-tag">Cihazdan dışarı çıkmaz</span></div></article>
         </div>
       </div>
     </section>
 
-    <section class="signal-strip" aria-label="FixLoop faydaları">
-      <div><strong>01</strong><span>Cihazına özel<br>teşhis</span></div>
-      <div><strong>02</strong><span>Güvenli, sıralı<br>adımlar</span></div>
-      <div><strong>03</strong><span>Gerçek sonuçlarla<br>öğrenen sistem</span></div>
-    </section>
-
-    <section class="how-section" id="how">
-      <div class="section-intro">
-        <span class="eyebrow dark">Nasıl çalışır?</span>
-        <h2>Forum kalabalığını<br><em>çözüm akışına</em> çeviriyoruz.</h2>
-        <p>FixLoop, sorunu anlamaktan işe yarayan çözümü doğrulamaya kadar tüm süreci sadeleştirir.</p>
-      </div>
-      <div class="loop-steps">
-        <article><span>01</span><div class="step-icon">⌨</div><h3>Anlat veya yükle</h3><p>Sorunu yaz. İstersen ekran görüntüsünü ekle; hassas alanları gizle.</p></article>
-        <article><span>02</span><div class="step-icon">⌁</div><h3>Akıllı eşleştirme</h3><p>Cihaz, sürüm ve belirti bilgileri en yakın doğrulanmış çözümle eşleşir.</p></article>
-        <article><span>03</span><div class="step-icon">✓</div><h3>Dene ve doğrula</h3><p>Kısa adımları sırayla uygula. Sonucu bildir; sistem herkes için gelişsin.</p></article>
+    <section class="safety-section section" id="safety" aria-labelledby="safety-title">
+      <div class="safety-layout container">
+        <div class="safety-copy">
+          <span class="eyebrow">Güvenlik önce</span>
+          <h2 id="safety-title">Bazı sorunlar “tamir et” değil, “hemen dur” demektir.</h2>
+          <p>Tehlike belirtileri normal eşleştirmeyi geçersiz kılar. FixLoop riskli talimat üretmez; cihazı güvenli bırakma ve uzman desteğine geçme yolunu öne çıkarır.</p>
+          <div class="danger-pills" aria-label="Acil belirtiler"><span>Şişmiş batarya</span><span>Duman / yanık kokusu</span><span>Elektrik kaçağı</span><span>Gaz kokusu</span><span>Kaynar su / buhar</span></div>
+        </div>
+        <aside class="safety-board" aria-label="Acil güvenlik örneği">
+          <div class="alert-head"><span class="alert-dot">!</span><span><small>Normal akış durduruldu</small><b>Acil güvenlik akışı</b></span></div>
+          <div class="alert-line"><span>1</span><div><b>Kullanmayı bırak</b><p>Cihaza yeniden güç verme veya şarja bağlama.</p></div></div>
+          <div class="alert-line"><span>2</span><div><b>İnsanları uzaklaştır</b><p>Çocukları ve evcil hayvanları güvenli mesafeye al.</p></div></div>
+          <div class="alert-line"><span>3</span><div><b>Uzman yardımına geç</b><p>Duruma göre yetkili servis, elektrikçi veya acil yardım kullan.</p></div></div>
+        </aside>
       </div>
     </section>
 
-    <section class="proof-section" id="proof">
-      <div class="proof-copy">
-        <span class="eyebrow light">FixLoop farkı</span>
-        <h2>Bir cevap değil.<br><em>Kanıtlanmış bir yol.</em></h2>
-        <p>Genel bir yapay zekâ yanıtı tek seferlik olabilir. FixLoop her denemeden öğrenir; cihaz ve sürüm özelinde neyin gerçekten işe yaradığını biriktirir.</p>
-        <div class="comparison">
-          <div><span>Geleneksel arama</span><b>Uzun içerik</b><b>Genel öneri</b><b>Belirsiz sonuç</b></div>
-          <div class="our-way"><span>FixLoop</span><b>Kısa akış</b><b>Cihaza özel</b><b>Doğrulanmış sonuç</b></div>
+    <section class="local-section container" aria-labelledby="local-title">
+      <div class="local-card">
+        <div class="local-grid">
+          <div>
+            <span class="eyebrow">Yerel gerçekten yerel</span>
+            <h2 id="local-title">Hesap açmadan çalışır.</h2>
+            <p>Katalog, tanı motoru ve kullanıcı sonuçları bu bilgisayardadır. İnternet kesilse bile sorun arama ve çözüm akışı devam eder.</p>
+          </div>
+          <div class="local-list">
+            <div><span>✓</span> GPT veya harici AI servisi yok</div>
+            <div><span>✓</span> API anahtarı ve giriş ekranı yok</div>
+            <div><span>✓</span> Ekran görüntüsünün kendisi kaydedilmez</div>
+            <div><span>✓</span> Eksik sorunlar yerel listeye eklenir</div>
+          </div>
         </div>
       </div>
-      <div class="data-visual" aria-label="Çözümlerin kullanıcı sonuçlarıyla gelişmesini gösteren şema">
-        <div class="ring ring-one"></div><div class="ring ring-two"></div>
-        <div class="core"><span class="brand-mark inverted" aria-hidden="true"><i></i><i></i></span><b>FixLoop</b><small>öğreniyor</small></div>
-        <span class="node n1">Sorun<br><b>tanımı</b></span><span class="node n2">Cihaz +<br><b>sürüm</b></span><span class="node n3">Çözüm<br><b>sonucu</b></span><span class="node n4">Doğruluk<br><b>puanı</b></span>
-      </div>
     </section>
 
-    <section class="final-cta">
-      <span class="eyebrow">Bir şey mi çalışmıyor?</span>
-      <h2>Sorununu döngüden çıkar.</h2>
-      <a href="#solver">Çözmeye başla <span>→</span></a>
-      <p>Ücretsiz · Üyelik gerekmez · 2 dakikada başla</p>
+    <section class="final container" aria-labelledby="final-title">
+      <span class="eyebrow">Sorun hazırsa FixLoop hazır</span>
+      <h2 id="final-title">Teknik sorununu teknik bir işe dönüştürme.</h2>
+      <p>Ne olduğunu anlat. Cihazı seç. Güvenli çözüm akışını sırayla uygula.</p>
+      <a href="#diagnose">Sorunumu çözmeye başla <span>→</span></a>
     </section>
   </main>
 
-  <footer><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span><span>FixLoop</span></a><p>Teknik sorunların en kısa yolu.</p><span>© 2026 · MVP demo</span></footer>
+  <footer class="container">
+    <a class="wordmark" href="#top"><span class="mark" aria-hidden="true">↻</span>FixLoop</a>
+    <span>Yerel cihaz sorun giderme platformu</span>
+    <span>© 2026</span>
+  </footer>
+
   <script src="app.js"></script>
 </body>
 </html>

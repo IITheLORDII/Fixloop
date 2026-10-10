@@ -1,0 +1,5226 @@
+{
+  "schemaVersion": 3,
+  "id": "core-printer",
+  "label": "Yazıcı / tarayıcı",
+  "generatedAt": "2026-10-10T13:17:34.554Z",
+  "deviceTypes": [
+    {
+      "id": "printer",
+      "label": "Yazıcı / tarayıcı",
+      "subtypes": [
+        {
+          "id": "inkjet-printer",
+          "label": "Mürekkep püskürtmeli yazıcı",
+          "brands": [
+            "HP",
+            "Canon",
+            "Epson",
+            "Brother"
+          ],
+          "models": [
+            "DeskJet",
+            "OfficeJet",
+            "PIXMA",
+            "EcoTank"
+          ]
+        },
+        {
+          "id": "laser-printer",
+          "label": "Lazer yazıcı",
+          "brands": [
+            "HP",
+            "Brother",
+            "Canon",
+            "Samsung",
+            "Xerox"
+          ],
+          "models": [
+            "LaserJet",
+            "HL",
+            "DCP",
+            "imageCLASS"
+          ]
+        },
+        {
+          "id": "scanner",
+          "label": "Tarayıcı",
+          "brands": [
+            "HP",
+            "Canon",
+            "Epson",
+            "Brother",
+            "Fujitsu"
+          ],
+          "models": [
+            "ScanJet",
+            "CanoScan",
+            "Perfection",
+            "ScanSnap"
+          ]
+        },
+        {
+          "id": "label-printer",
+          "label": "Etiket yazıcısı",
+          "brands": [
+            "Brother",
+            "Zebra",
+            "Dymo",
+            "Epson"
+          ],
+          "models": [
+            "P-touch",
+            "QL",
+            "LabelWriter"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "inkjet-printer-no-power",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "power",
+      "title": "mürekkep püskürtmeli yazıcı hiç açılmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "mürekkep püskürtmeli yazıcı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "mürekkep püskürtmeli yazıcı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı hiç açılmıyor",
+        "mürekkep püskürtmeli yazıcı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "mürekkep püskürtmeli yazıcı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/no-power"
+    },
+    {
+      "id": "inkjet-printer-printer-offline",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "network",
+      "title": "mürekkep püskürtmeli yazıcı çevrimdışı veya yazdırmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "yazıcı çevrimdışı",
+          "yazdırmıyor",
+          "kuyrukta bekliyor"
+        ],
+        "en": [
+          "printer offline",
+          "will not print",
+          "print job stuck"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı çevrimdışı veya yazdırmıyor",
+        "yazıcı çevrimdışı",
+        "yazdırmıyor",
+        "kuyrukta bekliyor",
+        "printer offline",
+        "will not print",
+        "print job stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "network",
+        "offline",
+        "queue"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-printer-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-printer-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-printer-offline-safe-check",
+          "title": "Yazdırma yolunu yenile",
+          "description": "Yazıcı durumu, kuyruk ve ağ bağlantısını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Yazıcı durumunu kontrol et",
+              "detail": "Kağıt, kapak ve sarf uyarısı olmadığını; cihazın hazır olduğunu doğrula."
+            },
+            {
+              "title": "Tek bir işi yeniden dene",
+              "detail": "Takılı işleri sistem yazdırma kuyruğundan iptal edip test sayfası gönder."
+            },
+            {
+              "title": "Ağı veya USB bağlantısını yenile",
+              "detail": "Yazıcı ve bilgisayarı normal yeniden başlatıp bağlantıyı tekrar kur."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-printer-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/printer-offline"
+    },
+    {
+      "id": "inkjet-printer-paper-jam",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "paper",
+      "title": "mürekkep püskürtmeli yazıcı kağıt sıkıştırıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "kağıt sıkıştı",
+          "kağıt almıyor",
+          "paper jam"
+        ],
+        "en": [
+          "paper jam",
+          "will not feed paper",
+          "paper feed error"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı kağıt sıkıştırıyor",
+        "kağıt sıkıştı",
+        "kağıt almıyor",
+        "paper jam",
+        "will not feed paper",
+        "paper feed error"
+      ],
+      "typoVariants": [
+        "kagit sikisti"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "paper",
+        "jam"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-paper-jam-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-paper-jam-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-paper-jam-safe-check",
+          "title": "Kağıt yolunu üretici adımıyla temizle",
+          "description": "Gücü kesip yalnızca kullanıcı erişimine açık kapaklardan görünen kağıdı çıkar.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazı kapat ve fişini çek",
+              "detail": "Hareketli parçaların durmasını bekle."
+            },
+            {
+              "title": "Görünen kağıdı yavaşça çıkar",
+              "detail": "Kullanıcı kapağını aç; kağıdı ilerleme yönünde iki elle ve yırtmadan çek."
+            },
+            {
+              "title": "Kağıdı düzgün yükle",
+              "detail": "Kuru ve uygun boyuttaki kağıdı kılavuzları sıkıştırmadan yerleştir."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-paper-jam-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/paper-jam"
+    },
+    {
+      "id": "inkjet-printer-poor-print-quality",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "quality",
+      "title": "mürekkep püskürtmeli yazıcı soluk, çizgili veya lekeli çıktı veriyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "çıktı soluk",
+          "baskı çizgili",
+          "sayfa lekeli"
+        ],
+        "en": [
+          "faded print",
+          "streaks on page",
+          "poor print quality"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı soluk, çizgili veya lekeli çıktı veriyor",
+        "çıktı soluk",
+        "baskı çizgili",
+        "sayfa lekeli",
+        "faded print",
+        "streaks on page",
+        "poor print quality"
+      ],
+      "typoVariants": [
+        "cikti soluk"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "quality",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-poor-print-quality-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-poor-print-quality-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-poor-print-quality-safe-check",
+          "title": "Yerleşik bakım testini çalıştır",
+          "description": "Sarf seviyesini ve üreticinin nozül veya kalite testini kullan.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sarf seviyesini kontrol et",
+              "detail": "Mürekkep veya toner uyarısını cihaz ekranından kontrol et."
+            },
+            {
+              "title": "Doğru kağıt ve kaliteyi seç",
+              "detail": "Kağıt türü ile yazdırma ayarının eşleştiğini doğrula."
+            },
+            {
+              "title": "Yerleşik kalite testini çalıştır",
+              "detail": "Üreticinin bakım menüsündeki test sayfası veya temizleme işlemini bir kez çalıştır."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-poor-print-quality-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/poor-print-quality"
+    },
+    {
+      "id": "inkjet-printer-scan-failed",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "scanner",
+      "title": "mürekkep püskürtmeli yazıcı tarama yapmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "tarama yapmıyor",
+          "tarayıcı bulunamadı",
+          "scan error"
+        ],
+        "en": [
+          "scanner not found",
+          "cannot scan",
+          "scan failed"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı tarama yapmıyor",
+        "tarama yapmıyor",
+        "tarayıcı bulunamadı",
+        "scan error",
+        "scanner not found",
+        "cannot scan",
+        "scan failed"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "scanner",
+        "scan",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-scan-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-scan-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-scan-failed-safe-check",
+          "title": "Tarama bağlantısını doğrula",
+          "description": "Tarayıcı durumu, izin ve resmî yazılımı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kilidi ve kapağı kontrol et",
+              "detail": "Varsa taşıma kilidinin açık ve kapağın düzgün kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "USB veya ağ bağlantısını yeniden kur ve cihazı normal başlat."
+            },
+            {
+              "title": "Resmî tarama uygulamasını dene",
+              "detail": "Üreticinin uygulamasından küçük bir test taraması başlat."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-scan-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/scan-failed"
+    },
+    {
+      "id": "inkjet-printer-consumable-warning",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "consumable",
+      "title": "mürekkep püskürtmeli yazıcı kartuş veya toner uyarısı veriyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "kartuş tanınmıyor",
+          "toner uyarısı",
+          "mürekkep hatası"
+        ],
+        "en": [
+          "cartridge not recognized",
+          "toner warning",
+          "ink error"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı kartuş veya toner uyarısı veriyor",
+        "kartuş tanınmıyor",
+        "toner uyarısı",
+        "mürekkep hatası",
+        "cartridge not recognized",
+        "toner warning",
+        "ink error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "consumable",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-consumable-warning-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-consumable-warning-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-consumable-warning-safe-check",
+          "title": "Sarf malzemesini güvenle doğrula",
+          "description": "Model uyumunu ve üreticinin kullanıcıya açık yeniden takma adımını uygula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Model uyumunu kontrol et",
+              "detail": "Sarf malzemesinin cihaz modeline uygun olduğunu ambalajdan doğrula."
+            },
+            {
+              "title": "Koruma bandını kontrol et",
+              "detail": "Yeni sarfta üreticinin belirttiği taşıma bandının çıkarıldığını doğrula."
+            },
+            {
+              "title": "Kullanıcı adımına göre yeniden tak",
+              "detail": "Cihaz kapalıyken kullanım kılavuzundaki sarf değiştirme adımını uygula."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-consumable-warning-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/consumable-warning"
+    },
+    {
+      "id": "inkjet-printer-network-offline",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "network",
+      "title": "mürekkep püskürtmeli yazıcı internete bağlanmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/network-offline"
+    },
+    {
+      "id": "inkjet-printer-error-message",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "error",
+      "title": "mürekkep püskürtmeli yazıcı hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "OfficeJet",
+        "PIXMA",
+        "EcoTank"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "mürekkep püskürtmeli yazıcı hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "inkjet-printer",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "inkjet-printer-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "inkjet-printer-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "inkjet-printer-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/error-message"
+    },
+    {
+      "id": "laser-printer-no-power",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "power",
+      "title": "lazer yazıcı hiç açılmıyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "lazer yazıcı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "lazer yazıcı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı hiç açılmıyor",
+        "lazer yazıcı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "lazer yazıcı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/no-power"
+    },
+    {
+      "id": "laser-printer-printer-offline",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "network",
+      "title": "lazer yazıcı çevrimdışı veya yazdırmıyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "yazıcı çevrimdışı",
+          "yazdırmıyor",
+          "kuyrukta bekliyor"
+        ],
+        "en": [
+          "printer offline",
+          "will not print",
+          "print job stuck"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı çevrimdışı veya yazdırmıyor",
+        "yazıcı çevrimdışı",
+        "yazdırmıyor",
+        "kuyrukta bekliyor",
+        "printer offline",
+        "will not print",
+        "print job stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "network",
+        "offline",
+        "queue"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-printer-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-printer-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-printer-offline-safe-check",
+          "title": "Yazdırma yolunu yenile",
+          "description": "Yazıcı durumu, kuyruk ve ağ bağlantısını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Yazıcı durumunu kontrol et",
+              "detail": "Kağıt, kapak ve sarf uyarısı olmadığını; cihazın hazır olduğunu doğrula."
+            },
+            {
+              "title": "Tek bir işi yeniden dene",
+              "detail": "Takılı işleri sistem yazdırma kuyruğundan iptal edip test sayfası gönder."
+            },
+            {
+              "title": "Ağı veya USB bağlantısını yenile",
+              "detail": "Yazıcı ve bilgisayarı normal yeniden başlatıp bağlantıyı tekrar kur."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-printer-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/printer-offline"
+    },
+    {
+      "id": "laser-printer-paper-jam",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "paper",
+      "title": "lazer yazıcı kağıt sıkıştırıyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "kağıt sıkıştı",
+          "kağıt almıyor",
+          "paper jam"
+        ],
+        "en": [
+          "paper jam",
+          "will not feed paper",
+          "paper feed error"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı kağıt sıkıştırıyor",
+        "kağıt sıkıştı",
+        "kağıt almıyor",
+        "paper jam",
+        "will not feed paper",
+        "paper feed error"
+      ],
+      "typoVariants": [
+        "kagit sikisti"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "paper",
+        "jam"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-paper-jam-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-paper-jam-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-paper-jam-safe-check",
+          "title": "Kağıt yolunu üretici adımıyla temizle",
+          "description": "Gücü kesip yalnızca kullanıcı erişimine açık kapaklardan görünen kağıdı çıkar.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazı kapat ve fişini çek",
+              "detail": "Hareketli parçaların durmasını bekle."
+            },
+            {
+              "title": "Görünen kağıdı yavaşça çıkar",
+              "detail": "Kullanıcı kapağını aç; kağıdı ilerleme yönünde iki elle ve yırtmadan çek."
+            },
+            {
+              "title": "Kağıdı düzgün yükle",
+              "detail": "Kuru ve uygun boyuttaki kağıdı kılavuzları sıkıştırmadan yerleştir."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-paper-jam-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/paper-jam"
+    },
+    {
+      "id": "laser-printer-poor-print-quality",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "quality",
+      "title": "lazer yazıcı soluk, çizgili veya lekeli çıktı veriyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "çıktı soluk",
+          "baskı çizgili",
+          "sayfa lekeli"
+        ],
+        "en": [
+          "faded print",
+          "streaks on page",
+          "poor print quality"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı soluk, çizgili veya lekeli çıktı veriyor",
+        "çıktı soluk",
+        "baskı çizgili",
+        "sayfa lekeli",
+        "faded print",
+        "streaks on page",
+        "poor print quality"
+      ],
+      "typoVariants": [
+        "cikti soluk"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "quality",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-poor-print-quality-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-poor-print-quality-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-poor-print-quality-safe-check",
+          "title": "Yerleşik bakım testini çalıştır",
+          "description": "Sarf seviyesini ve üreticinin nozül veya kalite testini kullan.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sarf seviyesini kontrol et",
+              "detail": "Mürekkep veya toner uyarısını cihaz ekranından kontrol et."
+            },
+            {
+              "title": "Doğru kağıt ve kaliteyi seç",
+              "detail": "Kağıt türü ile yazdırma ayarının eşleştiğini doğrula."
+            },
+            {
+              "title": "Yerleşik kalite testini çalıştır",
+              "detail": "Üreticinin bakım menüsündeki test sayfası veya temizleme işlemini bir kez çalıştır."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-poor-print-quality-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/poor-print-quality"
+    },
+    {
+      "id": "laser-printer-scan-failed",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "scanner",
+      "title": "lazer yazıcı tarama yapmıyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "tarama yapmıyor",
+          "tarayıcı bulunamadı",
+          "scan error"
+        ],
+        "en": [
+          "scanner not found",
+          "cannot scan",
+          "scan failed"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı tarama yapmıyor",
+        "tarama yapmıyor",
+        "tarayıcı bulunamadı",
+        "scan error",
+        "scanner not found",
+        "cannot scan",
+        "scan failed"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "scanner",
+        "scan",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-scan-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-scan-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-scan-failed-safe-check",
+          "title": "Tarama bağlantısını doğrula",
+          "description": "Tarayıcı durumu, izin ve resmî yazılımı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kilidi ve kapağı kontrol et",
+              "detail": "Varsa taşıma kilidinin açık ve kapağın düzgün kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "USB veya ağ bağlantısını yeniden kur ve cihazı normal başlat."
+            },
+            {
+              "title": "Resmî tarama uygulamasını dene",
+              "detail": "Üreticinin uygulamasından küçük bir test taraması başlat."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-scan-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/scan-failed"
+    },
+    {
+      "id": "laser-printer-consumable-warning",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "consumable",
+      "title": "lazer yazıcı kartuş veya toner uyarısı veriyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "kartuş tanınmıyor",
+          "toner uyarısı",
+          "mürekkep hatası"
+        ],
+        "en": [
+          "cartridge not recognized",
+          "toner warning",
+          "ink error"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı kartuş veya toner uyarısı veriyor",
+        "kartuş tanınmıyor",
+        "toner uyarısı",
+        "mürekkep hatası",
+        "cartridge not recognized",
+        "toner warning",
+        "ink error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "consumable",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-consumable-warning-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-consumable-warning-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-consumable-warning-safe-check",
+          "title": "Sarf malzemesini güvenle doğrula",
+          "description": "Model uyumunu ve üreticinin kullanıcıya açık yeniden takma adımını uygula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Model uyumunu kontrol et",
+              "detail": "Sarf malzemesinin cihaz modeline uygun olduğunu ambalajdan doğrula."
+            },
+            {
+              "title": "Koruma bandını kontrol et",
+              "detail": "Yeni sarfta üreticinin belirttiği taşıma bandının çıkarıldığını doğrula."
+            },
+            {
+              "title": "Kullanıcı adımına göre yeniden tak",
+              "detail": "Cihaz kapalıyken kullanım kılavuzundaki sarf değiştirme adımını uygula."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-consumable-warning-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/consumable-warning"
+    },
+    {
+      "id": "laser-printer-network-offline",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "network",
+      "title": "lazer yazıcı internete bağlanmıyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/network-offline"
+    },
+    {
+      "id": "laser-printer-error-message",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "category": "error",
+      "title": "lazer yazıcı hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "HP",
+        "Brother",
+        "Canon",
+        "Samsung",
+        "Xerox"
+      ],
+      "modelPatterns": [
+        "LaserJet",
+        "HL",
+        "DCP",
+        "imageCLASS"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "lazer yazıcı hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "laser-printer",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "laser-printer-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "laser-printer-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "laser-printer-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/error-message"
+    },
+    {
+      "id": "scanner-no-power",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "power",
+      "title": "tarayıcı hiç açılmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "tarayıcı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "tarayıcı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "tarayıcı hiç açılmıyor",
+        "tarayıcı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "tarayıcı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "scanner-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "scanner-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/no-power"
+    },
+    {
+      "id": "scanner-printer-offline",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "network",
+      "title": "tarayıcı çevrimdışı veya yazdırmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "yazıcı çevrimdışı",
+          "yazdırmıyor",
+          "kuyrukta bekliyor"
+        ],
+        "en": [
+          "printer offline",
+          "will not print",
+          "print job stuck"
+        ]
+      },
+      "aliases": [
+        "tarayıcı çevrimdışı veya yazdırmıyor",
+        "yazıcı çevrimdışı",
+        "yazdırmıyor",
+        "kuyrukta bekliyor",
+        "printer offline",
+        "will not print",
+        "print job stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "network",
+        "offline",
+        "queue"
+      ],
+      "questions": [
+        {
+          "id": "scanner-printer-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-printer-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-printer-offline-safe-check",
+          "title": "Yazdırma yolunu yenile",
+          "description": "Yazıcı durumu, kuyruk ve ağ bağlantısını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Yazıcı durumunu kontrol et",
+              "detail": "Kağıt, kapak ve sarf uyarısı olmadığını; cihazın hazır olduğunu doğrula."
+            },
+            {
+              "title": "Tek bir işi yeniden dene",
+              "detail": "Takılı işleri sistem yazdırma kuyruğundan iptal edip test sayfası gönder."
+            },
+            {
+              "title": "Ağı veya USB bağlantısını yenile",
+              "detail": "Yazıcı ve bilgisayarı normal yeniden başlatıp bağlantıyı tekrar kur."
+            }
+          ]
+        },
+        {
+          "id": "scanner-printer-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/printer-offline"
+    },
+    {
+      "id": "scanner-paper-jam",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "paper",
+      "title": "tarayıcı kağıt sıkıştırıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "kağıt sıkıştı",
+          "kağıt almıyor",
+          "paper jam"
+        ],
+        "en": [
+          "paper jam",
+          "will not feed paper",
+          "paper feed error"
+        ]
+      },
+      "aliases": [
+        "tarayıcı kağıt sıkıştırıyor",
+        "kağıt sıkıştı",
+        "kağıt almıyor",
+        "paper jam",
+        "will not feed paper",
+        "paper feed error"
+      ],
+      "typoVariants": [
+        "kagit sikisti"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "paper",
+        "jam"
+      ],
+      "questions": [
+        {
+          "id": "scanner-paper-jam-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-paper-jam-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-paper-jam-safe-check",
+          "title": "Kağıt yolunu üretici adımıyla temizle",
+          "description": "Gücü kesip yalnızca kullanıcı erişimine açık kapaklardan görünen kağıdı çıkar.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazı kapat ve fişini çek",
+              "detail": "Hareketli parçaların durmasını bekle."
+            },
+            {
+              "title": "Görünen kağıdı yavaşça çıkar",
+              "detail": "Kullanıcı kapağını aç; kağıdı ilerleme yönünde iki elle ve yırtmadan çek."
+            },
+            {
+              "title": "Kağıdı düzgün yükle",
+              "detail": "Kuru ve uygun boyuttaki kağıdı kılavuzları sıkıştırmadan yerleştir."
+            }
+          ]
+        },
+        {
+          "id": "scanner-paper-jam-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/paper-jam"
+    },
+    {
+      "id": "scanner-poor-print-quality",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "quality",
+      "title": "tarayıcı soluk, çizgili veya lekeli çıktı veriyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "çıktı soluk",
+          "baskı çizgili",
+          "sayfa lekeli"
+        ],
+        "en": [
+          "faded print",
+          "streaks on page",
+          "poor print quality"
+        ]
+      },
+      "aliases": [
+        "tarayıcı soluk, çizgili veya lekeli çıktı veriyor",
+        "çıktı soluk",
+        "baskı çizgili",
+        "sayfa lekeli",
+        "faded print",
+        "streaks on page",
+        "poor print quality"
+      ],
+      "typoVariants": [
+        "cikti soluk"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "quality",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "scanner-poor-print-quality-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-poor-print-quality-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-poor-print-quality-safe-check",
+          "title": "Yerleşik bakım testini çalıştır",
+          "description": "Sarf seviyesini ve üreticinin nozül veya kalite testini kullan.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sarf seviyesini kontrol et",
+              "detail": "Mürekkep veya toner uyarısını cihaz ekranından kontrol et."
+            },
+            {
+              "title": "Doğru kağıt ve kaliteyi seç",
+              "detail": "Kağıt türü ile yazdırma ayarının eşleştiğini doğrula."
+            },
+            {
+              "title": "Yerleşik kalite testini çalıştır",
+              "detail": "Üreticinin bakım menüsündeki test sayfası veya temizleme işlemini bir kez çalıştır."
+            }
+          ]
+        },
+        {
+          "id": "scanner-poor-print-quality-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/poor-print-quality"
+    },
+    {
+      "id": "scanner-scan-failed",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "scanner",
+      "title": "tarayıcı tarama yapmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "tarama yapmıyor",
+          "tarayıcı bulunamadı",
+          "scan error"
+        ],
+        "en": [
+          "scanner not found",
+          "cannot scan",
+          "scan failed"
+        ]
+      },
+      "aliases": [
+        "tarayıcı tarama yapmıyor",
+        "tarama yapmıyor",
+        "tarayıcı bulunamadı",
+        "scan error",
+        "scanner not found",
+        "cannot scan",
+        "scan failed"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "scan",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "scanner-scan-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-scan-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-scan-failed-safe-check",
+          "title": "Tarama bağlantısını doğrula",
+          "description": "Tarayıcı durumu, izin ve resmî yazılımı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kilidi ve kapağı kontrol et",
+              "detail": "Varsa taşıma kilidinin açık ve kapağın düzgün kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "USB veya ağ bağlantısını yeniden kur ve cihazı normal başlat."
+            },
+            {
+              "title": "Resmî tarama uygulamasını dene",
+              "detail": "Üreticinin uygulamasından küçük bir test taraması başlat."
+            }
+          ]
+        },
+        {
+          "id": "scanner-scan-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/scan-failed"
+    },
+    {
+      "id": "scanner-consumable-warning",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "consumable",
+      "title": "tarayıcı kartuş veya toner uyarısı veriyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "kartuş tanınmıyor",
+          "toner uyarısı",
+          "mürekkep hatası"
+        ],
+        "en": [
+          "cartridge not recognized",
+          "toner warning",
+          "ink error"
+        ]
+      },
+      "aliases": [
+        "tarayıcı kartuş veya toner uyarısı veriyor",
+        "kartuş tanınmıyor",
+        "toner uyarısı",
+        "mürekkep hatası",
+        "cartridge not recognized",
+        "toner warning",
+        "ink error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "consumable",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "scanner-consumable-warning-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-consumable-warning-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-consumable-warning-safe-check",
+          "title": "Sarf malzemesini güvenle doğrula",
+          "description": "Model uyumunu ve üreticinin kullanıcıya açık yeniden takma adımını uygula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Model uyumunu kontrol et",
+              "detail": "Sarf malzemesinin cihaz modeline uygun olduğunu ambalajdan doğrula."
+            },
+            {
+              "title": "Koruma bandını kontrol et",
+              "detail": "Yeni sarfta üreticinin belirttiği taşıma bandının çıkarıldığını doğrula."
+            },
+            {
+              "title": "Kullanıcı adımına göre yeniden tak",
+              "detail": "Cihaz kapalıyken kullanım kılavuzundaki sarf değiştirme adımını uygula."
+            }
+          ]
+        },
+        {
+          "id": "scanner-consumable-warning-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/consumable-warning"
+    },
+    {
+      "id": "scanner-network-offline",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "network",
+      "title": "tarayıcı internete bağlanmıyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "tarayıcı internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "scanner-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "scanner-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/network-offline"
+    },
+    {
+      "id": "scanner-error-message",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "category": "error",
+      "title": "tarayıcı hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "HP",
+        "Canon",
+        "Epson",
+        "Brother",
+        "Fujitsu"
+      ],
+      "modelPatterns": [
+        "ScanJet",
+        "CanoScan",
+        "Perfection",
+        "ScanSnap"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "tarayıcı hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "scanner",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "scanner-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scanner-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "scanner-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "scanner-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "HP Yazıcı Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/error-message"
+    },
+    {
+      "id": "label-printer-no-power",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "power",
+      "title": "etiket yazıcısı hiç açılmıyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "etiket yazıcısı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "etiket yazıcısı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı hiç açılmıyor",
+        "etiket yazıcısı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "etiket yazıcısı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/no-power"
+    },
+    {
+      "id": "label-printer-printer-offline",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "network",
+      "title": "etiket yazıcısı çevrimdışı veya yazdırmıyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "yazıcı çevrimdışı",
+          "yazdırmıyor",
+          "kuyrukta bekliyor"
+        ],
+        "en": [
+          "printer offline",
+          "will not print",
+          "print job stuck"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı çevrimdışı veya yazdırmıyor",
+        "yazıcı çevrimdışı",
+        "yazdırmıyor",
+        "kuyrukta bekliyor",
+        "printer offline",
+        "will not print",
+        "print job stuck"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "network",
+        "offline",
+        "queue"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-printer-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-printer-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "offline",
+                "queue"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-printer-offline-safe-check",
+          "title": "Yazdırma yolunu yenile",
+          "description": "Yazıcı durumu, kuyruk ve ağ bağlantısını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Yazıcı durumunu kontrol et",
+              "detail": "Kağıt, kapak ve sarf uyarısı olmadığını; cihazın hazır olduğunu doğrula."
+            },
+            {
+              "title": "Tek bir işi yeniden dene",
+              "detail": "Takılı işleri sistem yazdırma kuyruğundan iptal edip test sayfası gönder."
+            },
+            {
+              "title": "Ağı veya USB bağlantısını yenile",
+              "detail": "Yazıcı ve bilgisayarı normal yeniden başlatıp bağlantıyı tekrar kur."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-printer-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/printer-offline"
+    },
+    {
+      "id": "label-printer-paper-jam",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "paper",
+      "title": "etiket yazıcısı kağıt sıkıştırıyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "kağıt sıkıştı",
+          "kağıt almıyor",
+          "paper jam"
+        ],
+        "en": [
+          "paper jam",
+          "will not feed paper",
+          "paper feed error"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı kağıt sıkıştırıyor",
+        "kağıt sıkıştı",
+        "kağıt almıyor",
+        "paper jam",
+        "will not feed paper",
+        "paper feed error"
+      ],
+      "typoVariants": [
+        "kagit sikisti"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "paper",
+        "jam"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-paper-jam-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-paper-jam-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "paper",
+                "jam"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-paper-jam-safe-check",
+          "title": "Kağıt yolunu üretici adımıyla temizle",
+          "description": "Gücü kesip yalnızca kullanıcı erişimine açık kapaklardan görünen kağıdı çıkar.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazı kapat ve fişini çek",
+              "detail": "Hareketli parçaların durmasını bekle."
+            },
+            {
+              "title": "Görünen kağıdı yavaşça çıkar",
+              "detail": "Kullanıcı kapağını aç; kağıdı ilerleme yönünde iki elle ve yırtmadan çek."
+            },
+            {
+              "title": "Kağıdı düzgün yükle",
+              "detail": "Kuru ve uygun boyuttaki kağıdı kılavuzları sıkıştırmadan yerleştir."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-paper-jam-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/paper-jam"
+    },
+    {
+      "id": "label-printer-poor-print-quality",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "quality",
+      "title": "etiket yazıcısı soluk, çizgili veya lekeli çıktı veriyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "çıktı soluk",
+          "baskı çizgili",
+          "sayfa lekeli"
+        ],
+        "en": [
+          "faded print",
+          "streaks on page",
+          "poor print quality"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı soluk, çizgili veya lekeli çıktı veriyor",
+        "çıktı soluk",
+        "baskı çizgili",
+        "sayfa lekeli",
+        "faded print",
+        "streaks on page",
+        "poor print quality"
+      ],
+      "typoVariants": [
+        "cikti soluk"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "quality",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-poor-print-quality-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-poor-print-quality-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "quality",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-poor-print-quality-safe-check",
+          "title": "Yerleşik bakım testini çalıştır",
+          "description": "Sarf seviyesini ve üreticinin nozül veya kalite testini kullan.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Sarf seviyesini kontrol et",
+              "detail": "Mürekkep veya toner uyarısını cihaz ekranından kontrol et."
+            },
+            {
+              "title": "Doğru kağıt ve kaliteyi seç",
+              "detail": "Kağıt türü ile yazdırma ayarının eşleştiğini doğrula."
+            },
+            {
+              "title": "Yerleşik kalite testini çalıştır",
+              "detail": "Üreticinin bakım menüsündeki test sayfası veya temizleme işlemini bir kez çalıştır."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-poor-print-quality-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/poor-print-quality"
+    },
+    {
+      "id": "label-printer-scan-failed",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "scanner",
+      "title": "etiket yazıcısı tarama yapmıyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "tarama yapmıyor",
+          "tarayıcı bulunamadı",
+          "scan error"
+        ],
+        "en": [
+          "scanner not found",
+          "cannot scan",
+          "scan failed"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı tarama yapmıyor",
+        "tarama yapmıyor",
+        "tarayıcı bulunamadı",
+        "scan error",
+        "scanner not found",
+        "cannot scan",
+        "scan failed"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "scanner",
+        "scan",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-scan-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-scan-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "scanner",
+                "scan",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-scan-failed-safe-check",
+          "title": "Tarama bağlantısını doğrula",
+          "description": "Tarayıcı durumu, izin ve resmî yazılımı kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kilidi ve kapağı kontrol et",
+              "detail": "Varsa taşıma kilidinin açık ve kapağın düzgün kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "USB veya ağ bağlantısını yeniden kur ve cihazı normal başlat."
+            },
+            {
+              "title": "Resmî tarama uygulamasını dene",
+              "detail": "Üreticinin uygulamasından küçük bir test taraması başlat."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-scan-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/scan-failed"
+    },
+    {
+      "id": "label-printer-consumable-warning",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "consumable",
+      "title": "etiket yazıcısı kartuş veya toner uyarısı veriyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "kartuş tanınmıyor",
+          "toner uyarısı",
+          "mürekkep hatası"
+        ],
+        "en": [
+          "cartridge not recognized",
+          "toner warning",
+          "ink error"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı kartuş veya toner uyarısı veriyor",
+        "kartuş tanınmıyor",
+        "toner uyarısı",
+        "mürekkep hatası",
+        "cartridge not recognized",
+        "toner warning",
+        "ink error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "consumable",
+        "ink",
+        "toner"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-consumable-warning-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-consumable-warning-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "printer",
+                "ink",
+                "toner"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-consumable-warning-safe-check",
+          "title": "Sarf malzemesini güvenle doğrula",
+          "description": "Model uyumunu ve üreticinin kullanıcıya açık yeniden takma adımını uygula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Model uyumunu kontrol et",
+              "detail": "Sarf malzemesinin cihaz modeline uygun olduğunu ambalajdan doğrula."
+            },
+            {
+              "title": "Koruma bandını kontrol et",
+              "detail": "Yeni sarfta üreticinin belirttiği taşıma bandının çıkarıldığını doğrula."
+            },
+            {
+              "title": "Kullanıcı adımına göre yeniden tak",
+              "detail": "Cihaz kapalıyken kullanım kılavuzundaki sarf değiştirme adımını uygula."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-consumable-warning-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/consumable-warning"
+    },
+    {
+      "id": "label-printer-network-offline",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "network",
+      "title": "etiket yazıcısı internete bağlanmıyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/network-offline"
+    },
+    {
+      "id": "label-printer-error-message",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "category": "error",
+      "title": "etiket yazıcısı hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Brother",
+        "Zebra",
+        "Dymo",
+        "Epson"
+      ],
+      "modelPatterns": [
+        "P-touch",
+        "QL",
+        "LabelWriter"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "etiket yazıcısı hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "printer",
+        "label-printer",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "label-printer-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "label-printer-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "label-printer-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "label-printer-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Brother Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "printer/error-message"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "inkjet-printer-safe-fallback",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "title": "Mürekkep püskürtmeli yazıcı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "laser-printer-safe-fallback",
+      "deviceType": "printer",
+      "subType": "laser-printer",
+      "title": "Lazer yazıcı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "scanner-safe-fallback",
+      "deviceType": "printer",
+      "subType": "scanner",
+      "title": "Tarayıcı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "label-printer-safe-fallback",
+      "deviceType": "printer",
+      "subType": "label-printer",
+      "title": "Etiket yazıcısı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "brother-print",
+          "title": "Brother Destek",
+          "url": "https://support.brother.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}

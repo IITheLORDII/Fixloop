@@ -1,0 +1,5184 @@
+{
+  "schemaVersion": 3,
+  "id": "core-power",
+  "label": "Şarj / güç ürünleri",
+  "generatedAt": "2026-10-10T13:17:34.589Z",
+  "deviceTypes": [
+    {
+      "id": "power",
+      "label": "Şarj / güç ürünleri",
+      "subtypes": [
+        {
+          "id": "wall-charger",
+          "label": "Şarj adaptörü",
+          "brands": [
+            "Apple",
+            "Samsung",
+            "Anker",
+            "Belkin",
+            "Baseus",
+            "Ugreen",
+            "Xiaomi"
+          ],
+          "models": [
+            "MagSafe",
+            "PowerPort",
+            "GaN"
+          ]
+        },
+        {
+          "id": "power-bank",
+          "label": "Powerbank",
+          "brands": [
+            "Anker",
+            "Xiaomi",
+            "Samsung",
+            "Baseus",
+            "Belkin"
+          ],
+          "models": [
+            "PowerCore",
+            "Mi Power Bank"
+          ]
+        },
+        {
+          "id": "ups",
+          "label": "Kesintisiz güç kaynağı",
+          "brands": [
+            "APC",
+            "Eaton",
+            "Schneider",
+            "Inform",
+            "Tunçmatik"
+          ],
+          "models": [
+            "Back-UPS",
+            "Easy UPS"
+          ]
+        },
+        {
+          "id": "surge-protector",
+          "label": "Akım korumalı priz",
+          "brands": [
+            "APC",
+            "Belkin",
+            "Philips",
+            "Schneider",
+            "Tunçmatik"
+          ],
+          "models": [
+            "SurgeArrest"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "wall-charger-no-power",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "power",
+      "title": "şarj adaptörü hiç açılmıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj adaptörü açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "şarj adaptörü will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü hiç açılmıyor",
+        "şarj adaptörü açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "şarj adaptörü will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/no-power"
+    },
+    {
+      "id": "wall-charger-not-charging",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "battery",
+      "title": "şarj adaptörü şarj olmuyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "battery",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/not-charging"
+    },
+    {
+      "id": "wall-charger-intermittent",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "stability",
+      "title": "şarj adaptörü ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/intermittent"
+    },
+    {
+      "id": "wall-charger-overheating",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "thermal",
+      "title": "şarj adaptörü aşırı ısınıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/overheating"
+    },
+    {
+      "id": "wall-charger-slow-performance",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "performance",
+      "title": "şarj adaptörü çok yavaş veya donuyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/slow-performance"
+    },
+    {
+      "id": "wall-charger-controls-not-working",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "input",
+      "title": "şarj adaptörü tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/controls-not-working"
+    },
+    {
+      "id": "wall-charger-error-message",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "error",
+      "title": "şarj adaptörü hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/error-message"
+    },
+    {
+      "id": "wall-charger-stops-mid-cycle",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "category": "operation",
+      "title": "şarj adaptörü çalışırken duruyor",
+      "brandPatterns": [
+        "Apple",
+        "Samsung",
+        "Anker",
+        "Belkin",
+        "Baseus",
+        "Ugreen",
+        "Xiaomi"
+      ],
+      "modelPatterns": [
+        "MagSafe",
+        "PowerPort",
+        "GaN"
+      ],
+      "symptoms": {
+        "tr": [
+          "çalışırken duruyor",
+          "program yarıda kalıyor",
+          "kendiliğinden kapanıyor"
+        ],
+        "en": [
+          "stops during use",
+          "cycle stops midway",
+          "turns off by itself"
+        ]
+      },
+      "aliases": [
+        "şarj adaptörü çalışırken duruyor",
+        "çalışırken duruyor",
+        "program yarıda kalıyor",
+        "kendiliğinden kapanıyor",
+        "stops during use",
+        "cycle stops midway",
+        "turns off by itself"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "wall-charger",
+        "operation",
+        "intermittent",
+        "thermal"
+      ],
+      "questions": [
+        {
+          "id": "wall-charger-stops-mid-cycle-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-stops-mid-cycle-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "wall-charger-stops-mid-cycle-safe-check",
+          "title": "Çalışma koşullarını kontrol et",
+          "description": "Güç, kapak ve aşırı yük ihtimalini güvenli biçimde ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Gücü ve kapağı kontrol et",
+              "detail": "Fişin gevşek olmadığını ve kapağın tam kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Soğumasını bekle",
+              "detail": "Cihaz sıcaksa kapatıp üreticinin önerdiği süre boyunca beklet."
+            },
+            {
+              "title": "Daha küçük yükle dene",
+              "detail": "Kılavuz sınırına uygun, daha hafif bir yükle tek kısa test yap."
+            }
+          ]
+        },
+        {
+          "id": "wall-charger-stops-mid-cycle-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Apple Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/stops-mid-cycle"
+    },
+    {
+      "id": "power-bank-no-power",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "power",
+      "title": "powerbank hiç açılmıyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "powerbank açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "powerbank will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "powerbank hiç açılmıyor",
+        "powerbank açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "powerbank will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/no-power"
+    },
+    {
+      "id": "power-bank-not-charging",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "battery",
+      "title": "powerbank şarj olmuyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "powerbank şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "battery",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/not-charging"
+    },
+    {
+      "id": "power-bank-intermittent",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "stability",
+      "title": "powerbank ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "powerbank ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/intermittent"
+    },
+    {
+      "id": "power-bank-overheating",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "thermal",
+      "title": "powerbank aşırı ısınıyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "powerbank aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/overheating"
+    },
+    {
+      "id": "power-bank-slow-performance",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "performance",
+      "title": "powerbank çok yavaş veya donuyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "powerbank çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/slow-performance"
+    },
+    {
+      "id": "power-bank-controls-not-working",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "input",
+      "title": "powerbank tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "powerbank tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/controls-not-working"
+    },
+    {
+      "id": "power-bank-error-message",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "error",
+      "title": "powerbank hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "powerbank hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/error-message"
+    },
+    {
+      "id": "power-bank-stops-mid-cycle",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "category": "operation",
+      "title": "powerbank çalışırken duruyor",
+      "brandPatterns": [
+        "Anker",
+        "Xiaomi",
+        "Samsung",
+        "Baseus",
+        "Belkin"
+      ],
+      "modelPatterns": [
+        "PowerCore",
+        "Mi Power Bank"
+      ],
+      "symptoms": {
+        "tr": [
+          "çalışırken duruyor",
+          "program yarıda kalıyor",
+          "kendiliğinden kapanıyor"
+        ],
+        "en": [
+          "stops during use",
+          "cycle stops midway",
+          "turns off by itself"
+        ]
+      },
+      "aliases": [
+        "powerbank çalışırken duruyor",
+        "çalışırken duruyor",
+        "program yarıda kalıyor",
+        "kendiliğinden kapanıyor",
+        "stops during use",
+        "cycle stops midway",
+        "turns off by itself"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "power-bank",
+        "operation",
+        "intermittent",
+        "thermal"
+      ],
+      "questions": [
+        {
+          "id": "power-bank-stops-mid-cycle-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "power-bank-stops-mid-cycle-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "power-bank-stops-mid-cycle-safe-check",
+          "title": "Çalışma koşullarını kontrol et",
+          "description": "Güç, kapak ve aşırı yük ihtimalini güvenli biçimde ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Gücü ve kapağı kontrol et",
+              "detail": "Fişin gevşek olmadığını ve kapağın tam kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Soğumasını bekle",
+              "detail": "Cihaz sıcaksa kapatıp üreticinin önerdiği süre boyunca beklet."
+            },
+            {
+              "title": "Daha küçük yükle dene",
+              "detail": "Kılavuz sınırına uygun, daha hafif bir yükle tek kısa test yap."
+            }
+          ]
+        },
+        {
+          "id": "power-bank-stops-mid-cycle-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Samsung Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/stops-mid-cycle"
+    },
+    {
+      "id": "ups-no-power",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "power",
+      "title": "kesintisiz güç kaynağı hiç açılmıyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "kesintisiz güç kaynağı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "kesintisiz güç kaynağı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı hiç açılmıyor",
+        "kesintisiz güç kaynağı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "kesintisiz güç kaynağı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "ups-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "ups-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/no-power"
+    },
+    {
+      "id": "ups-not-charging",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "battery",
+      "title": "kesintisiz güç kaynağı şarj olmuyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "battery",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "ups-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "ups-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/not-charging"
+    },
+    {
+      "id": "ups-intermittent",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "stability",
+      "title": "kesintisiz güç kaynağı ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "ups-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "ups-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/intermittent"
+    },
+    {
+      "id": "ups-overheating",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "thermal",
+      "title": "kesintisiz güç kaynağı aşırı ısınıyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "ups-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "ups-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/overheating"
+    },
+    {
+      "id": "ups-slow-performance",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "performance",
+      "title": "kesintisiz güç kaynağı çok yavaş veya donuyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "ups-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "ups-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/slow-performance"
+    },
+    {
+      "id": "ups-controls-not-working",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "input",
+      "title": "kesintisiz güç kaynağı tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "ups-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "ups-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/controls-not-working"
+    },
+    {
+      "id": "ups-error-message",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "error",
+      "title": "kesintisiz güç kaynağı hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "ups-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "ups-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/error-message"
+    },
+    {
+      "id": "ups-stops-mid-cycle",
+      "deviceType": "power",
+      "subType": "ups",
+      "category": "operation",
+      "title": "kesintisiz güç kaynağı çalışırken duruyor",
+      "brandPatterns": [
+        "APC",
+        "Eaton",
+        "Schneider",
+        "Inform",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "Back-UPS",
+        "Easy UPS"
+      ],
+      "symptoms": {
+        "tr": [
+          "çalışırken duruyor",
+          "program yarıda kalıyor",
+          "kendiliğinden kapanıyor"
+        ],
+        "en": [
+          "stops during use",
+          "cycle stops midway",
+          "turns off by itself"
+        ]
+      },
+      "aliases": [
+        "kesintisiz güç kaynağı çalışırken duruyor",
+        "çalışırken duruyor",
+        "program yarıda kalıyor",
+        "kendiliğinden kapanıyor",
+        "stops during use",
+        "cycle stops midway",
+        "turns off by itself"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "ups",
+        "operation",
+        "intermittent",
+        "thermal"
+      ],
+      "questions": [
+        {
+          "id": "ups-stops-mid-cycle-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ups-stops-mid-cycle-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "ups-stops-mid-cycle-safe-check",
+          "title": "Çalışma koşullarını kontrol et",
+          "description": "Güç, kapak ve aşırı yük ihtimalini güvenli biçimde ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Gücü ve kapağı kontrol et",
+              "detail": "Fişin gevşek olmadığını ve kapağın tam kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Soğumasını bekle",
+              "detail": "Cihaz sıcaksa kapatıp üreticinin önerdiği süre boyunca beklet."
+            },
+            {
+              "title": "Daha küçük yükle dene",
+              "detail": "Kılavuz sınırına uygun, daha hafif bir yükle tek kısa test yap."
+            }
+          ]
+        },
+        {
+          "id": "ups-stops-mid-cycle-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/stops-mid-cycle"
+    },
+    {
+      "id": "surge-protector-no-power",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "power",
+      "title": "akım korumalı priz hiç açılmıyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "akım korumalı priz açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "akım korumalı priz will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz hiç açılmıyor",
+        "akım korumalı priz açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "akım korumalı priz will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/no-power"
+    },
+    {
+      "id": "surge-protector-not-charging",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "battery",
+      "title": "akım korumalı priz şarj olmuyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "battery",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/not-charging"
+    },
+    {
+      "id": "surge-protector-intermittent",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "stability",
+      "title": "akım korumalı priz ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/intermittent"
+    },
+    {
+      "id": "surge-protector-overheating",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "thermal",
+      "title": "akım korumalı priz aşırı ısınıyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/overheating"
+    },
+    {
+      "id": "surge-protector-slow-performance",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "performance",
+      "title": "akım korumalı priz çok yavaş veya donuyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/slow-performance"
+    },
+    {
+      "id": "surge-protector-controls-not-working",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "input",
+      "title": "akım korumalı priz tuşları veya kontrolleri çalışmıyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "tuş çalışmıyor",
+          "kontrol tepki vermiyor",
+          "dokunmatik çalışmıyor"
+        ],
+        "en": [
+          "buttons not working",
+          "controls unresponsive",
+          "touch not working"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz tuşları veya kontrolleri çalışmıyor",
+        "tuş çalışmıyor",
+        "kontrol tepki vermiyor",
+        "dokunmatik çalışmıyor",
+        "buttons not working",
+        "controls unresponsive",
+        "touch not working"
+      ],
+      "typoVariants": [
+        "tuslar calismiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "input",
+        "controls"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-controls-not-working-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-controls-not-working-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "input",
+                "controls"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-controls-not-working-safe-check",
+          "title": "Kontrol girişini ayır",
+          "description": "Kilit, bağlantı ve geçici yazılım durumunu güvenli adımlarla kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Fiziksel engeli kontrol et",
+              "detail": "Kılıf, kir veya taşıma kilidinin kontrolü engellemediğini görsel olarak doğrula."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Kablosuzsa pili ve bağlantıyı; kabloluysa erişilebilir konnektörü kontrol et."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Cihazı normal yöntemle yeniden başlat ve tek bir kontrolle test et."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-controls-not-working-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/controls-not-working"
+    },
+    {
+      "id": "surge-protector-error-message",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "error",
+      "title": "akım korumalı priz hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/error-message"
+    },
+    {
+      "id": "surge-protector-stops-mid-cycle",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "category": "operation",
+      "title": "akım korumalı priz çalışırken duruyor",
+      "brandPatterns": [
+        "APC",
+        "Belkin",
+        "Philips",
+        "Schneider",
+        "Tunçmatik"
+      ],
+      "modelPatterns": [
+        "SurgeArrest"
+      ],
+      "symptoms": {
+        "tr": [
+          "çalışırken duruyor",
+          "program yarıda kalıyor",
+          "kendiliğinden kapanıyor"
+        ],
+        "en": [
+          "stops during use",
+          "cycle stops midway",
+          "turns off by itself"
+        ]
+      },
+      "aliases": [
+        "akım korumalı priz çalışırken duruyor",
+        "çalışırken duruyor",
+        "program yarıda kalıyor",
+        "kendiliğinden kapanıyor",
+        "stops during use",
+        "cycle stops midway",
+        "turns off by itself"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "power",
+        "surge-protector",
+        "operation",
+        "intermittent",
+        "thermal"
+      ],
+      "questions": [
+        {
+          "id": "surge-protector-stops-mid-cycle-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-stops-mid-cycle-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "operation",
+                "intermittent",
+                "thermal"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "surge-protector-stops-mid-cycle-safe-check",
+          "title": "Çalışma koşullarını kontrol et",
+          "description": "Güç, kapak ve aşırı yük ihtimalini güvenli biçimde ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Gücü ve kapağı kontrol et",
+              "detail": "Fişin gevşek olmadığını ve kapağın tam kapalı olduğunu doğrula."
+            },
+            {
+              "title": "Soğumasını bekle",
+              "detail": "Cihaz sıcaksa kapatıp üreticinin önerdiği süre boyunca beklet."
+            },
+            {
+              "title": "Daha küçük yükle dene",
+              "detail": "Kılavuz sınırına uygun, daha hafif bir yükle tek kısa test yap."
+            }
+          ]
+        },
+        {
+          "id": "surge-protector-stops-mid-cycle-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "APC Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "power/stops-mid-cycle"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "wall-charger-safe-fallback",
+      "deviceType": "power",
+      "subType": "wall-charger",
+      "title": "Şarj adaptörü için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "apple-support",
+          "title": "Apple Destek",
+          "url": "https://support.apple.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "power-bank-safe-fallback",
+      "deviceType": "power",
+      "subType": "power-bank",
+      "title": "Powerbank için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "ups-safe-fallback",
+      "deviceType": "power",
+      "subType": "ups",
+      "title": "Kesintisiz güç kaynağı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "surge-protector-safe-fallback",
+      "deviceType": "power",
+      "subType": "surge-protector",
+      "title": "Akım korumalı priz için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "apc-support",
+          "title": "APC Destek",
+          "url": "https://www.apc.com/us/en/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}

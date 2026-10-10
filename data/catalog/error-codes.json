@@ -1,0 +1,925 @@
+{
+  "schemaVersion": 3,
+  "id": "core-error-codes",
+  "label": "Marka hata kodları",
+  "generatedAt": "2026-10-10T13:17:34.604Z",
+  "deviceTypes": [],
+  "issues": [
+    {
+      "id": "windows-update-0x80070002",
+      "deviceType": "computer",
+      "subType": "windows-laptop",
+      "category": "error-code",
+      "title": "Windows Update 0x80070002 hatası",
+      "brandPatterns": [
+        "Microsoft"
+      ],
+      "modelPatterns": [
+        "Windows 10",
+        "Windows 11"
+      ],
+      "symptoms": {
+        "tr": [
+          "Windows güncelleme 0x80070002 hatası"
+        ],
+        "en": [
+          "Windows Update error 0x80070002"
+        ]
+      },
+      "aliases": [
+        "Windows güncelleme 0x80070002 hatası",
+        "Windows Update error 0x80070002",
+        "0x80070002"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "0x80070002"
+      ],
+      "tags": [
+        "error-code",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "windows-update-0x80070002-visible-code",
+          "text": "Ekranda 0x80070002 kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "windows-update-0x80070002-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "windows-update-0x80070002-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "Microsoft Windows Destek içinde model ve 0x80070002 kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "microsoft-windows",
+          "title": "Microsoft Windows Destek",
+          "url": "https://support.microsoft.com/en-us/windows",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "windows-device-code-43",
+      "deviceType": "computer",
+      "subType": "windows-laptop",
+      "category": "error-code",
+      "title": "Windows Aygıt Yöneticisi Kod 43",
+      "brandPatterns": [
+        "Microsoft"
+      ],
+      "modelPatterns": [
+        "Windows 10",
+        "Windows 11"
+      ],
+      "symptoms": {
+        "tr": [
+          "aygıt yöneticisi kod 43"
+        ],
+        "en": [
+          "device manager code 43"
+        ]
+      },
+      "aliases": [
+        "aygıt yöneticisi kod 43",
+        "device manager code 43",
+        "Code 43",
+        "Kod 43"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "Code 43",
+        "Kod 43"
+      ],
+      "tags": [
+        "error-code",
+        "hardware",
+        "driver"
+      ],
+      "questions": [
+        {
+          "id": "windows-device-code-43-visible-code",
+          "text": "Ekranda Code 43 kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "windows-device-code-43-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "windows-device-code-43-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "Microsoft Windows Destek içinde model ve Code 43 kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "microsoft-windows",
+          "title": "Microsoft Windows Destek",
+          "url": "https://support.microsoft.com/en-us/windows",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "samsung-washer-5c-5e",
+      "deviceType": "appliance",
+      "subType": "washing-machine",
+      "category": "error-code",
+      "title": "Samsung çamaşır makinesi 5C / 5E tahliye hatası",
+      "brandPatterns": [
+        "Samsung"
+      ],
+      "modelPatterns": [
+        "AddWash",
+        "EcoBubble"
+      ],
+      "symptoms": {
+        "tr": [
+          "Samsung çamaşır makinesi 5C hatası",
+          "Samsung 5E su boşaltma hatası"
+        ],
+        "en": [
+          "Samsung washer 5C error",
+          "Samsung washer 5E drain error"
+        ]
+      },
+      "aliases": [
+        "Samsung çamaşır makinesi 5C hatası",
+        "Samsung 5E su boşaltma hatası",
+        "Samsung washer 5C error",
+        "Samsung washer 5E drain error",
+        "5C",
+        "5E"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "5C",
+        "5E"
+      ],
+      "tags": [
+        "error-code",
+        "water",
+        "drain"
+      ],
+      "questions": [
+        {
+          "id": "samsung-washer-5c-5e-visible-code",
+          "text": "Ekranda 5C kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "samsung-washer-5c-5e-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "samsung-washer-5c-5e-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "Samsung Destek içinde model ve 5C kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "samsung-support",
+          "title": "Samsung Destek",
+          "url": "https://www.samsung.com/tr/support/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "lg-washer-oe",
+      "deviceType": "appliance",
+      "subType": "washing-machine",
+      "category": "error-code",
+      "title": "LG çamaşır makinesi OE tahliye hatası",
+      "brandPatterns": [
+        "LG"
+      ],
+      "modelPatterns": [
+        "Direct Drive",
+        "ThinQ"
+      ],
+      "symptoms": {
+        "tr": [
+          "LG çamaşır makinesi OE hatası"
+        ],
+        "en": [
+          "LG washer OE drain error"
+        ]
+      },
+      "aliases": [
+        "LG çamaşır makinesi OE hatası",
+        "LG washer OE drain error",
+        "OE"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "OE"
+      ],
+      "tags": [
+        "error-code",
+        "water",
+        "drain"
+      ],
+      "questions": [
+        {
+          "id": "lg-washer-oe-visible-code",
+          "text": "Ekranda OE kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "lg-washer-oe-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "lg-washer-oe-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "LG Elektronik Destek içinde model ve OE kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "lg-electronics",
+          "title": "LG Elektronik Destek",
+          "url": "https://www.lg.com/tr/destek",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "bosch-dishwasher-e24",
+      "deviceType": "appliance",
+      "subType": "dishwasher",
+      "category": "error-code",
+      "title": "Bosch bulaşık makinesi E24 tahliye hatası",
+      "brandPatterns": [
+        "Bosch"
+      ],
+      "modelPatterns": [
+        "Serie 4",
+        "Serie 6",
+        "Serie 8"
+      ],
+      "symptoms": {
+        "tr": [
+          "Bosch bulaşık makinesi E24 hatası"
+        ],
+        "en": [
+          "Bosch dishwasher E24 drain error"
+        ]
+      },
+      "aliases": [
+        "Bosch bulaşık makinesi E24 hatası",
+        "Bosch dishwasher E24 drain error",
+        "E24",
+        "E:24"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "E24",
+        "E:24"
+      ],
+      "tags": [
+        "error-code",
+        "water",
+        "drain"
+      ],
+      "questions": [
+        {
+          "id": "bosch-dishwasher-e24-visible-code",
+          "text": "Ekranda E24 kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "bosch-dishwasher-e24-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "bosch-dishwasher-e24-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "Bosch Ev Aletleri Destek içinde model ve E24 kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "bosch-home-support",
+          "title": "Bosch Ev Aletleri Destek",
+          "url": "https://www.bosch-home.com.tr/musteri-hizmetleri",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "playstation-ce-108255-1",
+      "deviceType": "console",
+      "subType": "playstation",
+      "category": "error-code",
+      "title": "PlayStation 5 CE-108255-1 uygulama hatası",
+      "brandPatterns": [
+        "PlayStation"
+      ],
+      "modelPatterns": [
+        "PS5"
+      ],
+      "symptoms": {
+        "tr": [
+          "PS5 CE-108255-1 hatası"
+        ],
+        "en": [
+          "PS5 error CE-108255-1"
+        ]
+      },
+      "aliases": [
+        "PS5 CE-108255-1 hatası",
+        "PS5 error CE-108255-1",
+        "CE-108255-1"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "CE-108255-1"
+      ],
+      "tags": [
+        "error-code",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "playstation-ce-108255-1-visible-code",
+          "text": "Ekranda CE-108255-1 kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "playstation-ce-108255-1-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "playstation-ce-108255-1-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "PlayStation Donanım Desteği içinde model ve CE-108255-1 kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "playstation-support",
+          "title": "PlayStation Donanım Desteği",
+          "url": "https://www.playstation.com/en-us/support/hardware/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "canon-printer-5100",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "error-code",
+      "title": "Canon PIXMA 5100 taşıyıcı hatası",
+      "brandPatterns": [
+        "Canon"
+      ],
+      "modelPatterns": [
+        "PIXMA"
+      ],
+      "symptoms": {
+        "tr": [
+          "Canon yazıcı 5100 hatası"
+        ],
+        "en": [
+          "Canon printer support code 5100"
+        ]
+      },
+      "aliases": [
+        "Canon yazıcı 5100 hatası",
+        "Canon printer support code 5100",
+        "5100",
+        "Support Code 5100"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "5100",
+        "Support Code 5100"
+      ],
+      "tags": [
+        "error-code",
+        "printer",
+        "carriage"
+      ],
+      "questions": [
+        {
+          "id": "canon-printer-5100-visible-code",
+          "text": "Ekranda 5100 kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "canon-printer-5100-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "canon-printer-5100-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "Canon Destek içinde model ve 5100 kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    },
+    {
+      "id": "hp-printer-e3",
+      "deviceType": "printer",
+      "subType": "inkjet-printer",
+      "category": "error-code",
+      "title": "HP yazıcı E3 taşıyıcı sıkışması",
+      "brandPatterns": [
+        "HP"
+      ],
+      "modelPatterns": [
+        "DeskJet",
+        "ENVY"
+      ],
+      "symptoms": {
+        "tr": [
+          "HP yazıcı E3 hatası"
+        ],
+        "en": [
+          "HP printer E3 error"
+        ]
+      },
+      "aliases": [
+        "HP yazıcı E3 hatası",
+        "HP printer E3 error",
+        "E3"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [
+        "E3"
+      ],
+      "tags": [
+        "error-code",
+        "printer",
+        "carriage"
+      ],
+      "questions": [
+        {
+          "id": "hp-printer-e3-visible-code",
+          "text": "Ekranda E3 kodu aynen görünüyor mu?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "Evet",
+              "next": "solution:0",
+              "boostTags": [
+                "error-code"
+              ]
+            },
+            {
+              "id": "no",
+              "label": "Hayır",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "hp-printer-e3-safe",
+          "title": "Koda özel güvenli ön kontrolleri uygula",
+          "description": "Hata kodunu silmeden önce güç, bağlantı ve kullanıcı tarafından kontrol edilebilen koşulları doğrula.",
+          "duration": "4 dakika",
+          "steps": [
+            {
+              "title": "Kodu ve modeli kaydet",
+              "detail": "Tam kodu, model numarasını ve hatanın oluştuğu işlemi not et."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Güç, kapak, ağ, sarf veya dış bağlantı gibi kullanıcıya açık koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Güvenliyse cihazı üreticinin normal yöntemiyle kapatıp aç ve aynı işlemi tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "hp-printer-e3-official",
+          "title": "Model ve kodla resmî desteği kullan",
+          "description": "Kod sürerse ileri müdahale yapmadan üreticinin resmî desteğine geç.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Resmî destek sayfasını aç",
+              "detail": "HP Yazıcı Destek içinde model ve E3 kodunu birlikte ara."
+            },
+            {
+              "title": "Kullanıcı sınırında kal",
+              "detail": "Yalnızca kullanım kılavuzunda son kullanıcıya açık olarak belirtilen adımları uygula."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Kod normal yeniden başlatmadan sonra dönüyorsa yetkili üretici desteğine başvur.",
+      "sources": [
+        {
+          "id": "hp-print",
+          "title": "HP Yazıcı Destek",
+          "url": "https://support.hp.com/tr-tr/printer",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "brand-error-code"
+    }
+  ],
+  "fallbacks": []
+}

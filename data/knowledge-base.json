@@ -1,0 +1,2446 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-10T12:27:58.046Z",
+  "deviceTypes": [
+    {
+      "id": "computer",
+      "label": "Bilgisayar / laptop"
+    },
+    {
+      "id": "mobile",
+      "label": "Telefon / tablet"
+    },
+    {
+      "id": "network",
+      "label": "Modem / router / Wi-Fi"
+    },
+    {
+      "id": "printer",
+      "label": "Yazıcı / tarayıcı"
+    },
+    {
+      "id": "tv",
+      "label": "TV / monitör / görüntü"
+    },
+    {
+      "id": "audio",
+      "label": "Kulaklık / hoparlör / ses"
+    },
+    {
+      "id": "console",
+      "label": "Oyun konsolu / kontrolcü"
+    },
+    {
+      "id": "smart-home",
+      "label": "Akıllı ev / güvenlik kamerası"
+    },
+    {
+      "id": "wearable",
+      "label": "Akıllı saat / giyilebilir"
+    },
+    {
+      "id": "appliance",
+      "label": "Beyaz eşya / ev aleti"
+    },
+    {
+      "id": "camera",
+      "label": "Fotoğraf makinesi / kamera"
+    },
+    {
+      "id": "storage",
+      "label": "USB / disk / hafıza kartı"
+    },
+    {
+      "id": "other",
+      "label": "Diğer cihaz"
+    }
+  ],
+  "issues": [
+    {
+      "id": "computer-no-power",
+      "deviceType": "computer",
+      "category": "power",
+      "title": "Bilgisayar hiç açılmıyor",
+      "keywords": [
+        "bilgisayar açılmıyor",
+        "laptop açılmıyor",
+        "güç yok",
+        "ışık yanmıyor",
+        "power"
+      ],
+      "confidence": 78,
+      "solutions": [
+        {
+          "title": "Güç kaynağını ve birikmiş elektriği kontrol et",
+          "description": "Dış bağlantıları güvenli biçimde eleyerek güç durumunu doğrula.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Priz ve adaptörü kontrol et",
+              "detail": "Aynı prizi başka bir cihazla dene; adaptörün iki ucunu yeniden tak."
+            },
+            {
+              "title": "Güç boşaltma yap",
+              "detail": "Cihazı prizden çıkar, çevre birimlerini ayır, güç düğmesine 15 saniye bas ve tekrar bağla."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Şarj veya güç ışığı yanıyor mu?",
+        "Sıvı teması ya da yanık kokusu oldu mu?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "computer-black-screen",
+      "deviceType": "computer",
+      "category": "display",
+      "title": "Bilgisayar açılıyor ama ekran siyah",
+      "keywords": [
+        "siyah ekran",
+        "görüntü yok",
+        "ekran gelmiyor",
+        "black screen",
+        "monitör sinyal yok"
+      ],
+      "confidence": 82,
+      "solutions": [
+        {
+          "title": "Ekran ve görüntü yolunu kontrol et",
+          "description": "Cihaz çalışıyor ancak görüntü yanlış çıkışta veya kablo bağlantısında kalmış olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Parlaklık ve ekran bağlantısını kontrol et",
+              "detail": "Parlaklığı artır; harici monitör varsa görüntü kablosunu yeniden tak."
+            },
+            {
+              "title": "Görüntü çıkışını değiştir",
+              "detail": "Windows’ta Win + P tuşlarına basıp yalnızca bilgisayar ekranını seç."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.microsoft.com/en-us/support/get-help/windows-troubleshooters"
+      ]
+    },
+    {
+      "id": "computer-no-audio",
+      "deviceType": "computer",
+      "category": "audio",
+      "title": "Bilgisayardan ses gelmiyor",
+      "keywords": [
+        "ses yok",
+        "hoparlör çalışmıyor",
+        "audio",
+        "ses gelmiyor",
+        "mikrofon değil"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Doğru ses çıkışını seç",
+          "description": "İşletim sistemi sesi başka bir çıkışa yönlendirmiş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Ses çıkış listesini aç",
+              "detail": "Görev çubuğu veya menü çubuğundaki ses simgesini aç."
+            },
+            {
+              "title": "Kullandığın hoparlörü seç",
+              "detail": "Dahili hoparlör ya da bağlı kulaklığı etkin çıkış yap."
+            }
+          ]
+        },
+        {
+          "title": "Ses hizmetini ve cihazı yenile",
+          "description": "İlk seçim doğruysa geçici sürücü durumu sorun çıkarıyor olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Açık çalışmalarını kaydedip normal yeniden başlatma yap."
+            },
+            {
+              "title": "Ses tanılamasını çalıştır",
+              "detail": "Sistem ayarlarında ses sorun gidericisini veya çıkış testi seçeneğini aç."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.microsoft.com/en-us/windows/hardware/audio/fix-sound-or-audio-problems-in-windows"
+      ]
+    },
+    {
+      "id": "computer-overheating",
+      "deviceType": "computer",
+      "category": "thermal",
+      "title": "Bilgisayar aşırı ısınıyor veya kapanıyor",
+      "keywords": [
+        "ısınıyor",
+        "aşırı sıcak",
+        "fan çok",
+        "kapanıyor",
+        "overheat",
+        "ısınma"
+      ],
+      "confidence": 80,
+      "solutions": [
+        {
+          "title": "Hava akışını güvenli biçimde düzelt",
+          "description": "Kapalı hava kanalları cihazın kendini korumak için yavaşlamasına veya kapanmasına yol açabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Cihazı kapatıp soğut",
+              "detail": "Fişten çıkar ve sert, düz bir yüzeyde en az 20 dakika beklet."
+            },
+            {
+              "title": "Havalandırma alanını aç",
+              "detail": "Izgaraları kapatan yüzeyleri kaldır; cihazı yatak veya kumaş üzerinde kullanma."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Yanık kokusu, şişmiş kasa veya anormal ses varsa kullanmayı bırak ve servise ver.",
+      "sources": []
+    },
+    {
+      "id": "computer-slow",
+      "deviceType": "computer",
+      "category": "performance",
+      "title": "Bilgisayar çok yavaş veya donuyor",
+      "keywords": [
+        "yavaş",
+        "donuyor",
+        "kasıyor",
+        "takılıyor",
+        "slow",
+        "performans"
+      ],
+      "confidence": 76,
+      "solutions": [
+        {
+          "title": "Kaynak kullanan uygulamaları azalt",
+          "description": "Çok sayıda başlangıç uygulaması bellek ve işlemciyi doldurabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Gereksiz uygulamaları kapat",
+              "detail": "Görev Yöneticisi veya Etkinlik Monitörü’nde yoğun uygulamaları kontrol et."
+            },
+            {
+              "title": "Depolama alanını kontrol et",
+              "detail": "Diskte en az yüzde 10 boş alan bırak ve cihazı yeniden başlat."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.google.com/android/answer/7667018?hl=en"
+      ]
+    },
+    {
+      "id": "computer-keyboard-mouse",
+      "deviceType": "computer",
+      "category": "input",
+      "title": "Klavye veya fare çalışmıyor",
+      "keywords": [
+        "klavye çalışmıyor",
+        "fare çalışmıyor",
+        "mouse",
+        "tuş basmıyor",
+        "imleç yok"
+      ],
+      "confidence": 80,
+      "solutions": [
+        {
+          "title": "Bağlantıyı yeniden kur",
+          "description": "USB, kablosuz alıcı veya Bluetooth bağlantısı geçici olarak kopmuş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Farklı bağlantı noktası dene",
+              "detail": "USB cihazı çıkarıp başka bir porta tak; kablosuzsa pili kontrol et."
+            },
+            {
+              "title": "Cihazı yeniden eşleştir",
+              "detail": "Bluetooth ayarından cihazı kaldırıp yeniden ekle."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "computer-bluetooth-no-audio",
+      "deviceType": "computer",
+      "category": "bluetooth",
+      "title": "Bluetooth bağlı ama ses gelmiyor",
+      "keywords": [
+        "bluetooth",
+        "kulaklık bağlı",
+        "ses gelmiyor",
+        "airpods",
+        "jbl"
+      ],
+      "confidence": 90,
+      "solutions": [
+        {
+          "title": "Bluetooth aygıtını ses çıkışı yap",
+          "description": "Bağlantı kurulmuş olsa da ses eski hoparlörde kalabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Ses çıkış listesini aç",
+              "detail": "Ses simgesinin yanındaki çıkış seçiciyi aç."
+            },
+            {
+              "title": "Bluetooth kulaklığını seç",
+              "detail": "Bağlı kulaklığı varsayılan çıkış olarak seç."
+            }
+          ]
+        },
+        {
+          "title": "Kulaklığı kaldırıp yeniden eşleştir",
+          "description": "Bozuk eşleştirme kaydı ses profilinin yüklenmesini engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Bluetooth cihazını kaldır",
+              "detail": "Ayarlar → Bluetooth ve cihazlar bölümünden cihazı kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda yeniden ekle",
+              "detail": "Kulaklığı eşleştirme moduna al ve yeni cihaz olarak bağla."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.microsoft.com/en-US/Windows/Hardware/Bluetooth/fix-bluetooth-connected-but-no-sound-issue-on-windows"
+      ]
+    },
+    {
+      "id": "computer-wifi-no-internet",
+      "deviceType": "computer",
+      "category": "network",
+      "title": "Bilgisayar Wi-Fi bağlı ama internet yok",
+      "keywords": [
+        "wifi bağlı internet yok",
+        "ağ var internet yok",
+        "erişim yok",
+        "dns",
+        "bağlantı yok"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Ağ bağlantısını yenile",
+          "description": "Geçici ağ adresi veya kablosuz oturum soruna neden olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Wi-Fi’yi kapatıp aç",
+              "detail": "10 saniye kapalı tut ve aynı ağa yeniden bağlan."
+            },
+            {
+              "title": "Modem durumunu karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazda internet olup olmadığını kontrol et."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.microsoft.com/en-us/support/get-help/windows-troubleshooters"
+      ]
+    },
+    {
+      "id": "computer-app-crash",
+      "deviceType": "computer",
+      "category": "software",
+      "title": "Program açılmıyor veya sürekli kapanıyor",
+      "keywords": [
+        "program açılmıyor",
+        "uygulama açılmıyor",
+        "çöküyor",
+        "hata veriyor",
+        "kapanıyor"
+      ],
+      "confidence": 79,
+      "solutions": [
+        {
+          "title": "Uygulamayı temiz biçimde yeniden başlat",
+          "description": "Arka planda takılı kalan işlem yeni açılışı engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Görev Yöneticisi veya Zorla Çık ekranından işlemi sonlandır."
+            },
+            {
+              "title": "Güncelleme kontrolü yap",
+              "detail": "Uygulamanın resmi güncellemesini ve işletim sistemi güncellemelerini kontrol et."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "computer-storage-full",
+      "deviceType": "computer",
+      "category": "storage",
+      "title": "Disk dolu veya alan kalmadı",
+      "keywords": [
+        "disk dolu",
+        "alan kalmadı",
+        "depolama dolu",
+        "yer yok",
+        "storage full"
+      ],
+      "confidence": 92,
+      "solutions": [
+        {
+          "title": "Güvenli alan temizliği yap",
+          "description": "Geçici dosyalar ve indirilen büyük dosyalar alanı doldurmuş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "Sistem ayarlarından en çok alan kullanan kategorileri görüntüle."
+            },
+            {
+              "title": "Yalnızca tanıdığın dosyaları kaldır",
+              "detail": "Çöp kutusu ve gereksiz indirmeleri temizle; sistem klasörlerini elle silme."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "mobile-not-charging",
+      "deviceType": "mobile",
+      "category": "power",
+      "title": "Telefon veya tablet şarj olmuyor",
+      "keywords": [
+        "şarj olmuyor",
+        "sarj almiyor",
+        "kablo takılı",
+        "şarj kesiliyor",
+        "charging"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Kablo, adaptör ve portu güvenle kontrol et",
+          "description": "Sorun çoğunlukla güç kaynağı veya gevşek bağlantıdan kaynaklanır.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Farklı priz ve uyumlu kablo dene",
+              "detail": "Hasarlı görünen kabloyu kullanma; mümkünse üretici onaylı adaptör kullan."
+            },
+            {
+              "title": "Şarj portunu görsel olarak kontrol et",
+              "detail": "Cihaz kapalıyken gevşek tüy veya nem uyarısı olup olmadığına bak; metal cisim sokma."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Cihaz aşırı ısınıyor, şişmiş veya koku çıkarıyorsa şarja takma ve servise başvur.",
+      "sources": [
+        "https://support.apple.com/iphone"
+      ]
+    },
+    {
+      "id": "mobile-battery-drain",
+      "deviceType": "mobile",
+      "category": "battery",
+      "title": "Telefonun şarjı çok hızlı bitiyor",
+      "keywords": [
+        "şarj hızlı bitiyor",
+        "pil çabuk bitiyor",
+        "battery drain",
+        "batarya hızlı",
+        "şarj dayanmıyor"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Yüksek pil kullanan uygulamayı bul",
+          "description": "Arka planda çalışan uygulamalar pil tüketimini artırabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Pil kullanım ekranını aç",
+              "detail": "Ayarlar → Pil bölümünde en çok tüketen uygulamaları incele."
+            },
+            {
+              "title": "Gereksiz arka plan kullanımını kısıtla",
+              "detail": "Yüksek tüketen ve kullanmadığın uygulamaların arka plan erişimini azalt."
+            }
+          ]
+        },
+        {
+          "title": "Ekran ve bağlantı tüketimini azalt",
+          "description": "Yüksek parlaklık ve sürekli bağlantılar pili hızla tüketebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Parlaklığı ve ekran süresini azalt",
+              "detail": "Otomatik parlaklığı aç ve ekran kapanma süresini kısalt."
+            },
+            {
+              "title": "Cihazı güncelle ve yeniden başlat",
+              "detail": "Sistem ve uygulama güncellemelerini tamamladıktan sonra yeniden başlat."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.google.com/android/answer/7664692?hl=en"
+      ]
+    },
+    {
+      "id": "mobile-overheating",
+      "deviceType": "mobile",
+      "category": "thermal",
+      "title": "Telefon aşırı ısınıyor",
+      "keywords": [
+        "telefon ısınıyor",
+        "aşırı sıcak",
+        "overheat",
+        "ısınma uyarısı",
+        "çok ısınıyor"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Cihazı yükten çıkarıp soğut",
+          "description": "Yoğun kullanım, şarj veya doğrudan güneş sıcaklığı artırabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Şarjdan çıkar ve uygulamaları kapat",
+              "detail": "Cihazı kapat; kılıfı çıkar ve gölgede oda sıcaklığında beklet."
+            },
+            {
+              "title": "Kendiliğinden soğumasını bekle",
+              "detail": "Buzdolabı, buz veya su kullanma; tamamen soğumadan yeniden şarj etme."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Şişme, duman veya keskin koku varsa cihazdan uzaklaş ve acil teknik destek al.",
+      "sources": [
+        "https://support.google.com/android/answer/7664692?hl=en"
+      ]
+    },
+    {
+      "id": "mobile-touch",
+      "deviceType": "mobile",
+      "category": "display",
+      "title": "Dokunmatik ekran çalışmıyor",
+      "keywords": [
+        "dokunmatik çalışmıyor",
+        "ekran basmıyor",
+        "touch",
+        "dokunma algılamıyor",
+        "hayalet dokunma"
+      ],
+      "confidence": 82,
+      "solutions": [
+        {
+          "title": "Ekran yüzeyini ve oturumu kontrol et",
+          "description": "Nem, kir veya takılı bir uygulama dokunmayı etkileyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Ekranı kurut ve aksesuarları çıkar",
+              "detail": "Ellerini ve ekranı kurula; uyumsuz ekran koruyucuyu geçici olarak çıkar."
+            },
+            {
+              "title": "Cihazı zorla yeniden başlat",
+              "detail": "Modelin resmi tuş kombinasyonunu kullan; fabrika ayarına dönme."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.apple.com/iphone"
+      ]
+    },
+    {
+      "id": "mobile-no-cellular",
+      "deviceType": "mobile",
+      "category": "network",
+      "title": "Telefon şebekeye bağlanmıyor",
+      "keywords": [
+        "şebeke yok",
+        "servis yok",
+        "sim yok",
+        "mobil veri yok",
+        "arama yapamıyorum"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Hücresel bağlantıyı yenile",
+          "description": "Geçici operatör kaydı veya SIM teması bağlantıyı kesebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Uçak modunu 10 saniye aç",
+              "detail": "Ardından kapatıp şebekenin yeniden gelmesini bekle."
+            },
+            {
+              "title": "SIM ve operatör durumunu kontrol et",
+              "detail": "SIM uyarısı varsa cihazı kapatıp SIM’i yeniden yerleştir; genel kesinti için operatöre bak."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.apple.com/iphone"
+      ]
+    },
+    {
+      "id": "mobile-wifi",
+      "deviceType": "mobile",
+      "category": "network",
+      "title": "Telefon Wi-Fi ağına bağlanmıyor",
+      "keywords": [
+        "telefon wifi bağlanmıyor",
+        "wifi şifre",
+        "ip alınıyor",
+        "internet yok",
+        "ağ kaydedildi"
+      ],
+      "confidence": 85,
+      "solutions": [
+        {
+          "title": "Kablosuz bağlantıyı yeniden kur",
+          "description": "Kayıtlı ağ ayarı bozulmuş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Ağı unut",
+              "detail": "Wi-Fi ayarlarında ağ ayrıntısını aç ve Bu ağı unut seçeneğini kullan."
+            },
+            {
+              "title": "Şifreyi yeniden girerek bağlan",
+              "detail": "Modeme yakın konumda doğru şifreyle tekrar bağlan."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "mobile-app-crash",
+      "deviceType": "mobile",
+      "category": "software",
+      "title": "Mobil uygulama açılmıyor veya çöküyor",
+      "keywords": [
+        "uygulama çöküyor",
+        "app açılmıyor",
+        "uygulama durduruldu",
+        "kapanıyor",
+        "donuyor"
+      ],
+      "confidence": 82,
+      "solutions": [
+        {
+          "title": "Uygulamayı ve cihazı yenile",
+          "description": "Geçici uygulama oturumu bozulmuş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar ekranından uygulamayı kaldır."
+            },
+            {
+              "title": "Uygulamayı güncelle ve cihazı yeniden başlat",
+              "detail": "Resmi mağazadan güncellemeyi yükle, ardından cihazı yeniden başlat."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.google.com/android/answer/7667018?hl=en"
+      ]
+    },
+    {
+      "id": "mobile-camera",
+      "deviceType": "mobile",
+      "category": "camera",
+      "title": "Telefon kamerası açılmıyor veya bulanık",
+      "keywords": [
+        "kamera açılmıyor",
+        "kamera bulanık",
+        "camera failed",
+        "kamera siyah",
+        "odaklamıyor"
+      ],
+      "confidence": 80,
+      "solutions": [
+        {
+          "title": "Kamera oturumunu ve lensi kontrol et",
+          "description": "Başka uygulama kamerayı kullanıyor veya lens kirli olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Lensi yumuşak bezle temizle",
+              "detail": "Kılıfın lensi kapatmadığını doğrula; sıvı temizleyiciyi doğrudan püskürtme."
+            },
+            {
+              "title": "Kamera kullanan uygulamaları kapat",
+              "detail": "Görüntülü görüşme uygulamalarını kapatıp kamera uygulamasını yeniden aç."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "router-no-internet",
+      "deviceType": "network",
+      "category": "internet",
+      "title": "Modem veya router internete çıkmıyor",
+      "keywords": [
+        "modem internet yok",
+        "router internet yok",
+        "wan yok",
+        "kırmızı internet",
+        "bağlı internet yok"
+      ],
+      "confidence": 90,
+      "solutions": [
+        {
+          "title": "Kabloları ve servis durumunu ayır",
+          "description": "Önce sorunun modem, router veya servis sağlayıcı tarafında olduğunu belirle.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "WAN ve güç kablolarını kontrol et",
+              "detail": "İnternet kablosunun WAN portuna tam oturduğunu doğrula."
+            },
+            {
+              "title": "Modem ve routerı sırayla yeniden başlat",
+              "detail": "İkisini kapat; modemi açıp ışıklar sabitlenince routerı aç."
+            }
+          ]
+        },
+        {
+          "title": "Doğrudan modem testini yap",
+          "description": "Router dışındaki bağlantıyı test etmek sorunun yerini gösterir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Mümkünse kablolu bağlantı dene",
+              "detail": "Bilgisayarı Ethernet ile modeme bağlayıp interneti kontrol et."
+            },
+            {
+              "title": "Servis sağlayıcıyı kontrol et",
+              "detail": "Modemde de internet yoksa bölgesel arıza için sağlayıcınla görüş."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.tp-link.com/us/support/faq/1105/"
+      ]
+    },
+    {
+      "id": "router-weak-wifi",
+      "deviceType": "network",
+      "category": "wifi",
+      "title": "Wi-Fi çekmiyor veya çok yavaş",
+      "keywords": [
+        "wifi çekmiyor",
+        "sinyal zayıf",
+        "internet yavaş",
+        "kopuyor",
+        "menzil"
+      ],
+      "confidence": 85,
+      "solutions": [
+        {
+          "title": "Router konumunu iyileştir",
+          "description": "Duvarlar, metal yüzeyler ve kapalı dolaplar sinyali zayıflatabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Routerı açık ve merkezi yere al",
+              "detail": "Yerden yükseğe, metal eşya ve mikrodalgadan uzağa yerleştir."
+            },
+            {
+              "title": "Yakından hız testi yap",
+              "detail": "Routera birkaç metre mesafede test edip uzak konumla karşılaştır."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.tp-link.com/in/support/faq/2237/"
+      ]
+    },
+    {
+      "id": "router-intermittent",
+      "deviceType": "network",
+      "category": "stability",
+      "title": "İnternet sık sık kopuyor",
+      "keywords": [
+        "internet kopuyor",
+        "bağlantı kesiliyor",
+        "wifi gidip geliyor",
+        "unstable",
+        "dsl kopuyor"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Kopmanın kaynağını ayır",
+          "description": "Kablolu ve kablosuz cihazları karşılaştırmak sorunun yerini gösterir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Ethernet ile kısa test yap",
+              "detail": "Kablolu bağlantı da kopuyorsa modem veya servis hattını kontrol et."
+            },
+            {
+              "title": "WAN kablosunu ve ısınmayı kontrol et",
+              "detail": "Kabloyu yeniden tak; routerın havalandırmasının açık olduğundan emin ol."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.tp-link.com/in/support/faq/2237/"
+      ]
+    },
+    {
+      "id": "router-red-light",
+      "deviceType": "network",
+      "category": "status",
+      "title": "Modemde kırmızı internet veya LOS ışığı yanıyor",
+      "keywords": [
+        "los kırmızı",
+        "internet ışığı kırmızı",
+        "dsl yanmıyor",
+        "pon kırmızı",
+        "modem kırmızı"
+      ],
+      "confidence": 92,
+      "solutions": [
+        {
+          "title": "Hat bağlantısını güvenle kontrol et",
+          "description": "LOS veya DSL ışığı fiziksel hat/sinyal sorunu gösterebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Fiber veya DSL kablosuna dokunmadan gözle kontrol et",
+              "detail": "Ezilme, kopma veya gevşek uç görürsen zorlamadan bırak."
+            },
+            {
+              "title": "Servis sağlayıcıya arıza kaydı aç",
+              "detail": "Işık yeniden başlatma sonrası kırmızı kalıyorsa hat ölçümü iste."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Fiber ucuna bakma ve kabloyu sökme; lazer ışığı göz için tehlikeli olabilir.",
+      "sources": []
+    },
+    {
+      "id": "printer-offline",
+      "deviceType": "printer",
+      "category": "connection",
+      "title": "Yazıcı çevrimdışı görünüyor",
+      "keywords": [
+        "yazıcı çevrimdışı",
+        "printer offline",
+        "yazdırmıyor",
+        "kuyrukta kaldı",
+        "bağlı değil"
+      ],
+      "confidence": 90,
+      "solutions": [
+        {
+          "title": "Yazıcı bağlantısını ve kuyruğu yenile",
+          "description": "Yanlış yazıcı seçimi veya takılı iş kuyruğu yazdırmayı engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Yazıcının açık ve aynı ağda olduğunu doğrula",
+              "detail": "Ekrandaki hata ışıklarını ve Wi-Fi simgesini kontrol et."
+            },
+            {
+              "title": "Bekleyen işi iptal edip test sayfası gönder",
+              "detail": "Yazdırma kuyruğunu temizle ve doğru yazıcıyı varsayılan yap."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.hp.com/us-en/printer"
+      ]
+    },
+    {
+      "id": "printer-paper-jam",
+      "deviceType": "printer",
+      "category": "paper",
+      "title": "Yazıcıda kağıt sıkıştı",
+      "keywords": [
+        "kağıt sıkıştı",
+        "paper jam",
+        "kağıt kaldı",
+        "jam error",
+        "kağıt çıkmıyor"
+      ],
+      "confidence": 94,
+      "solutions": [
+        {
+          "title": "Sıkışan kağıdı güvenli biçimde çıkar",
+          "description": "Yırtık parçalar sensörü kapatabilir ve yeni sıkışmalara yol açabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Yazıcıyı kapat ve fişten çek",
+              "detail": "Hareketli parçalar tamamen durana kadar bekle."
+            },
+            {
+              "title": "Görünen kağıdı iki elle düz çek",
+              "detail": "Keskin alet kullanma; yırtılırsa görünen tüm parçaları dikkatle çıkar."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.hp.com/us-en/document/ish_2041450-1757203-16"
+      ]
+    },
+    {
+      "id": "printer-no-feed",
+      "deviceType": "printer",
+      "category": "paper",
+      "title": "Yazıcı kağıdı almıyor",
+      "keywords": [
+        "kağıt almıyor",
+        "paper feed",
+        "kağıt çekmiyor",
+        "out of paper",
+        "tepsi dolu"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Kağıt tepsisini yeniden hazırla",
+          "description": "Yanlış hizalanmış veya nemli kağıt beslemeyi engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Kağıdı çıkarıp düzleştir",
+              "detail": "Kıvrılmış veya nemli sayfaları ayır ve uygun türde kağıt kullan."
+            },
+            {
+              "title": "Kılavuzları kağıda yasla",
+              "detail": "Tepsiyi aşırı doldurmadan genişlik kılavuzlarını gevşekçe hizala."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.hp.com/us-en/printer"
+      ]
+    },
+    {
+      "id": "printer-quality",
+      "deviceType": "printer",
+      "category": "quality",
+      "title": "Baskı soluk, çizgili veya lekeli",
+      "keywords": [
+        "soluk baskı",
+        "çizgili baskı",
+        "lekeli",
+        "renk bozuk",
+        "print quality"
+      ],
+      "confidence": 83,
+      "solutions": [
+        {
+          "title": "Sarf malzemesi ve bakım testini çalıştır",
+          "description": "Düşük mürekkep/toner veya tıkalı kafa kaliteyi bozabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Kartuş seviyesini ve koruma bantlarını kontrol et",
+              "detail": "Yeni kartuşta taşıma bandı kalmadığını doğrula."
+            },
+            {
+              "title": "Yerleşik kalite veya kafa temizleme testini çalıştır",
+              "detail": "Yazıcının bakım menüsünü kullan; işlemi gereksiz yere art arda tekrarlama."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.hp.com/us-en/printer"
+      ]
+    },
+    {
+      "id": "printer-blank-pages",
+      "deviceType": "printer",
+      "category": "quality",
+      "title": "Yazıcı boş sayfa çıkarıyor",
+      "keywords": [
+        "boş sayfa",
+        "blank page",
+        "beyaz kağıt",
+        "mürekkep gelmiyor"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Kartuş ve belgeyi kontrol et",
+          "description": "Boş belge sayfası veya kartuş havalandırması baskıyı engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Baskı önizlemesini kontrol et",
+              "detail": "Belgede boş sayfa olmadığını ve doğru sayfaların seçildiğini doğrula."
+            },
+            {
+              "title": "Kartuşu üretici talimatına göre yeniden tak",
+              "detail": "Koruma bandı ve seviye uyarısını kontrol et; elektronik temaslara dokunma."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.hp.com/us-en/printer"
+      ]
+    },
+    {
+      "id": "tv-no-power",
+      "deviceType": "tv",
+      "category": "power",
+      "title": "TV veya monitör açılmıyor",
+      "keywords": [
+        "tv açılmıyor",
+        "monitör açılmıyor",
+        "standby yok",
+        "güç ışığı yok"
+      ],
+      "confidence": 83,
+      "solutions": [
+        {
+          "title": "Harici güç kontrollerini yap",
+          "description": "Priz, uzatma kablosu veya kumanda pili soruna neden olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Prizi başka cihazla test et",
+              "detail": "TV’yi doğrudan çalışan bir duvar prizine tak."
+            },
+            {
+              "title": "Cihaz üzerindeki fiziksel güç düğmesini dene",
+              "detail": "Kumanda yerine TV/monitör üzerindeki düğmeyi kullan."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Yanık kokusu veya çıtırtı varsa fişi çek ve servise başvur.",
+      "sources": [
+        "https://www.lg.com/us/support/help-library/lg-tv-troubleshooting-an-lg-tv-with-no-picture-and-no-sound--20154765216944"
+      ]
+    },
+    {
+      "id": "tv-sound-no-picture",
+      "deviceType": "tv",
+      "category": "display",
+      "title": "TV’de ses var ama görüntü yok",
+      "keywords": [
+        "ses var görüntü yok",
+        "ekran siyah",
+        "tv karanlık",
+        "picture yok"
+      ],
+      "confidence": 90,
+      "solutions": [
+        {
+          "title": "Görüntü kaynağını ayır",
+          "description": "Harici cihaz veya HDMI kablosu video sinyali göndermiyor olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Ses seviyesi göstergesini aç",
+              "detail": "Gösterge görünüyorsa panel çalışıyor ve sorun kaynak/kablo tarafında olabilir."
+            },
+            {
+              "title": "HDMI kablosunu ve girişi değiştir",
+              "detail": "Cihazları kapat, kabloyu yeniden tak ve başka HDMI girişi dene."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.lg.com/us/support/help-library/lg-tv-troubleshooting-an-lg-tv-with-no-picture-and-no-sound--20154765216944"
+      ]
+    },
+    {
+      "id": "tv-no-signal",
+      "deviceType": "tv",
+      "category": "input",
+      "title": "TV veya monitörde sinyal yok",
+      "keywords": [
+        "sinyal yok",
+        "no signal",
+        "hdmi görmüyor",
+        "kaynak yok",
+        "ekran bağlantı"
+      ],
+      "confidence": 92,
+      "solutions": [
+        {
+          "title": "Doğru giriş ve kaynak cihazını kontrol et",
+          "description": "Ekran yanlış HDMI girişinde olabilir veya kaynak cihazı uyuyor olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Kaynak/Input menüsünü aç",
+              "detail": "Kablonun bağlı olduğu HDMI numarasını seç."
+            },
+            {
+              "title": "Kaynak cihazı yeniden başlat",
+              "detail": "Konsol, kutu veya bilgisayarı kapatıp yeniden aç; mümkünse başka kablo dene."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "tv-no-sound",
+      "deviceType": "tv",
+      "category": "audio",
+      "title": "TV’de görüntü var ama ses yok",
+      "keywords": [
+        "görüntü var ses yok",
+        "tv ses gelmiyor",
+        "mute",
+        "hoparlör yok"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Ses çıkışı ve sessizi kontrol et",
+          "description": "Ses harici cihaza veya Bluetooth çıkışına yönlenmiş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Sessizi kapat ve ses düzeyini artır",
+              "detail": "Kumandadaki Mute tuşunu ve ekrandaki ses göstergesini kontrol et."
+            },
+            {
+              "title": "Ses çıkışını TV hoparlörü yap",
+              "detail": "Ses ayarlarında dahili hoparlörü seç."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "tv-remote",
+      "deviceType": "tv",
+      "category": "input",
+      "title": "TV kumandası çalışmıyor",
+      "keywords": [
+        "kumanda çalışmıyor",
+        "remote",
+        "tuş basmıyor",
+        "tv kumanda"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Kumandanın güç ve görüş hattını kontrol et",
+          "description": "Bitmiş pil veya engellenmiş sensör komutu durdurabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Pilleri doğru yönde yenile",
+              "detail": "Yeni ve aynı tip iki pil kullan."
+            },
+            {
+              "title": "TV sensörünün önünü aç",
+              "detail": "Sensör önündeki eşyaları kaldır ve yakından tekrar dene."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "audio-not-pairing",
+      "deviceType": "audio",
+      "category": "bluetooth",
+      "title": "Kulaklık veya hoparlör Bluetooth ile eşleşmiyor",
+      "keywords": [
+        "eşleşmiyor",
+        "bluetooth bulmuyor",
+        "kulaklık bağlanmıyor",
+        "hoparlör bağlanmıyor",
+        "pairing"
+      ],
+      "confidence": 87,
+      "solutions": [
+        {
+          "title": "Eşleştirme durumunu sıfırla",
+          "description": "Ses cihazı başka bir telefona bağlı kaldıysa yeni cihazda görünmeyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Yakındaki eski bağlantılarda Bluetooth’u kapat",
+              "detail": "Daha önce bağlanan telefon veya bilgisayarı geçici olarak ayır."
+            },
+            {
+              "title": "Ses cihazını eşleştirme moduna al",
+              "detail": "Modelin resmi düğme kombinasyonunu kullanıp yeni cihaz listesinden seç."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "audio-one-side",
+      "deviceType": "audio",
+      "category": "channel",
+      "title": "Kulaklığın tek tarafından ses geliyor",
+      "keywords": [
+        "tek taraf",
+        "sağ kulaklık",
+        "sol kulaklık",
+        "one side",
+        "bir kulaklık çalışmıyor"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Şarjı ve ses dengesini kontrol et",
+          "description": "Bir kulaklığın düşük şarjı veya kanal dengesi tek taraflı sese yol açabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "İki kulaklığı da tam şarj et",
+              "detail": "Temas noktalarını kuru, yumuşak bezle silip kutuda şarj et."
+            },
+            {
+              "title": "Sol/sağ ses dengesini ortala",
+              "detail": "Erişilebilirlik → Ses ayarlarında denge kaydırıcısını ortaya getir."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://support.microsoft.com/en-US/Windows/Hardware/Bluetooth/fix-bluetooth-connected-but-no-sound-issue-on-windows"
+      ]
+    },
+    {
+      "id": "audio-not-charging",
+      "deviceType": "audio",
+      "category": "power",
+      "title": "Kablosuz kulaklık veya hoparlör şarj olmuyor",
+      "keywords": [
+        "kulaklık şarj olmuyor",
+        "hoparlör şarj",
+        "kutu şarj etmiyor",
+        "ışık yanmıyor"
+      ],
+      "confidence": 85,
+      "solutions": [
+        {
+          "title": "Şarj yolunu kontrol et",
+          "description": "Kablo, adaptör veya kirli temas noktaları şarjı kesebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Farklı uyumlu kablo ve düşük riskli güç kaynağı dene",
+              "detail": "Hasarlı kablo kullanma ve üreticinin voltaj şartını aşma."
+            },
+            {
+              "title": "Temas noktalarını kuru bezle temizle",
+              "detail": "Sıvı ve metal cisim kullanmadan görünür kiri al."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "console-no-power",
+      "deviceType": "console",
+      "category": "power",
+      "title": "Oyun konsolu açılmıyor",
+      "keywords": [
+        "ps5 açılmıyor",
+        "xbox açılmıyor",
+        "switch açılmıyor",
+        "konsol güç yok",
+        "ışık yok"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Güç döngüsünü güvenle uygula",
+          "description": "Geçici güç koruması konsolun açılmasını engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Konsolu tamamen kapat ve fişini çek",
+              "detail": "En az 3 dakika bekle; uzatma yerine duvar prizini dene."
+            },
+            {
+              "title": "Yalnızca güç ve görüntü kablosuyla aç",
+              "detail": "USB aksesuarlarını ayırıp fiziksel güç düğmesini kullan."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.playstation.com/en-ph/support/hardware/ps5-ps4-power-indicator-lights/"
+      ]
+    },
+    {
+      "id": "console-controller",
+      "deviceType": "console",
+      "category": "controller",
+      "title": "Oyun kolu bağlanmıyor veya şarj olmuyor",
+      "keywords": [
+        "kol bağlanmıyor",
+        "controller",
+        "gamepad",
+        "dualsense",
+        "joy-con",
+        "kumanda şarj"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Kontrolcüyü kabloyla yeniden eşleştir",
+          "description": "Kayıtlı kablosuz eşleşme veya boş pil bağlantıyı engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Veri aktarabilen USB kablosu bağla",
+              "detail": "Kontrolcüyü doğrudan açık konsola bağla."
+            },
+            {
+              "title": "Eşleştirme düğmesine bas",
+              "detail": "Konsol ve kontrolcüdeki resmi eşleştirme adımını uygula."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.playstation.com/en-us/support/hardware/accessories/",
+        "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22265/p/897/c/715"
+      ]
+    },
+    {
+      "id": "console-overheating",
+      "deviceType": "console",
+      "category": "thermal",
+      "title": "Oyun konsolu ısınıyor veya kapanıyor",
+      "keywords": [
+        "konsol ısınıyor",
+        "ps5 sıcak",
+        "xbox kapanıyor",
+        "overheating",
+        "fan yüksek"
+      ],
+      "confidence": 89,
+      "solutions": [
+        {
+          "title": "Konsolu kapatıp havalandır",
+          "description": "Tıkalı hava yolu cihazın koruma amaçlı kapanmasına yol açabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Konsolu kapat ve fişten çek",
+              "detail": "En az 20 dakika oda sıcaklığında beklet."
+            },
+            {
+              "title": "Açık ve havadar konuma taşı",
+              "detail": "Kapalı dolaptan çıkar; havalandırma deliklerinin çevresini boş bırak."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.playstation.com/en-ph/support/hardware/ps5-ps4-power-indicator-lights/"
+      ]
+    },
+    {
+      "id": "console-no-display",
+      "deviceType": "console",
+      "category": "display",
+      "title": "Konsoldan TV’ye görüntü gelmiyor",
+      "keywords": [
+        "konsol görüntü yok",
+        "ps5 no signal",
+        "xbox hdmi",
+        "switch görüntü",
+        "hdmi sinyal yok"
+      ],
+      "confidence": 87,
+      "solutions": [
+        {
+          "title": "HDMI yolunu kontrol et",
+          "description": "Yanlış giriş veya kablo teması görüntüyü kesebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "TV’de doğru HDMI girişini seç",
+              "detail": "Kablonun takılı olduğu numarayla kaynak seçimini eşleştir."
+            },
+            {
+              "title": "HDMI kablosunu yeniden tak veya değiştir",
+              "detail": "Konsol ve TV kapalıyken kabloyu iki uçtan yeniden bağla."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "smart-device-offline",
+      "deviceType": "smart-home",
+      "category": "network",
+      "title": "Akıllı ev cihazı çevrimdışı görünüyor",
+      "keywords": [
+        "cihaz çevrimdışı",
+        "offline",
+        "akıllı priz bağlanmıyor",
+        "ampul bağlanmıyor",
+        "iot"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Güç ve 2.4 GHz ağını kontrol et",
+          "description": "Birçok akıllı ev cihazı yalnızca 2.4 GHz Wi-Fi ile kurulur.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Cihazın enerjisini ve gösterge ışığını kontrol et",
+              "detail": "Gücü 10 saniye kesip yeniden ver."
+            },
+            {
+              "title": "Telefonu 2.4 GHz ağına bağla",
+              "detail": "Kurulum sırasında VPN ve mobil veriyi geçici olarak kapat."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "smart-camera-offline",
+      "deviceType": "smart-home",
+      "category": "camera",
+      "title": "Güvenlik kamerası çevrimdışı",
+      "keywords": [
+        "kamera offline",
+        "güvenlik kamerası bağlanmıyor",
+        "camera çevrimdışı",
+        "görüntü yok"
+      ],
+      "confidence": 86,
+      "solutions": [
+        {
+          "title": "Yerel güç ve ağ bağlantısını doğrula",
+          "description": "Kamera güç kaybetmiş veya Wi-Fi kimliği değişmiş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Güç adaptörünü ve durum ışığını kontrol et",
+              "detail": "Hasarlı kablo kullanma; cihazı üreticinin adaptörüyle yeniden başlat."
+            },
+            {
+              "title": "Router yakınında bağlantıyı dene",
+              "detail": "Wi-Fi adı/şifresi değiştiyse kamerayı resmi uygulamadan yeniden bağla."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "smart-speaker",
+      "deviceType": "smart-home",
+      "category": "audio",
+      "title": "Akıllı hoparlör yanıt vermiyor",
+      "keywords": [
+        "akıllı hoparlör yanıt vermiyor",
+        "asistan duymuyor",
+        "homepod",
+        "alexa",
+        "google home"
+      ],
+      "confidence": 80,
+      "solutions": [
+        {
+          "title": "Mikrofon ve bağlantıyı kontrol et",
+          "description": "Mikrofon kapalı veya cihaz ağdan düşmüş olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Mikrofon kapatma düğmesini kontrol et",
+              "detail": "Gizlilik düğmesi etkinse kapat."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Gücü 10 saniye kesip yeniden ver ve aynı Wi-Fi ağına bağlı olduğunu doğrula."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "wearable-not-charging",
+      "deviceType": "wearable",
+      "category": "power",
+      "title": "Akıllı saat veya bileklik şarj olmuyor",
+      "keywords": [
+        "saat şarj olmuyor",
+        "bileklik şarj",
+        "watch charging",
+        "şarj pimi"
+      ],
+      "confidence": 87,
+      "solutions": [
+        {
+          "title": "Şarj temasını kontrol et",
+          "description": "Kirli veya yanlış hizalı temas yüzeyi şarjı kesebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Şarj yüzeylerini kuru bezle temizle",
+              "detail": "Saat ve şarj aparatı kuru olmalı; metal cisim kullanma."
+            },
+            {
+              "title": "Şarj aparatını yeniden hizala",
+              "detail": "Üretici adaptörüyle başka bir prizde en az 20 dakika beklet."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "wearable-not-syncing",
+      "deviceType": "wearable",
+      "category": "sync",
+      "title": "Akıllı saat telefonla eşitlenmiyor",
+      "keywords": [
+        "saat eşitlenmiyor",
+        "senkron yok",
+        "sync",
+        "bileklik bağlanmıyor",
+        "veri gelmiyor"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Bluetooth ve uygulama oturumunu yenile",
+          "description": "Telefon bağlantısı veya uygulama izni eşitlemeyi durdurabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Telefon ve saatte Bluetooth’u kontrol et",
+              "detail": "Uçak modunun kapalı olduğundan emin ol."
+            },
+            {
+              "title": "Resmi uygulamayı açıp manuel eşitle",
+              "detail": "Uygulama güncellemesini ve gerekli Bluetooth iznini kontrol et."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "wearable-sensor",
+      "deviceType": "wearable",
+      "category": "sensor",
+      "title": "Akıllı saat ölçümleri hatalı",
+      "keywords": [
+        "nabız yanlış",
+        "adım saymıyor",
+        "sensör yanlış",
+        "heart rate",
+        "uyku ölçmüyor"
+      ],
+      "confidence": 76,
+      "solutions": [
+        {
+          "title": "Sensör temasını iyileştir",
+          "description": "Gevşek kullanım, kir veya dövme sensör okumasını etkileyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Saatin arkasını temiz ve kuru tut",
+              "detail": "Yumuşak, tüy bırakmayan bez kullan."
+            },
+            {
+              "title": "Kayışı rahat ama sabit tak",
+              "detail": "Sensörü bilek kemiğinin biraz üstünde cilde temas edecek şekilde konumlandır."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Bu ölçümleri tıbbi tanı için kullanma; sağlık belirtisi varsa sağlık profesyoneline başvur.",
+      "sources": []
+    },
+    {
+      "id": "washer-not-draining",
+      "deviceType": "appliance",
+      "category": "washer",
+      "title": "Çamaşır makinesi suyu boşaltmıyor",
+      "keywords": [
+        "çamaşır makinesi su boşaltmıyor",
+        "makine içinde su",
+        "drain",
+        "pompa",
+        "sıkma yapmıyor"
+      ],
+      "confidence": 91,
+      "solutions": [
+        {
+          "title": "Programı, yükü ve dış tahliye hortumunu kontrol et",
+          "description": "Dengesiz yük veya kıvrılmış hortum tahliyeyi engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Makineyi durdur ve sıcak suyun soğumasını bekle",
+              "detail": "Fişi çek; kapağı zorlamadan kullanım kılavuzundaki güvenlik adımını izle."
+            },
+            {
+              "title": "Görünen tahliye hortumunda kıvrılma ara",
+              "detail": "Makineyi sökmeden, dış hortumun ezilmediğini kontrol et."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "service",
+      "escalation": "Su sızıntısı, sıcak su veya erişilemeyen filtre varsa işlemi durdurup yetkili servis çağır.",
+      "sources": [
+        "https://www.whirlpool.com/blog/washers-and-dryers/why-is-my-washing-machine-not-draining.html",
+        "https://www.samsung.com/us/support/troubleshoot/TSG10007110/"
+      ]
+    },
+    {
+      "id": "washer-not-spinning",
+      "deviceType": "appliance",
+      "category": "washer",
+      "title": "Çamaşır makinesi sıkma yapmıyor",
+      "keywords": [
+        "sıkma yapmıyor",
+        "tambur dönmüyor",
+        "çamaşır ıslak",
+        "spin yok",
+        "makine sallanıyor"
+      ],
+      "confidence": 87,
+      "solutions": [
+        {
+          "title": "Yük dengesini ve programı düzelt",
+          "description": "Tek ağır parça veya aşırı yük güvenlik nedeniyle sıkmayı durdurabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Makineyi durdurup yükü dengele",
+              "detail": "Çamaşırları eşit dağıt; aşırı doluysa bir kısmını çıkar."
+            },
+            {
+              "title": "Tahliye ve sıkma programını seç",
+              "detail": "Kapağın tam kapandığını doğrulayıp yalnızca tahliye/sıkma programını çalıştır."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": [
+        "https://www.whirlpool.com/blog/washers-and-dryers/why-is-my-washing-machine-not-draining.html"
+      ]
+    },
+    {
+      "id": "fridge-not-cooling",
+      "deviceType": "appliance",
+      "category": "refrigerator",
+      "title": "Buzdolabı yeterince soğutmuyor",
+      "keywords": [
+        "buzdolabı soğutmuyor",
+        "dolap sıcak",
+        "dondurucu eriyor",
+        "fridge not cooling"
+      ],
+      "confidence": 90,
+      "solutions": [
+        {
+          "title": "Ayar, kapı ve hava akışını kontrol et",
+          "description": "Yeni kurulum, açık kapı veya kapalı hava kanalı sıcaklığı yükseltebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Sıcaklık ayarını ve kapı contasını kontrol et",
+              "detail": "Kapının tam kapandığını ve contada boşluk olmadığını doğrula."
+            },
+            {
+              "title": "Hava boşluğu bırak ve 24 saat izle",
+              "detail": "Havalandırma deliklerini yiyecekle kapatma; yeni ayarın oturmasını bekle."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "service",
+      "escalation": "Yiyecekler güvenli sıcaklığın üstünde kaldıysa tüketme; kompresör veya gaz devresini kendin açma.",
+      "sources": [
+        "https://www.whirlpool.com/blog/kitchen/why-is-my-refrigerator-not-cooling.html"
+      ]
+    },
+    {
+      "id": "dishwasher-not-draining",
+      "deviceType": "appliance",
+      "category": "dishwasher",
+      "title": "Bulaşık makinesi suyu boşaltmıyor",
+      "keywords": [
+        "bulaşık makinesi su boşaltmıyor",
+        "tabanda su",
+        "dishwasher drain",
+        "filtre tıkalı"
+      ],
+      "confidence": 91,
+      "solutions": [
+        {
+          "title": "Gücü kesip filtreyi kontrol et",
+          "description": "Kirli filtre veya kıvrılmış dış hortum tahliyeyi engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Makineyi boşalt ve elektriğini kes",
+              "detail": "Fişi çek veya sigortadan kapat; tabandaki su için havlu hazırla."
+            },
+            {
+              "title": "Kılavuza göre erişilebilir filtreyi temizle",
+              "detail": "Filtreyi suyla durula; cam parçası varsa elle müdahale etme."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "service",
+      "escalation": "Kimyasal lavabo açıcı kullanma; pompa veya elektrik bölmesine erişme.",
+      "sources": [
+        "https://producthelp.whirlpool.com/Dishwashers/Product_Info/Dishwasher_Product_Assistance/Dishwasher_Not_Draining"
+      ]
+    },
+    {
+      "id": "dryer-no-heat",
+      "deviceType": "appliance",
+      "category": "dryer",
+      "title": "Kurutma makinesi ısıtmıyor",
+      "keywords": [
+        "kurutma ısıtmıyor",
+        "çamaşır ıslak",
+        "dryer no heat",
+        "kurutma uzun"
+      ],
+      "confidence": 84,
+      "solutions": [
+        {
+          "title": "Program ve hava akışını kontrol et",
+          "description": "Tıkalı tiftik filtresi veya hava kanalı kurutmayı uzatabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Makineyi kapatıp tiftik filtresini temizle",
+              "detail": "Her yükten sonra erişilebilir filtredeki tiftikleri al."
+            },
+            {
+              "title": "Isıtmalı program seçimini doğrula",
+              "detail": "Hava ile kurutma yerine uygun ısı programını seç; dış menfezin kapalı olmadığını kontrol et."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "service",
+      "escalation": "Yanık kokusu, aşırı ısı veya gaz kokusu varsa kullanma; fişi çek ve profesyonel servis çağır.",
+      "sources": []
+    },
+    {
+      "id": "vacuum-low-suction",
+      "deviceType": "appliance",
+      "category": "vacuum",
+      "title": "Elektrikli süpürgenin çekişi azaldı",
+      "keywords": [
+        "süpürge çekmiyor",
+        "çekiş az",
+        "vacuum suction",
+        "başlık dönmüyor",
+        "toz almıyor"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Hazne, filtre ve görünür hava yolunu kontrol et",
+          "description": "Dolu hazne veya tıkalı filtre hava akışını düşürür.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Cihazı kapatıp fişten çek",
+              "detail": "Toz haznesini boşalt ve model kılavuzuna göre filtreyi kontrol et."
+            },
+            {
+              "title": "Görünen hortum ve başlık tıkanıklığını temizle",
+              "detail": "Keskin cisim kullanma; yıkanabilir filtrenin tamamen kurumasını bekle."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "camera-no-power",
+      "deviceType": "camera",
+      "category": "power",
+      "title": "Fotoğraf makinesi açılmıyor",
+      "keywords": [
+        "fotoğraf makinesi açılmıyor",
+        "kamera güç yok",
+        "camera power",
+        "pil tanımıyor"
+      ],
+      "confidence": 82,
+      "solutions": [
+        {
+          "title": "Pil ve kapak kilidini kontrol et",
+          "description": "Boş pil veya tam kapanmayan pil/kart kapağı açılışı engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Pili uyumlu şarj cihazında şarj et",
+              "detail": "Şişmiş veya hasarlı pili kullanma."
+            },
+            {
+              "title": "Pil ve kart kapağını yeniden kapat",
+              "detail": "Pili doğru yönde yerleştir; kapak mandalını zorlamadan kilitle."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "camera-card-error",
+      "deviceType": "camera",
+      "category": "storage",
+      "title": "Kamera hafıza kartı hatası veriyor",
+      "keywords": [
+        "kart hatası",
+        "memory card error",
+        "sd kart kamera",
+        "kart okunmuyor",
+        "card locked"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Kart kilidi ve uyumluluğu kontrol et",
+          "description": "SD kilidi veya desteklenmeyen kapasite yazmayı engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Kamerayı kapatıp kartı çıkar",
+              "detail": "SD kartın yan kilidini açık konuma getir ve kartı yeniden tak."
+            },
+            {
+              "title": "Veriyi yedeklemeden biçimlendirme yapma",
+              "detail": "Kart bilgisayarda okunuyorsa önce fotoğrafları kopyala; sonra kameranın kendi biçimlendirme seçeneğini kullan."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "camera-blurry",
+      "deviceType": "camera",
+      "category": "focus",
+      "title": "Fotoğraflar sürekli bulanık çıkıyor",
+      "keywords": [
+        "fotoğraf bulanık",
+        "odaklamıyor",
+        "blurry",
+        "net değil",
+        "focus"
+      ],
+      "confidence": 82,
+      "solutions": [
+        {
+          "title": "Lens, odak modu ve ışığı kontrol et",
+          "description": "Kirli lens, manuel odak veya düşük ışık bulanıklığa yol açabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Lensi uygun bezle temizle",
+              "detail": "Mikrofiber bez kullan; temizlik sıvısını doğrudan lense sıkma."
+            },
+            {
+              "title": "Otomatik odağı ve sabitlemeyi dene",
+              "detail": "AF modunu seç, yeterli ışıkta sabit tutarak test çekimi yap."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "safe",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "storage-usb-not-recognized",
+      "deviceType": "storage",
+      "category": "connection",
+      "title": "USB bellek veya harici disk görünmüyor",
+      "keywords": [
+        "usb görünmüyor",
+        "disk tanınmıyor",
+        "harici disk yok",
+        "device not recognized",
+        "flash bellek"
+      ],
+      "confidence": 88,
+      "solutions": [
+        {
+          "title": "Bağlantıyı veri kaybetmeden kontrol et",
+          "description": "Port, kablo veya sürücü sorunu aygıtın görünmesini engelleyebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Farklı port ve kablo dene",
+              "detail": "USB çoklayıcı yerine doğrudan bilgisayara bağla."
+            },
+            {
+              "title": "Disk yönetiminde yalnızca görünürlüğü kontrol et",
+              "detail": "Biçimlendirme veya bölüm silme yapma; önemli veri varsa yazmayı durdur."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Disk tıklıyor, düşmüş veya yanık kokuyorsa tekrar çalıştırma; veri kurtarma uzmanına başvur.",
+      "sources": []
+    },
+    {
+      "id": "storage-sd-not-recognized",
+      "deviceType": "storage",
+      "category": "connection",
+      "title": "SD kart okunmuyor",
+      "keywords": [
+        "sd kart okunmuyor",
+        "hafıza kartı görünmüyor",
+        "memory card",
+        "kart biçimlendir"
+      ],
+      "confidence": 87,
+      "solutions": [
+        {
+          "title": "Kart ve okuyucuyu ayırarak test et",
+          "description": "Kart kilidi, adaptör veya okuyucu arızası soruna neden olabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Kartı çıkarıp kilit anahtarını kontrol et",
+              "detail": "Cihaz kapalıyken kartı yeniden yerleştir."
+            },
+            {
+              "title": "Farklı kart okuyucuda salt okunur test yap",
+              "detail": "Veri önemliyse biçimlendirme teklifini reddet ve yeni dosya yazma."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "storage-slow",
+      "deviceType": "storage",
+      "category": "performance",
+      "title": "Harici disk veya USB çok yavaş",
+      "keywords": [
+        "disk yavaş",
+        "usb yavaş",
+        "kopyalama yavaş",
+        "external drive slow",
+        "hız düştü"
+      ],
+      "confidence": 78,
+      "solutions": [
+        {
+          "title": "Port ve disk sağlığını kontrol et",
+          "description": "Yavaş port, kablo veya dolu disk aktarımı düşürebilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Uyumlu yüksek hızlı porta doğrudan bağla",
+              "detail": "Çoklayıcıyı çıkar ve mümkünse üretici kablosunu kullan."
+            },
+            {
+              "title": "Önemli veriyi önce yedekle",
+              "detail": "Ani yavaşlama, bağlantı kopması veya hata varsa yoğun test yapmadan veriyi kopyala."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Adımlar işe yaramazsa modelin resmi servis veya üretici destek kanalına başvur.",
+      "sources": []
+    },
+    {
+      "id": "danger-swollen-battery",
+      "deviceType": "other",
+      "category": "safety",
+      "title": "Batarya şişmiş, duman veya keskin koku var",
+      "keywords": [
+        "batarya şişti",
+        "pil şişti",
+        "duman çıkıyor",
+        "yanık kokusu",
+        "battery swollen",
+        "kasa açıldı"
+      ],
+      "confidence": 99,
+      "solutions": [
+        {
+          "title": "Kullanmayı hemen bırak",
+          "description": "Bu durum yangın ve kimyasal yaralanma riski taşır.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Şarj etme, bastırma veya delme",
+              "detail": "Cihazı yanıcı maddelerden uzak, iyi havalanan güvenli bir alanda bırak."
+            },
+            {
+              "title": "Yerel acil durum ve yetkili servis yönlendirmesini izle",
+              "detail": "Duman veya alev varsa uzaklaş ve yerel acil yardım hattını ara."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "emergency",
+      "escalation": "Cihazı kargolama, ev çöpüne atma veya suya koyma.",
+      "sources": []
+    },
+    {
+      "id": "danger-water-electric",
+      "deviceType": "other",
+      "category": "safety",
+      "title": "Elektrikli cihaza su girdi veya kaçak var",
+      "keywords": [
+        "su girdi",
+        "su döküldü",
+        "elektrik çarpıyor",
+        "kaçak var",
+        "ıslak cihaz"
+      ],
+      "confidence": 98,
+      "solutions": [
+        {
+          "title": "Enerjiyi güvenli noktadan kes",
+          "description": "Islak elektrikli cihaza dokunmak ciddi yaralanmaya yol açabilir.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Güvenliyse sigortadan elektriği kapat",
+              "detail": "Cihaza veya ıslak prize dokunma; çıplak ayakla yaklaşma."
+            },
+            {
+              "title": "Profesyonel yardım çağır",
+              "detail": "Cihazı kurudu sanarak çalıştırma; yetkili servis kontrolü olmadan kullanma."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "emergency",
+      "escalation": "Elektrik çarpması olduysa yerel acil yardım hattını ara.",
+      "sources": []
+    },
+    {
+      "id": "generic-safe-check",
+      "deviceType": "other",
+      "category": "generic",
+      "title": "Genel güvenli cihaz kontrolü",
+      "keywords": [],
+      "confidence": 52,
+      "solutions": [
+        {
+          "title": "Modeli ve belirtiyi güvenli biçimde doğrula",
+          "description": "Eşleşen özel çözüm bulunamadığı için yalnızca düşük riskli dış kontroller gösteriliyor.",
+          "duration": "3 dakika",
+          "steps": [
+            {
+              "title": "Cihazı ve hata mesajını not et",
+              "detail": "Marka, model, gösterge ışığı ve hata kodunu aynen kaydet."
+            },
+            {
+              "title": "Güvenli yeniden başlatma yap",
+              "detail": "Çalışmaları kaydet; cihaz kılavuzuna uygun şekilde kapatıp yeniden aç."
+            }
+          ]
+        }
+      ],
+      "clarifyingQuestions": [
+        "Sorun ne zaman başladı?",
+        "Ekranda bir hata kodu veya uyarı var mı?"
+      ],
+      "safety": "caution",
+      "escalation": "Kapağı açma, güvenlik mühürlerini bozma veya yüksek gerilimli bölümlere müdahale etme.",
+      "sources": []
+    }
+  ],
+  "attempts": []
+}

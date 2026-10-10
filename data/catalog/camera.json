@@ -1,0 +1,5194 @@
+{
+  "schemaVersion": 3,
+  "id": "core-camera",
+  "label": "Fotoğraf / video / drone",
+  "generatedAt": "2026-10-10T13:17:34.581Z",
+  "deviceTypes": [
+    {
+      "id": "camera",
+      "label": "Fotoğraf / video / drone",
+      "subtypes": [
+        {
+          "id": "digital-camera",
+          "label": "Fotoğraf makinesi",
+          "brands": [
+            "Canon",
+            "Sony",
+            "Nikon",
+            "Fujifilm",
+            "Panasonic",
+            "Olympus"
+          ],
+          "models": [
+            "EOS",
+            "Alpha",
+            "Z",
+            "X-T",
+            "Lumix"
+          ]
+        },
+        {
+          "id": "action-camera",
+          "label": "Aksiyon kamerası",
+          "brands": [
+            "GoPro",
+            "DJI",
+            "Insta360"
+          ],
+          "models": [
+            "HERO",
+            "Osmo Action",
+            "X4"
+          ]
+        },
+        {
+          "id": "drone",
+          "label": "Drone",
+          "brands": [
+            "DJI",
+            "Autel",
+            "Parrot"
+          ],
+          "models": [
+            "Mini",
+            "Mavic",
+            "Air",
+            "Avata",
+            "Evo"
+          ]
+        },
+        {
+          "id": "instant-camera",
+          "label": "Anlık baskı kamerası",
+          "brands": [
+            "Fujifilm",
+            "Polaroid",
+            "Kodak",
+            "Canon"
+          ],
+          "models": [
+            "Instax",
+            "Now",
+            "Mini Shot"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "digital-camera-no-power",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "power",
+      "title": "fotoğraf makinesi hiç açılmıyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "fotoğraf makinesi açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "fotoğraf makinesi will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi hiç açılmıyor",
+        "fotoğraf makinesi açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "fotoğraf makinesi will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-power"
+    },
+    {
+      "id": "digital-camera-not-charging",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "battery",
+      "title": "fotoğraf makinesi şarj olmuyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/not-charging"
+    },
+    {
+      "id": "digital-camera-storage-full",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "storage",
+      "title": "fotoğraf makinesi depolama alanı dolu",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "storage",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/storage-full"
+    },
+    {
+      "id": "digital-camera-no-display",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "display",
+      "title": "fotoğraf makinesi görüntü vermiyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-display"
+    },
+    {
+      "id": "digital-camera-sync-failed",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "sync",
+      "title": "fotoğraf makinesi verileri eşitlemiyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/sync-failed"
+    },
+    {
+      "id": "digital-camera-overheating",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "thermal",
+      "title": "fotoğraf makinesi aşırı ısınıyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/overheating"
+    },
+    {
+      "id": "digital-camera-update-failed",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "software",
+      "title": "fotoğraf makinesi güncellenmiyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/update-failed"
+    },
+    {
+      "id": "digital-camera-error-message",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "category": "error",
+      "title": "fotoğraf makinesi hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Canon",
+        "Sony",
+        "Nikon",
+        "Fujifilm",
+        "Panasonic",
+        "Olympus"
+      ],
+      "modelPatterns": [
+        "EOS",
+        "Alpha",
+        "Z",
+        "X-T",
+        "Lumix"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "fotoğraf makinesi hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "digital-camera",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "digital-camera-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "digital-camera-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "digital-camera-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/error-message"
+    },
+    {
+      "id": "action-camera-no-power",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "power",
+      "title": "aksiyon kamerası hiç açılmıyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "aksiyon kamerası açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "aksiyon kamerası will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası hiç açılmıyor",
+        "aksiyon kamerası açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "aksiyon kamerası will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-power"
+    },
+    {
+      "id": "action-camera-not-charging",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "battery",
+      "title": "aksiyon kamerası şarj olmuyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/not-charging"
+    },
+    {
+      "id": "action-camera-storage-full",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "storage",
+      "title": "aksiyon kamerası depolama alanı dolu",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "storage",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/storage-full"
+    },
+    {
+      "id": "action-camera-no-display",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "display",
+      "title": "aksiyon kamerası görüntü vermiyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-display"
+    },
+    {
+      "id": "action-camera-sync-failed",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "sync",
+      "title": "aksiyon kamerası verileri eşitlemiyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/sync-failed"
+    },
+    {
+      "id": "action-camera-overheating",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "thermal",
+      "title": "aksiyon kamerası aşırı ısınıyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/overheating"
+    },
+    {
+      "id": "action-camera-update-failed",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "software",
+      "title": "aksiyon kamerası güncellenmiyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/update-failed"
+    },
+    {
+      "id": "action-camera-error-message",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "category": "error",
+      "title": "aksiyon kamerası hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "GoPro",
+        "DJI",
+        "Insta360"
+      ],
+      "modelPatterns": [
+        "HERO",
+        "Osmo Action",
+        "X4"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "aksiyon kamerası hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "action-camera",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "action-camera-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "action-camera-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "action-camera-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "action-camera-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/error-message"
+    },
+    {
+      "id": "drone-no-power",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "power",
+      "title": "drone hiç açılmıyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "drone açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "drone will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "drone hiç açılmıyor",
+        "drone açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "drone will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "drone-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "drone-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-power"
+    },
+    {
+      "id": "drone-not-charging",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "battery",
+      "title": "drone şarj olmuyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "drone şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "drone-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "drone-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/not-charging"
+    },
+    {
+      "id": "drone-storage-full",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "storage",
+      "title": "drone depolama alanı dolu",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "drone depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "storage",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "drone-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "drone-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/storage-full"
+    },
+    {
+      "id": "drone-no-display",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "display",
+      "title": "drone görüntü vermiyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "drone görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "drone-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "drone-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-display"
+    },
+    {
+      "id": "drone-sync-failed",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "sync",
+      "title": "drone verileri eşitlemiyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "drone verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "drone-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "drone-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/sync-failed"
+    },
+    {
+      "id": "drone-overheating",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "thermal",
+      "title": "drone aşırı ısınıyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "drone aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "drone-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "drone-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/overheating"
+    },
+    {
+      "id": "drone-update-failed",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "software",
+      "title": "drone güncellenmiyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "drone güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "drone-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "drone-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/update-failed"
+    },
+    {
+      "id": "drone-error-message",
+      "deviceType": "camera",
+      "subType": "drone",
+      "category": "error",
+      "title": "drone hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "DJI",
+        "Autel",
+        "Parrot"
+      ],
+      "modelPatterns": [
+        "Mini",
+        "Mavic",
+        "Air",
+        "Avata",
+        "Evo"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "drone hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "drone",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "drone-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drone-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "drone-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "drone-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "DJI Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/error-message"
+    },
+    {
+      "id": "instant-camera-no-power",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "power",
+      "title": "anlık baskı kamerası hiç açılmıyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "anlık baskı kamerası açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "anlık baskı kamerası will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası hiç açılmıyor",
+        "anlık baskı kamerası açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "anlık baskı kamerası will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-power"
+    },
+    {
+      "id": "instant-camera-not-charging",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "battery",
+      "title": "anlık baskı kamerası şarj olmuyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "şarj olmuyor",
+          "pil dolmuyor",
+          "kablo takılı ama şarj yok"
+        ],
+        "en": [
+          "not charging",
+          "battery not charging",
+          "plugged in not charging"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası şarj olmuyor",
+        "şarj olmuyor",
+        "pil dolmuyor",
+        "kablo takılı ama şarj yok",
+        "not charging",
+        "battery not charging",
+        "plugged in not charging"
+      ],
+      "typoVariants": [
+        "sarj olmuyor",
+        "sarj almiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "battery",
+        "power",
+        "charging"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-not-charging-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-not-charging-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "battery",
+                "charging"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-not-charging-safe-check",
+          "title": "Şarj zincirini kontrol et",
+          "description": "Uyumlu kablo, adaptör ve kuru bağlantı noktasıyla sorunun kaynağını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Hasar ve nem kontrolü yap",
+              "detail": "Kablo veya portta hasar, sıvı ya da aşırı ısı varsa şarjı durdur."
+            },
+            {
+              "title": "Uyumlu güç kaynağı dene",
+              "detail": "Üretici onaylı farklı kablo, adaptör ve prizle dene."
+            },
+            {
+              "title": "Cihazı dinlendir",
+              "detail": "Cihazı oda sıcaklığında bekletip normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-not-charging-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/not-charging"
+    },
+    {
+      "id": "instant-camera-storage-full",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "storage",
+      "title": "anlık baskı kamerası depolama alanı dolu",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "storage",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/storage-full"
+    },
+    {
+      "id": "instant-camera-no-display",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "display",
+      "title": "anlık baskı kamerası görüntü vermiyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "görüntü yok",
+          "ekran siyah",
+          "sinyal yok"
+        ],
+        "en": [
+          "no picture",
+          "black screen",
+          "no signal"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası görüntü vermiyor",
+        "görüntü yok",
+        "ekran siyah",
+        "sinyal yok",
+        "no picture",
+        "black screen",
+        "no signal"
+      ],
+      "typoVariants": [
+        "goruntu yok",
+        "siyah ekran"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "display",
+        "video"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-no-display-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-no-display-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "display",
+                "video"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-no-display-safe-check",
+          "title": "Görüntü yolunu kontrol et",
+          "description": "Parlaklık, giriş seçimi ve erişilebilir kablo bağlantısını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve parlaklığı kontrol et",
+              "detail": "Güç göstergesini kontrol et ve parlaklığı görünür seviyeye getir."
+            },
+            {
+              "title": "Doğru girişi seç",
+              "detail": "Bağlı kaynağın kullanıldığı HDMI veya görüntü girişini seç."
+            },
+            {
+              "title": "Kabloyu yeniden bağla",
+              "detail": "Cihazları kapatıp görüntü kablosunun iki ucunu yeniden tak; hasarlı kabloyu kullanma."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-no-display-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/no-display"
+    },
+    {
+      "id": "instant-camera-sync-failed",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "sync",
+      "title": "anlık baskı kamerası verileri eşitlemiyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşitlemiyor",
+          "veri aktarılmıyor",
+          "senkronizasyon bekliyor"
+        ],
+        "en": [
+          "not syncing",
+          "data not transferred",
+          "sync pending"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası verileri eşitlemiyor",
+        "eşitlemiyor",
+        "veri aktarılmıyor",
+        "senkronizasyon bekliyor",
+        "not syncing",
+        "data not transferred",
+        "sync pending"
+      ],
+      "typoVariants": [
+        "esitlemiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "sync",
+        "connection"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-sync-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-sync-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "sync",
+                "connection"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-sync-failed-safe-check",
+          "title": "Eşitleme koşullarını yenile",
+          "description": "Bağlantı, izin ve resmî uygulama durumunu kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bağlantıyı doğrula",
+              "detail": "Bluetooth veya yerel ağ bağlantısının aktif olduğunu kontrol et."
+            },
+            {
+              "title": "İzinleri kontrol et",
+              "detail": "Resmî uygulamanın gerekli yakın cihaz ve arka plan izinlerini doğrula."
+            },
+            {
+              "title": "Uygulamayı yeniden aç",
+              "detail": "Uygulamayı tamamen kapatıp aç ve manuel eşitlemeyi başlat."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-sync-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/sync-failed"
+    },
+    {
+      "id": "instant-camera-overheating",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "thermal",
+      "title": "anlık baskı kamerası aşırı ısınıyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "aşırı ısınıyor",
+          "çok sıcak",
+          "ısı uyarısı"
+        ],
+        "en": [
+          "overheating",
+          "too hot",
+          "temperature warning"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası aşırı ısınıyor",
+        "aşırı ısınıyor",
+        "çok sıcak",
+        "ısı uyarısı",
+        "overheating",
+        "too hot",
+        "temperature warning"
+      ],
+      "typoVariants": [
+        "asiri isiniyor",
+        "cok sicak"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "thermal",
+        "overheat"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-overheating-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-overheating-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "thermal",
+                "overheat"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-overheating-safe-check",
+          "title": "Cihazı güvenle soğut",
+          "description": "Yükü ve çevresel ısıyı azalt; hızlı soğutma veya sıvı kullanma.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kullanımı ve şarjı durdur",
+              "detail": "Cihazı kapat; güvenliyse güç bağlantısını ayır."
+            },
+            {
+              "title": "Hava akışını aç",
+              "detail": "Güneşten ve kumaş yüzeylerden uzak, kuru ve sert bir zeminde beklet."
+            },
+            {
+              "title": "Tam soğuduktan sonra gözlemle",
+              "detail": "Normal sıcaklığa dönmeden yeniden açma veya şarj etme."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-overheating-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "Şişme, duman veya yanık kokusu varsa kullanma; güvenli alana geçip yetkili desteğe başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/overheating"
+    },
+    {
+      "id": "instant-camera-update-failed",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "software",
+      "title": "anlık baskı kamerası güncellenmiyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "güncelleme başarısız",
+          "güncelleme yüklenmiyor",
+          "yazılım güncelleme hatası"
+        ],
+        "en": [
+          "update failed",
+          "software update will not install",
+          "firmware update error"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası güncellenmiyor",
+        "güncelleme başarısız",
+        "güncelleme yüklenmiyor",
+        "yazılım güncelleme hatası",
+        "update failed",
+        "software update will not install",
+        "firmware update error"
+      ],
+      "typoVariants": [
+        "guncellenmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "software",
+        "update"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-update-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-update-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "update"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-update-failed-safe-check",
+          "title": "Güncelleme koşullarını hazırla",
+          "description": "Güç, bağlantı, boş alan ve resmî güncelleme kanalını doğrula.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve interneti sabitle",
+              "detail": "Cihazı yeterli güçte tut ve güvenilir bir ağa bağla."
+            },
+            {
+              "title": "Boş alanı kontrol et",
+              "detail": "Güncelleme için gereken boş alanı üreticinin ayarlar ekranından doğrula."
+            },
+            {
+              "title": "Resmî güncellemeyi yeniden dene",
+              "detail": "Cihazı normal yeniden başlatıp yalnızca resmî güncelleme ekranından tekrar dene."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-update-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/update-failed"
+    },
+    {
+      "id": "instant-camera-error-message",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "category": "error",
+      "title": "anlık baskı kamerası hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Fujifilm",
+        "Polaroid",
+        "Kodak",
+        "Canon"
+      ],
+      "modelPatterns": [
+        "Instax",
+        "Now",
+        "Mini Shot"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "anlık baskı kamerası hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "camera",
+        "instant-camera",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "instant-camera-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "instant-camera-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "instant-camera-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Canon Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "camera/error-message"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "digital-camera-safe-fallback",
+      "deviceType": "camera",
+      "subType": "digital-camera",
+      "title": "Fotoğraf makinesi için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "action-camera-safe-fallback",
+      "deviceType": "camera",
+      "subType": "action-camera",
+      "title": "Aksiyon kamerası için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "drone-safe-fallback",
+      "deviceType": "camera",
+      "subType": "drone",
+      "title": "Drone için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "dji-support",
+          "title": "DJI Destek",
+          "url": "https://www.dji.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "instant-camera-safe-fallback",
+      "deviceType": "camera",
+      "subType": "instant-camera",
+      "title": "Anlık baskı kamerası için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "canon-support",
+          "title": "Canon Destek",
+          "url": "https://www.usa.canon.com/support",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}

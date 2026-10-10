@@ -1,0 +1,2882 @@
+[
+  {
+    "id": "washing-machine-no-power-tr",
+    "problem": "çamaşır makinesi açılmıyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-no-power-en",
+    "problem": "çamaşır makinesi will not turn on Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-no-power",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-cycle-not-starting-tr",
+    "problem": "program başlamıyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-cycle-not-starting-en",
+    "problem": "cycle will not start Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-water-inlet-tr",
+    "problem": "su almıyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-water-inlet",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-water-inlet-en",
+    "problem": "not filling with water Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-water-inlet",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-not-draining-tr",
+    "problem": "suyu boşaltmıyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-not-draining",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-not-draining-en",
+    "problem": "not draining Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-not-draining",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-unusual-noise-tr",
+    "problem": "çok ses yapıyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-unusual-noise-en",
+    "problem": "unusual noise Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-water-leak-tr",
+    "problem": "su sızdırıyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-water-leak",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-water-leak-en",
+    "problem": "water leak Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-water-leak",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-error-message-tr",
+    "problem": "hata kodu veriyor Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-error-message-en",
+    "problem": "shows error code Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-error-message",
+    "language": "en"
+  },
+  {
+    "id": "washing-machine-cleaning-warning-tr",
+    "problem": "filtre uyarısı Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "washing-machine-cleaning-warning-en",
+    "problem": "clean filter warning Çamaşır makinesi",
+    "deviceType": "appliance",
+    "subType": "washing-machine",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "washing-machine-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "dryer-no-power-tr",
+    "problem": "kurutma makinesi açılmıyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-no-power-en",
+    "problem": "kurutma makinesi will not turn on Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-no-power",
+    "language": "en"
+  },
+  {
+    "id": "dryer-cycle-not-starting-tr",
+    "problem": "program başlamıyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-cycle-not-starting-en",
+    "problem": "cycle will not start Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "dryer-not-heating-tr",
+    "problem": "ısıtmıyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-not-heating",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-not-heating-en",
+    "problem": "not heating Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-not-heating",
+    "language": "en"
+  },
+  {
+    "id": "dryer-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-stops-mid-cycle-en",
+    "problem": "stops during use Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "dryer-unusual-noise-tr",
+    "problem": "çok ses yapıyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-unusual-noise-en",
+    "problem": "unusual noise Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "dryer-overheating-tr",
+    "problem": "aşırı ısınıyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-overheating-en",
+    "problem": "overheating Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-overheating",
+    "language": "en"
+  },
+  {
+    "id": "dryer-error-message-tr",
+    "problem": "hata kodu veriyor Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-error-message-en",
+    "problem": "shows error code Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-error-message",
+    "language": "en"
+  },
+  {
+    "id": "dryer-cleaning-warning-tr",
+    "problem": "filtre uyarısı Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "dryer-cleaning-warning-en",
+    "problem": "clean filter warning Kurutma makinesi",
+    "deviceType": "appliance",
+    "subType": "dryer",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dryer-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-no-power-tr",
+    "problem": "bulaşık makinesi açılmıyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-no-power-en",
+    "problem": "bulaşık makinesi will not turn on Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-no-power",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-cycle-not-starting-tr",
+    "problem": "program başlamıyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-cycle-not-starting-en",
+    "problem": "cycle will not start Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-water-inlet-tr",
+    "problem": "su almıyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-water-inlet",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-water-inlet-en",
+    "problem": "not filling with water Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-water-inlet",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-not-draining-tr",
+    "problem": "suyu boşaltmıyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-not-draining",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-not-draining-en",
+    "problem": "not draining Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-not-draining",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-unusual-noise-tr",
+    "problem": "çok ses yapıyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-unusual-noise-en",
+    "problem": "unusual noise Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-water-leak-tr",
+    "problem": "su sızdırıyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-water-leak",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-water-leak-en",
+    "problem": "water leak Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-water-leak",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-error-message-tr",
+    "problem": "hata kodu veriyor Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-error-message-en",
+    "problem": "shows error code Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-error-message",
+    "language": "en"
+  },
+  {
+    "id": "dishwasher-cleaning-warning-tr",
+    "problem": "filtre uyarısı Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "dishwasher-cleaning-warning-en",
+    "problem": "clean filter warning Bulaşık makinesi",
+    "deviceType": "appliance",
+    "subType": "dishwasher",
+    "brandModel": "Arçelik ProSmart",
+    "expectedIssueId": "dishwasher-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-no-power-tr",
+    "problem": "buzdolabı açılmıyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-no-power-en",
+    "problem": "buzdolabı will not turn on Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-no-power",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-cycle-not-starting-tr",
+    "problem": "program başlamıyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-cycle-not-starting-en",
+    "problem": "cycle will not start Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-not-cooling-tr",
+    "problem": "soğutmuyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-not-cooling",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-not-cooling-en",
+    "problem": "not cooling Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-not-cooling",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-unusual-noise-tr",
+    "problem": "çok ses yapıyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-unusual-noise-en",
+    "problem": "unusual noise Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-water-leak-tr",
+    "problem": "su sızdırıyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-water-leak",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-water-leak-en",
+    "problem": "water leak Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-water-leak",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-overheating-tr",
+    "problem": "aşırı ısınıyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-overheating-en",
+    "problem": "overheating Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-overheating",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-error-message-tr",
+    "problem": "hata kodu veriyor Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-error-message-en",
+    "problem": "shows error code Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-error-message",
+    "language": "en"
+  },
+  {
+    "id": "refrigerator-cleaning-warning-tr",
+    "problem": "filtre uyarısı Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "refrigerator-cleaning-warning-en",
+    "problem": "clean filter warning Buzdolabı",
+    "deviceType": "appliance",
+    "subType": "refrigerator",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "refrigerator-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "freezer-no-power-tr",
+    "problem": "derin dondurucu açılmıyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-no-power-en",
+    "problem": "derin dondurucu will not turn on Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-no-power",
+    "language": "en"
+  },
+  {
+    "id": "freezer-cycle-not-starting-tr",
+    "problem": "program başlamıyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-cycle-not-starting-en",
+    "problem": "cycle will not start Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "freezer-not-cooling-tr",
+    "problem": "soğutmuyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-not-cooling",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-not-cooling-en",
+    "problem": "not cooling Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-not-cooling",
+    "language": "en"
+  },
+  {
+    "id": "freezer-unusual-noise-tr",
+    "problem": "çok ses yapıyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-unusual-noise-en",
+    "problem": "unusual noise Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "freezer-water-leak-tr",
+    "problem": "su sızdırıyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-water-leak",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-water-leak-en",
+    "problem": "water leak Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-water-leak",
+    "language": "en"
+  },
+  {
+    "id": "freezer-overheating-tr",
+    "problem": "aşırı ısınıyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-overheating-en",
+    "problem": "overheating Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-overheating",
+    "language": "en"
+  },
+  {
+    "id": "freezer-error-message-tr",
+    "problem": "hata kodu veriyor Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-error-message-en",
+    "problem": "shows error code Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-error-message",
+    "language": "en"
+  },
+  {
+    "id": "freezer-cleaning-warning-tr",
+    "problem": "filtre uyarısı Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "freezer-cleaning-warning-en",
+    "problem": "clean filter warning Derin dondurucu",
+    "deviceType": "appliance",
+    "subType": "freezer",
+    "brandModel": "Arçelik No Frost",
+    "expectedIssueId": "freezer-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "oven-no-power-tr",
+    "problem": "fırın açılmıyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "oven-no-power-en",
+    "problem": "fırın will not turn on Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-no-power",
+    "language": "en"
+  },
+  {
+    "id": "oven-cycle-not-starting-tr",
+    "problem": "program başlamıyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "oven-cycle-not-starting-en",
+    "problem": "cycle will not start Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "oven-not-heating-tr",
+    "problem": "ısıtmıyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-not-heating",
+    "language": "tr"
+  },
+  {
+    "id": "oven-not-heating-en",
+    "problem": "not heating Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-not-heating",
+    "language": "en"
+  },
+  {
+    "id": "oven-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "oven-stops-mid-cycle-en",
+    "problem": "stops during use Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "oven-unusual-noise-tr",
+    "problem": "çok ses yapıyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "oven-unusual-noise-en",
+    "problem": "unusual noise Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "oven-overheating-tr",
+    "problem": "aşırı ısınıyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "oven-overheating-en",
+    "problem": "overheating Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-overheating",
+    "language": "en"
+  },
+  {
+    "id": "oven-error-message-tr",
+    "problem": "hata kodu veriyor Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "oven-error-message-en",
+    "problem": "shows error code Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-error-message",
+    "language": "en"
+  },
+  {
+    "id": "oven-cleaning-warning-tr",
+    "problem": "filtre uyarısı Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "oven-cleaning-warning-en",
+    "problem": "clean filter warning Fırın",
+    "deviceType": "appliance",
+    "subType": "oven",
+    "brandModel": "Arçelik Ankastre",
+    "expectedIssueId": "oven-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "microwave-no-power-tr",
+    "problem": "mikrodalga fırın açılmıyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-no-power-en",
+    "problem": "mikrodalga fırın will not turn on Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-no-power",
+    "language": "en"
+  },
+  {
+    "id": "microwave-cycle-not-starting-tr",
+    "problem": "program başlamıyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-cycle-not-starting-en",
+    "problem": "cycle will not start Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "microwave-not-heating-tr",
+    "problem": "ısıtmıyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-not-heating",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-not-heating-en",
+    "problem": "not heating Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-not-heating",
+    "language": "en"
+  },
+  {
+    "id": "microwave-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-stops-mid-cycle-en",
+    "problem": "stops during use Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "microwave-unusual-noise-tr",
+    "problem": "çok ses yapıyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-unusual-noise-en",
+    "problem": "unusual noise Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "microwave-overheating-tr",
+    "problem": "aşırı ısınıyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-overheating-en",
+    "problem": "overheating Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-overheating",
+    "language": "en"
+  },
+  {
+    "id": "microwave-error-message-tr",
+    "problem": "hata kodu veriyor Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-error-message-en",
+    "problem": "shows error code Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-error-message",
+    "language": "en"
+  },
+  {
+    "id": "microwave-cleaning-warning-tr",
+    "problem": "filtre uyarısı Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "microwave-cleaning-warning-en",
+    "problem": "clean filter warning Mikrodalga fırın",
+    "deviceType": "appliance",
+    "subType": "microwave",
+    "brandModel": "Arçelik Solo",
+    "expectedIssueId": "microwave-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-no-power-tr",
+    "problem": "klima açılmıyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-no-power-en",
+    "problem": "klima will not turn on Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-no-power",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-cycle-not-starting-tr",
+    "problem": "program başlamıyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-cycle-not-starting-en",
+    "problem": "cycle will not start Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-not-cooling-tr",
+    "problem": "soğutmuyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-not-cooling",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-not-cooling-en",
+    "problem": "not cooling Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-not-cooling",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-unusual-noise-tr",
+    "problem": "çok ses yapıyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-unusual-noise-en",
+    "problem": "unusual noise Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-water-leak-tr",
+    "problem": "su sızdırıyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-water-leak",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-water-leak-en",
+    "problem": "water leak Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-water-leak",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-overheating-tr",
+    "problem": "aşırı ısınıyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-overheating-en",
+    "problem": "overheating Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-overheating",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-error-message-tr",
+    "problem": "hata kodu veriyor Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-error-message-en",
+    "problem": "shows error code Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-error-message",
+    "language": "en"
+  },
+  {
+    "id": "air-conditioner-cleaning-warning-tr",
+    "problem": "filtre uyarısı Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "air-conditioner-cleaning-warning-en",
+    "problem": "clean filter warning Klima",
+    "deviceType": "appliance",
+    "subType": "air-conditioner",
+    "brandModel": "Arçelik Inverter",
+    "expectedIssueId": "air-conditioner-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-no-power-tr",
+    "problem": "kahve makinesi açılmıyor Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-no-power-en",
+    "problem": "kahve makinesi will not turn on Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-no-power",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-cycle-not-starting-tr",
+    "problem": "program başlamıyor Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-cycle-not-starting-en",
+    "problem": "cycle will not start Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-slow-performance-tr",
+    "problem": "çok yavaş Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-slow-performance",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-slow-performance-en",
+    "problem": "very slow Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-slow-performance",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-stops-mid-cycle-en",
+    "problem": "stops during use Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-unusual-noise-tr",
+    "problem": "çok ses yapıyor Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-unusual-noise-en",
+    "problem": "unusual noise Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-overheating-tr",
+    "problem": "aşırı ısınıyor Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-overheating-en",
+    "problem": "overheating Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-overheating",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-error-message-tr",
+    "problem": "hata kodu veriyor Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-error-message-en",
+    "problem": "shows error code Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-error-message",
+    "language": "en"
+  },
+  {
+    "id": "coffee-machine-cleaning-warning-tr",
+    "problem": "filtre uyarısı Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "coffee-machine-cleaning-warning-en",
+    "problem": "clean filter warning Kahve makinesi",
+    "deviceType": "appliance",
+    "subType": "coffee-machine",
+    "brandModel": "Arçelik Telve",
+    "expectedIssueId": "coffee-machine-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-no-power-tr",
+    "problem": "elektrikli süpürge açılmıyor Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-no-power-en",
+    "problem": "elektrikli süpürge will not turn on Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-no-power",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-cycle-not-starting-tr",
+    "problem": "program başlamıyor Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-cycle-not-starting-en",
+    "problem": "cycle will not start Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-slow-performance-tr",
+    "problem": "çok yavaş Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-slow-performance",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-slow-performance-en",
+    "problem": "very slow Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-slow-performance",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-stops-mid-cycle-en",
+    "problem": "stops during use Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-unusual-noise-tr",
+    "problem": "çok ses yapıyor Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-unusual-noise-en",
+    "problem": "unusual noise Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-overheating-tr",
+    "problem": "aşırı ısınıyor Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-overheating-en",
+    "problem": "overheating Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-overheating",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-error-message-tr",
+    "problem": "hata kodu veriyor Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-error-message-en",
+    "problem": "shows error code Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-error-message",
+    "language": "en"
+  },
+  {
+    "id": "vacuum-cleaner-cleaning-warning-tr",
+    "problem": "filtre uyarısı Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "vacuum-cleaner-cleaning-warning-en",
+    "problem": "clean filter warning Elektrikli süpürge",
+    "deviceType": "appliance",
+    "subType": "vacuum-cleaner",
+    "brandModel": "Arçelik PowerPro",
+    "expectedIssueId": "vacuum-cleaner-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-no-power-tr",
+    "problem": "hava temizleyici açılmıyor Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-no-power-en",
+    "problem": "hava temizleyici will not turn on Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-no-power",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-cycle-not-starting-tr",
+    "problem": "program başlamıyor Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-cycle-not-starting-en",
+    "problem": "cycle will not start Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-slow-performance-tr",
+    "problem": "çok yavaş Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-slow-performance",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-slow-performance-en",
+    "problem": "very slow Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-slow-performance",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-stops-mid-cycle-en",
+    "problem": "stops during use Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-unusual-noise-tr",
+    "problem": "çok ses yapıyor Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-unusual-noise-en",
+    "problem": "unusual noise Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-overheating-tr",
+    "problem": "aşırı ısınıyor Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-overheating-en",
+    "problem": "overheating Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-overheating",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-error-message-tr",
+    "problem": "hata kodu veriyor Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-error-message-en",
+    "problem": "shows error code Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-error-message",
+    "language": "en"
+  },
+  {
+    "id": "air-purifier-cleaning-warning-tr",
+    "problem": "filtre uyarısı Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "air-purifier-cleaning-warning-en",
+    "problem": "clean filter warning Hava temizleyici",
+    "deviceType": "appliance",
+    "subType": "air-purifier",
+    "brandModel": "Philips Pure Cool",
+    "expectedIssueId": "air-purifier-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "iron-no-power-tr",
+    "problem": "ütü açılmıyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "iron-no-power-en",
+    "problem": "ütü will not turn on Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-no-power",
+    "language": "en"
+  },
+  {
+    "id": "iron-cycle-not-starting-tr",
+    "problem": "program başlamıyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "iron-cycle-not-starting-en",
+    "problem": "cycle will not start Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "iron-not-heating-tr",
+    "problem": "ısıtmıyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-not-heating",
+    "language": "tr"
+  },
+  {
+    "id": "iron-not-heating-en",
+    "problem": "not heating Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-not-heating",
+    "language": "en"
+  },
+  {
+    "id": "iron-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "iron-stops-mid-cycle-en",
+    "problem": "stops during use Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "iron-unusual-noise-tr",
+    "problem": "çok ses yapıyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "iron-unusual-noise-en",
+    "problem": "unusual noise Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "iron-overheating-tr",
+    "problem": "aşırı ısınıyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "iron-overheating-en",
+    "problem": "overheating Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-overheating",
+    "language": "en"
+  },
+  {
+    "id": "iron-error-message-tr",
+    "problem": "hata kodu veriyor Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "iron-error-message-en",
+    "problem": "shows error code Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-error-message",
+    "language": "en"
+  },
+  {
+    "id": "iron-cleaning-warning-tr",
+    "problem": "filtre uyarısı Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "iron-cleaning-warning-en",
+    "problem": "clean filter warning Ütü",
+    "deviceType": "appliance",
+    "subType": "iron",
+    "brandModel": "Philips PerfectCare",
+    "expectedIssueId": "iron-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "kettle-no-power-tr",
+    "problem": "su ısıtıcı açılmıyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-no-power-en",
+    "problem": "su ısıtıcı will not turn on Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-no-power",
+    "language": "en"
+  },
+  {
+    "id": "kettle-cycle-not-starting-tr",
+    "problem": "program başlamıyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-cycle-not-starting-en",
+    "problem": "cycle will not start Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "kettle-not-heating-tr",
+    "problem": "ısıtmıyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-not-heating",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-not-heating-en",
+    "problem": "not heating Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-not-heating",
+    "language": "en"
+  },
+  {
+    "id": "kettle-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-stops-mid-cycle-en",
+    "problem": "stops during use Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "kettle-unusual-noise-tr",
+    "problem": "çok ses yapıyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-unusual-noise-en",
+    "problem": "unusual noise Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "kettle-overheating-tr",
+    "problem": "aşırı ısınıyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-overheating-en",
+    "problem": "overheating Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-overheating",
+    "language": "en"
+  },
+  {
+    "id": "kettle-error-message-tr",
+    "problem": "hata kodu veriyor Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-error-message-en",
+    "problem": "shows error code Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-error-message",
+    "language": "en"
+  },
+  {
+    "id": "kettle-cleaning-warning-tr",
+    "problem": "filtre uyarısı Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "kettle-cleaning-warning-en",
+    "problem": "clean filter warning Su ısıtıcı",
+    "deviceType": "appliance",
+    "subType": "kettle",
+    "brandModel": "Arçelik Kettle",
+    "expectedIssueId": "kettle-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "fan-no-power-tr",
+    "problem": "vantilatör açılmıyor Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "fan-no-power-en",
+    "problem": "vantilatör will not turn on Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-no-power",
+    "language": "en"
+  },
+  {
+    "id": "fan-cycle-not-starting-tr",
+    "problem": "program başlamıyor Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "fan-cycle-not-starting-en",
+    "problem": "cycle will not start Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "fan-slow-performance-tr",
+    "problem": "çok yavaş Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-slow-performance",
+    "language": "tr"
+  },
+  {
+    "id": "fan-slow-performance-en",
+    "problem": "very slow Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-slow-performance",
+    "language": "en"
+  },
+  {
+    "id": "fan-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "fan-stops-mid-cycle-en",
+    "problem": "stops during use Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "fan-unusual-noise-tr",
+    "problem": "çok ses yapıyor Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "fan-unusual-noise-en",
+    "problem": "unusual noise Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "fan-overheating-tr",
+    "problem": "aşırı ısınıyor Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "fan-overheating-en",
+    "problem": "overheating Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-overheating",
+    "language": "en"
+  },
+  {
+    "id": "fan-error-message-tr",
+    "problem": "hata kodu veriyor Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "fan-error-message-en",
+    "problem": "shows error code Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-error-message",
+    "language": "en"
+  },
+  {
+    "id": "fan-cleaning-warning-tr",
+    "problem": "filtre uyarısı Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "fan-cleaning-warning-en",
+    "problem": "clean filter warning Vantilatör",
+    "deviceType": "appliance",
+    "subType": "fan",
+    "brandModel": "Arçelik Smart Fan",
+    "expectedIssueId": "fan-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-no-power-tr",
+    "problem": "termosifon / şofben açılmıyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-no-power-en",
+    "problem": "termosifon / şofben will not turn on Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-no-power",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-cycle-not-starting-tr",
+    "problem": "program başlamıyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-cycle-not-starting",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-cycle-not-starting-en",
+    "problem": "cycle will not start Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-cycle-not-starting",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-not-heating-tr",
+    "problem": "ısıtmıyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-not-heating",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-not-heating-en",
+    "problem": "not heating Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-not-heating",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-stops-mid-cycle-tr",
+    "problem": "çalışırken duruyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-stops-mid-cycle",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-stops-mid-cycle-en",
+    "problem": "stops during use Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-stops-mid-cycle",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-unusual-noise-tr",
+    "problem": "çok ses yapıyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-unusual-noise",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-unusual-noise-en",
+    "problem": "unusual noise Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-unusual-noise",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-overheating-tr",
+    "problem": "aşırı ısınıyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-overheating-en",
+    "problem": "overheating Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-overheating",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-error-message-tr",
+    "problem": "hata kodu veriyor Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-error-message-en",
+    "problem": "shows error code Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-error-message",
+    "language": "en"
+  },
+  {
+    "id": "water-heater-cleaning-warning-tr",
+    "problem": "filtre uyarısı Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-cleaning-warning",
+    "language": "tr"
+  },
+  {
+    "id": "water-heater-cleaning-warning-en",
+    "problem": "clean filter warning Termosifon / şofben",
+    "deviceType": "appliance",
+    "subType": "water-heater",
+    "brandModel": "Arçelik Termosifon",
+    "expectedIssueId": "water-heater-cleaning-warning",
+    "language": "en"
+  },
+  {
+    "id": "bluetooth-headphones-no-power-tr",
+    "problem": "bluetooth kulaklık açılmıyor Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-not-charging-tr",
+    "problem": "şarj olmuyor Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-pairing-failed-tr",
+    "problem": "eşleşmiyor Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-pairing-failed",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-no-audio-tr",
+    "problem": "ses yok Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-no-audio",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-controls-not-working-tr",
+    "problem": "tuş çalışmıyor Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-controls-not-working",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-intermittent-tr",
+    "problem": "ara sıra kesiliyor Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-intermittent",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-update-failed-tr",
+    "problem": "güncelleme başarısız Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "bluetooth-headphones-app-error-tr",
+    "problem": "uygulama açılmıyor Bluetooth kulaklık",
+    "deviceType": "audio",
+    "subType": "bluetooth-headphones",
+    "brandModel": "Sony AirPods",
+    "expectedIssueId": "bluetooth-headphones-app-error",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-no-power-tr",
+    "problem": "kablolu kulaklık açılmıyor Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-not-charging-tr",
+    "problem": "şarj olmuyor Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-pairing-failed-tr",
+    "problem": "eşleşmiyor Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-pairing-failed",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-no-audio-tr",
+    "problem": "ses yok Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-no-audio",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-controls-not-working-tr",
+    "problem": "tuş çalışmıyor Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-controls-not-working",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-intermittent-tr",
+    "problem": "ara sıra kesiliyor Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-intermittent",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-update-failed-tr",
+    "problem": "güncelleme başarısız Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "wired-headphones-app-error-tr",
+    "problem": "uygulama açılmıyor Kablolu kulaklık",
+    "deviceType": "audio",
+    "subType": "wired-headphones",
+    "brandModel": "Sony ATH",
+    "expectedIssueId": "wired-headphones-app-error",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-no-power-tr",
+    "problem": "bluetooth / akıllı hoparlör açılmıyor Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-not-charging-tr",
+    "problem": "şarj olmuyor Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-pairing-failed-tr",
+    "problem": "eşleşmiyor Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-pairing-failed",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-no-audio-tr",
+    "problem": "ses yok Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-no-audio",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-controls-not-working-tr",
+    "problem": "tuş çalışmıyor Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-controls-not-working",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-intermittent-tr",
+    "problem": "ara sıra kesiliyor Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-intermittent",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-update-failed-tr",
+    "problem": "güncelleme başarısız Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "speaker-app-error-tr",
+    "problem": "uygulama açılmıyor Bluetooth / akıllı hoparlör",
+    "deviceType": "audio",
+    "subType": "speaker",
+    "brandModel": "JBL Flip",
+    "expectedIssueId": "speaker-app-error",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-no-power-tr",
+    "problem": "soundbar açılmıyor Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-not-charging-tr",
+    "problem": "şarj olmuyor Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-pairing-failed-tr",
+    "problem": "eşleşmiyor Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-pairing-failed",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-no-audio-tr",
+    "problem": "ses yok Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-no-audio",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-controls-not-working-tr",
+    "problem": "tuş çalışmıyor Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-controls-not-working",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-intermittent-tr",
+    "problem": "ara sıra kesiliyor Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-intermittent",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-update-failed-tr",
+    "problem": "güncelleme başarısız Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "soundbar-app-error-tr",
+    "problem": "uygulama açılmıyor Soundbar",
+    "deviceType": "audio",
+    "subType": "soundbar",
+    "brandModel": "Samsung Q-Series",
+    "expectedIssueId": "soundbar-app-error",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-no-power-tr",
+    "problem": "mikrofon açılmıyor Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-not-charging-tr",
+    "problem": "şarj olmuyor Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-pairing-failed-tr",
+    "problem": "eşleşmiyor Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-pairing-failed",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-no-audio-tr",
+    "problem": "ses yok Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-no-audio",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-controls-not-working-tr",
+    "problem": "tuş çalışmıyor Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-controls-not-working",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-intermittent-tr",
+    "problem": "ara sıra kesiliyor Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-intermittent",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-update-failed-tr",
+    "problem": "güncelleme başarısız Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "microphone-app-error-tr",
+    "problem": "uygulama açılmıyor Mikrofon",
+    "deviceType": "audio",
+    "subType": "microphone",
+    "brandModel": "Blue Yeti",
+    "expectedIssueId": "microphone-app-error",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-no-power-tr",
+    "problem": "fotoğraf makinesi açılmıyor Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-not-charging-tr",
+    "problem": "şarj olmuyor Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-storage-full-tr",
+    "problem": "depolama dolu Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-storage-full",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-no-display-tr",
+    "problem": "görüntü yok Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-no-display",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-sync-failed-tr",
+    "problem": "eşitlemiyor Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-sync-failed",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-overheating-tr",
+    "problem": "aşırı ısınıyor Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-update-failed-tr",
+    "problem": "güncelleme başarısız Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "digital-camera-error-message-tr",
+    "problem": "hata kodu veriyor Fotoğraf makinesi",
+    "deviceType": "camera",
+    "subType": "digital-camera",
+    "brandModel": "Canon EOS",
+    "expectedIssueId": "digital-camera-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-no-power-tr",
+    "problem": "aksiyon kamerası açılmıyor Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-not-charging-tr",
+    "problem": "şarj olmuyor Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-storage-full-tr",
+    "problem": "depolama dolu Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-storage-full",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-no-display-tr",
+    "problem": "görüntü yok Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-no-display",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-sync-failed-tr",
+    "problem": "eşitlemiyor Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-sync-failed",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-overheating-tr",
+    "problem": "aşırı ısınıyor Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-update-failed-tr",
+    "problem": "güncelleme başarısız Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "action-camera-error-message-tr",
+    "problem": "hata kodu veriyor Aksiyon kamerası",
+    "deviceType": "camera",
+    "subType": "action-camera",
+    "brandModel": "GoPro HERO",
+    "expectedIssueId": "action-camera-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "drone-no-power-tr",
+    "problem": "drone açılmıyor Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "drone-not-charging-tr",
+    "problem": "şarj olmuyor Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "drone-storage-full-tr",
+    "problem": "depolama dolu Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-storage-full",
+    "language": "tr"
+  },
+  {
+    "id": "drone-no-display-tr",
+    "problem": "görüntü yok Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-no-display",
+    "language": "tr"
+  },
+  {
+    "id": "drone-sync-failed-tr",
+    "problem": "eşitlemiyor Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-sync-failed",
+    "language": "tr"
+  },
+  {
+    "id": "drone-overheating-tr",
+    "problem": "aşırı ısınıyor Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "drone-update-failed-tr",
+    "problem": "güncelleme başarısız Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "drone-error-message-tr",
+    "problem": "hata kodu veriyor Drone",
+    "deviceType": "camera",
+    "subType": "drone",
+    "brandModel": "DJI Mini",
+    "expectedIssueId": "drone-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-no-power-tr",
+    "problem": "anlık baskı kamerası açılmıyor Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-not-charging-tr",
+    "problem": "şarj olmuyor Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-storage-full-tr",
+    "problem": "depolama dolu Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-storage-full",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-no-display-tr",
+    "problem": "görüntü yok Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-no-display",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-sync-failed-tr",
+    "problem": "eşitlemiyor Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-sync-failed",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-overheating-tr",
+    "problem": "aşırı ısınıyor Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-overheating",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-update-failed-tr",
+    "problem": "güncelleme başarısız Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-update-failed",
+    "language": "tr"
+  },
+  {
+    "id": "instant-camera-error-message-tr",
+    "problem": "hata kodu veriyor Anlık baskı kamerası",
+    "deviceType": "camera",
+    "subType": "instant-camera",
+    "brandModel": "Fujifilm Instax",
+    "expectedIssueId": "instant-camera-error-message",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-no-power-tr",
+    "problem": "windows laptop açılmıyor Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-no-power",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-not-charging-tr",
+    "problem": "şarj olmuyor Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-not-charging",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-battery-drain-tr",
+    "problem": "pil hızlı bitiyor Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-battery-drain",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-network-offline-tr",
+    "problem": "internete bağlanmıyor Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-network-offline",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-no-display-tr",
+    "problem": "görüntü yok Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-no-display",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-no-audio-tr",
+    "problem": "ses yok Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-no-audio",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-slow-performance-tr",
+    "problem": "çok yavaş Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-slow-performance",
+    "language": "tr"
+  },
+  {
+    "id": "windows-laptop-update-failed-tr",
+    "problem": "güncelleme başarısız Windows laptop",
+    "deviceType": "computer",
+    "subType": "windows-laptop",
+    "brandModel": "Microsoft Surface",
+    "expectedIssueId": "windows-laptop-update-failed",
+    "language": "tr"
+  }
+]

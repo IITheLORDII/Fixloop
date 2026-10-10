@@ -1,0 +1,5210 @@
+{
+  "schemaVersion": 3,
+  "id": "core-storage",
+  "label": "Disk / USB / NAS",
+  "generatedAt": "2026-10-10T13:17:34.585Z",
+  "deviceTypes": [
+    {
+      "id": "storage",
+      "label": "Disk / USB / NAS",
+      "subtypes": [
+        {
+          "id": "external-drive",
+          "label": "Harici disk / SSD",
+          "brands": [
+            "Western Digital",
+            "WD",
+            "Seagate",
+            "Samsung",
+            "SanDisk",
+            "Kingston"
+          ],
+          "models": [
+            "My Passport",
+            "Expansion",
+            "T7",
+            "Extreme"
+          ]
+        },
+        {
+          "id": "usb-drive",
+          "label": "USB bellek",
+          "brands": [
+            "SanDisk",
+            "Kingston",
+            "Samsung",
+            "Transcend",
+            "Kioxia"
+          ],
+          "models": [
+            "Ultra",
+            "DataTraveler"
+          ]
+        },
+        {
+          "id": "memory-card",
+          "label": "Hafıza kartı",
+          "brands": [
+            "SanDisk",
+            "Samsung",
+            "Kingston",
+            "Lexar"
+          ],
+          "models": [
+            "Extreme",
+            "Evo",
+            "Canvas"
+          ]
+        },
+        {
+          "id": "nas",
+          "label": "NAS depolama",
+          "brands": [
+            "Synology",
+            "QNAP",
+            "Asustor",
+            "Western Digital"
+          ],
+          "models": [
+            "DiskStation",
+            "TS",
+            "Lockerstor",
+            "My Cloud"
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "external-drive-no-power",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "power",
+      "title": "harici disk / ssd hiç açılmıyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "harici disk / ssd açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "harici disk / ssd will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd hiç açılmıyor",
+        "harici disk / ssd açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "harici disk / ssd will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/no-power"
+    },
+    {
+      "id": "external-drive-pairing-failed",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "connection",
+      "title": "harici disk / ssd eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/pairing-failed"
+    },
+    {
+      "id": "external-drive-storage-full",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "storage",
+      "title": "harici disk / ssd depolama alanı dolu",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/storage-full"
+    },
+    {
+      "id": "external-drive-slow-performance",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "performance",
+      "title": "harici disk / ssd çok yavaş veya donuyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/slow-performance"
+    },
+    {
+      "id": "external-drive-intermittent",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "stability",
+      "title": "harici disk / ssd ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/intermittent"
+    },
+    {
+      "id": "external-drive-network-offline",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "network",
+      "title": "harici disk / ssd internete bağlanmıyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/network-offline"
+    },
+    {
+      "id": "external-drive-app-error",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "software",
+      "title": "harici disk / ssd uygulaması hata veriyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/app-error"
+    },
+    {
+      "id": "external-drive-error-message",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "category": "error",
+      "title": "harici disk / ssd hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Western Digital",
+        "WD",
+        "Seagate",
+        "Samsung",
+        "SanDisk",
+        "Kingston"
+      ],
+      "modelPatterns": [
+        "My Passport",
+        "Expansion",
+        "T7",
+        "Extreme"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "harici disk / ssd hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "external-drive",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "external-drive-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "external-drive-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "external-drive-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "external-drive-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/error-message"
+    },
+    {
+      "id": "usb-drive-no-power",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "power",
+      "title": "usb bellek hiç açılmıyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "usb bellek açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "usb bellek will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "usb bellek hiç açılmıyor",
+        "usb bellek açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "usb bellek will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/no-power"
+    },
+    {
+      "id": "usb-drive-pairing-failed",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "connection",
+      "title": "usb bellek eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "usb bellek eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/pairing-failed"
+    },
+    {
+      "id": "usb-drive-storage-full",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "storage",
+      "title": "usb bellek depolama alanı dolu",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "usb bellek depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/storage-full"
+    },
+    {
+      "id": "usb-drive-slow-performance",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "performance",
+      "title": "usb bellek çok yavaş veya donuyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "usb bellek çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/slow-performance"
+    },
+    {
+      "id": "usb-drive-intermittent",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "stability",
+      "title": "usb bellek ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "usb bellek ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/intermittent"
+    },
+    {
+      "id": "usb-drive-network-offline",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "network",
+      "title": "usb bellek internete bağlanmıyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "usb bellek internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/network-offline"
+    },
+    {
+      "id": "usb-drive-app-error",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "software",
+      "title": "usb bellek uygulaması hata veriyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "usb bellek uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/app-error"
+    },
+    {
+      "id": "usb-drive-error-message",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "category": "error",
+      "title": "usb bellek hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Kingston",
+        "Samsung",
+        "Transcend",
+        "Kioxia"
+      ],
+      "modelPatterns": [
+        "Ultra",
+        "DataTraveler"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "usb bellek hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "usb-drive",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "usb-drive-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "usb-drive-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "usb-drive-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/error-message"
+    },
+    {
+      "id": "memory-card-no-power",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "power",
+      "title": "hafıza kartı hiç açılmıyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "hafıza kartı açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "hafıza kartı will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı hiç açılmıyor",
+        "hafıza kartı açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "hafıza kartı will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/no-power"
+    },
+    {
+      "id": "memory-card-pairing-failed",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "connection",
+      "title": "hafıza kartı eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/pairing-failed"
+    },
+    {
+      "id": "memory-card-storage-full",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "storage",
+      "title": "hafıza kartı depolama alanı dolu",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/storage-full"
+    },
+    {
+      "id": "memory-card-slow-performance",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "performance",
+      "title": "hafıza kartı çok yavaş veya donuyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/slow-performance"
+    },
+    {
+      "id": "memory-card-intermittent",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "stability",
+      "title": "hafıza kartı ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/intermittent"
+    },
+    {
+      "id": "memory-card-network-offline",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "network",
+      "title": "hafıza kartı internete bağlanmıyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/network-offline"
+    },
+    {
+      "id": "memory-card-app-error",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "software",
+      "title": "hafıza kartı uygulaması hata veriyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/app-error"
+    },
+    {
+      "id": "memory-card-error-message",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "category": "error",
+      "title": "hafıza kartı hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "SanDisk",
+        "Samsung",
+        "Kingston",
+        "Lexar"
+      ],
+      "modelPatterns": [
+        "Extreme",
+        "Evo",
+        "Canvas"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "hafıza kartı hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "memory-card",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "memory-card-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "memory-card-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "memory-card-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "memory-card-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Western Digital Destek içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/error-message"
+    },
+    {
+      "id": "nas-no-power",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "power",
+      "title": "nas depolama hiç açılmıyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "nas depolama açılmıyor",
+          "güç gelmiyor",
+          "ışık yanmıyor"
+        ],
+        "en": [
+          "nas depolama will not turn on",
+          "no power",
+          "power light is off"
+        ]
+      },
+      "aliases": [
+        "nas depolama hiç açılmıyor",
+        "nas depolama açılmıyor",
+        "güç gelmiyor",
+        "ışık yanmıyor",
+        "nas depolama will not turn on",
+        "no power",
+        "power light is off"
+      ],
+      "typoVariants": [
+        "acilmiyor",
+        "guc yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "power",
+        "startup"
+      ],
+      "questions": [
+        {
+          "id": "nas-no-power-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-no-power-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "power",
+                "startup"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-no-power-safe-check",
+          "title": "Güç yolunu güvenle doğrula",
+          "description": "Priz, kablo ve normal yeniden başlatma ile harici güç sorunlarını ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç kaynağını kontrol et",
+              "detail": "Prizi başka bir cihazla dene; gevşek veya hasarlı kablo kullanma."
+            },
+            {
+              "title": "Bağlantıları yeniden tak",
+              "detail": "Cihaz kapalıyken yalnızca erişilebilir güç bağlantılarını çıkarıp yeniden tak."
+            },
+            {
+              "title": "Normal yeniden başlatmayı dene",
+              "detail": "Üreticinin normal açma yöntemini bir kez uygula; zorlamaya devam etme."
+            }
+          ]
+        },
+        {
+          "id": "nas-no-power-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/no-power"
+    },
+    {
+      "id": "nas-pairing-failed",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "connection",
+      "title": "nas depolama eşleşmiyor veya bağlanmıyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "eşleşmiyor",
+          "bağlanmıyor",
+          "bluetooth bulmuyor"
+        ],
+        "en": [
+          "will not pair",
+          "cannot connect",
+          "bluetooth not found"
+        ]
+      },
+      "aliases": [
+        "nas depolama eşleşmiyor veya bağlanmıyor",
+        "eşleşmiyor",
+        "bağlanmıyor",
+        "bluetooth bulmuyor",
+        "will not pair",
+        "cannot connect",
+        "bluetooth not found"
+      ],
+      "typoVariants": [
+        "eslesmiyor",
+        "baglanmiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "connection",
+        "bluetooth",
+        "pairing"
+      ],
+      "questions": [
+        {
+          "id": "nas-pairing-failed-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-pairing-failed-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "bluetooth",
+                "pairing"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-pairing-failed-safe-check",
+          "title": "Eşleştirmeyi temiz biçimde yenile",
+          "description": "Güç, yakınlık ve eski eşleştirme kaydını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Cihazları yaklaştır ve şarjı kontrol et",
+              "detail": "İki cihazı yakın tut; düşük pil varsa önce güvenli biçimde şarj et."
+            },
+            {
+              "title": "Eski kaydı kaldır",
+              "detail": "Bağlı cihaz listesindeki eski kaydı unut veya kaldır."
+            },
+            {
+              "title": "Eşleştirme modunda tekrar ekle",
+              "detail": "Üreticinin eşleştirme yöntemini uygulayıp cihazı yeniden seç."
+            }
+          ]
+        },
+        {
+          "id": "nas-pairing-failed-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/pairing-failed"
+    },
+    {
+      "id": "nas-storage-full",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "storage",
+      "title": "nas depolama depolama alanı dolu",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "depolama dolu",
+          "yer kalmadı",
+          "hafıza dolu"
+        ],
+        "en": [
+          "storage full",
+          "not enough space",
+          "disk full"
+        ]
+      },
+      "aliases": [
+        "nas depolama depolama alanı dolu",
+        "depolama dolu",
+        "yer kalmadı",
+        "hafıza dolu",
+        "storage full",
+        "not enough space",
+        "disk full"
+      ],
+      "typoVariants": [
+        "hafiza dolu"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "full"
+      ],
+      "questions": [
+        {
+          "id": "nas-storage-full-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-storage-full-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "storage",
+                "full"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-storage-full-safe-check",
+          "title": "Güvenli boş alan oluştur",
+          "description": "Yalnızca tanıdığın kişisel ve geçici dosyaları gözden geçir.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Depolama özetini aç",
+              "detail": "En çok alan kullanan kategori ve uygulamaları ayarlar içinden görüntüle."
+            },
+            {
+              "title": "Gereksiz dosyaları yedekle veya kaldır",
+              "detail": "Kişisel dosyaları yedekle; sistem klasörlerini elle silme."
+            },
+            {
+              "title": "Çöp kutusunu kontrol et",
+              "detail": "Silinen dosyaların kapladığı alanı güvenli sistem aracından temizle."
+            }
+          ]
+        },
+        {
+          "id": "nas-storage-full-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/storage-full"
+    },
+    {
+      "id": "nas-slow-performance",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "performance",
+      "title": "nas depolama çok yavaş veya donuyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "çok yavaş",
+          "donuyor",
+          "kasıyor",
+          "tepki vermiyor"
+        ],
+        "en": [
+          "very slow",
+          "freezes",
+          "not responding"
+        ]
+      },
+      "aliases": [
+        "nas depolama çok yavaş veya donuyor",
+        "çok yavaş",
+        "donuyor",
+        "kasıyor",
+        "tepki vermiyor",
+        "very slow",
+        "freezes",
+        "not responding"
+      ],
+      "typoVariants": [
+        "cok yavas",
+        "kasiyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "performance",
+        "freeze"
+      ],
+      "questions": [
+        {
+          "id": "nas-slow-performance-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-slow-performance-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "performance",
+                "freeze"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-slow-performance-safe-check",
+          "title": "Yükü ve kullanılabilir alanı kontrol et",
+          "description": "Geçici yazılım yükünü azaltıp sorunun tekrar edip etmediğini ölç.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Bekleyen işlemi güvenle sonlandır",
+              "detail": "Yanıt vermeyen uygulamayı normal kapatma yöntemiyle kapat."
+            },
+            {
+              "title": "Boş alan ve güncellemeyi kontrol et",
+              "detail": "Depolamada güvenli boş alan bırak ve resmî güncellemeleri tamamla."
+            },
+            {
+              "title": "Normal yeniden başlat",
+              "detail": "Verileri kaydedip cihazı yeniden başlat; sorun çıkaran işlemi tek başına dene."
+            }
+          ]
+        },
+        {
+          "id": "nas-slow-performance-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/slow-performance"
+    },
+    {
+      "id": "nas-intermittent",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "stability",
+      "title": "nas depolama ara sıra bağlantıyı kesiyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "ara sıra kesiliyor",
+          "bağlantı kopuyor",
+          "kendiliğinden duruyor"
+        ],
+        "en": [
+          "keeps disconnecting",
+          "intermittent connection",
+          "stops randomly"
+        ]
+      },
+      "aliases": [
+        "nas depolama ara sıra bağlantıyı kesiyor",
+        "ara sıra kesiliyor",
+        "bağlantı kopuyor",
+        "kendiliğinden duruyor",
+        "keeps disconnecting",
+        "intermittent connection",
+        "stops randomly"
+      ],
+      "typoVariants": [
+        "baglanti kopuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "stability",
+        "connection",
+        "intermittent"
+      ],
+      "questions": [
+        {
+          "id": "nas-intermittent-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-intermittent-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "connection",
+                "intermittent"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-intermittent-safe-check",
+          "title": "Kesintinin koşulunu belirle",
+          "description": "Güç, mesafe ve yazılım durumunu tek tek değiştirerek kesintiyi ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Güç ve kabloyu sabitle",
+              "detail": "Gevşek kablo veya düşük pil ihtimalini güvenli biçimde ele."
+            },
+            {
+              "title": "Paraziti ve mesafeyi azalt",
+              "detail": "Kablosuz cihazları birbirine yaklaştır ve yoğun parazit kaynaklarından uzaklaştır."
+            },
+            {
+              "title": "Güncelle ve yeniden dene",
+              "detail": "Resmî yazılımı güncelle, yeniden başlat ve aynı işlemi tekrar gözlemle."
+            }
+          ]
+        },
+        {
+          "id": "nas-intermittent-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/intermittent"
+    },
+    {
+      "id": "nas-network-offline",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "network",
+      "title": "nas depolama internete bağlanmıyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "internete bağlanmıyor",
+          "wifi bağlı internet yok",
+          "ağ çevrimdışı"
+        ],
+        "en": [
+          "cannot connect to internet",
+          "wifi connected no internet",
+          "network offline"
+        ]
+      },
+      "aliases": [
+        "nas depolama internete bağlanmıyor",
+        "internete bağlanmıyor",
+        "wifi bağlı internet yok",
+        "ağ çevrimdışı",
+        "cannot connect to internet",
+        "wifi connected no internet",
+        "network offline"
+      ],
+      "typoVariants": [
+        "wifi bagli internet yok"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "network",
+        "wifi",
+        "internet"
+      ],
+      "questions": [
+        {
+          "id": "nas-network-offline-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-network-offline-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "network",
+                "wifi",
+                "internet"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-network-offline-safe-check",
+          "title": "Bağlantıyı katman katman kontrol et",
+          "description": "Yerel ağ, modem ve internet hizmetini birbirinden ayır.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Başka cihazla karşılaştır",
+              "detail": "Aynı ağdaki başka bir cihazın internete çıkıp çıkmadığını kontrol et."
+            },
+            {
+              "title": "Bağlantıyı yenile",
+              "detail": "Wi-Fi bağlantısını kapatıp aç ve doğru ağa yeniden bağlan."
+            },
+            {
+              "title": "Ağ cihazını yeniden başlat",
+              "detail": "Modem veya routerı normal yöntemle kapat, 30 saniye bekle ve aç."
+            }
+          ]
+        },
+        {
+          "id": "nas-network-offline-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/network-offline"
+    },
+    {
+      "id": "nas-app-error",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "software",
+      "title": "nas depolama uygulaması hata veriyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "uygulama açılmıyor",
+          "uygulama hata veriyor",
+          "uygulama çöküyor"
+        ],
+        "en": [
+          "app will not open",
+          "app crashes",
+          "application error"
+        ]
+      },
+      "aliases": [
+        "nas depolama uygulaması hata veriyor",
+        "uygulama açılmıyor",
+        "uygulama hata veriyor",
+        "uygulama çöküyor",
+        "app will not open",
+        "app crashes",
+        "application error"
+      ],
+      "typoVariants": [
+        "uygulama cokuyor"
+      ],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "software",
+        "app"
+      ],
+      "questions": [
+        {
+          "id": "nas-app-error-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-app-error-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "software",
+                "app"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-app-error-safe-check",
+          "title": "Uygulamayı temiz durumda dene",
+          "description": "Geçici uygulama ve bağlantı durumunu veri kaybetmeden yenile.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Uygulamayı tamamen kapat",
+              "detail": "Son uygulamalar veya görev ekranından uygulamayı kapat."
+            },
+            {
+              "title": "Bağlantı ve güncellemeyi kontrol et",
+              "detail": "İnterneti doğrula; uygulama ve cihaz güncellemelerini resmî mağazadan kur."
+            },
+            {
+              "title": "Cihazı yeniden başlat",
+              "detail": "Verilerini kaydedip cihazı normal biçimde yeniden başlat."
+            }
+          ]
+        },
+        {
+          "id": "nas-app-error-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "safe",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/app-error"
+    },
+    {
+      "id": "nas-error-message",
+      "deviceType": "storage",
+      "subType": "nas",
+      "category": "error",
+      "title": "nas depolama hata kodu veya uyarı gösteriyor",
+      "brandPatterns": [
+        "Synology",
+        "QNAP",
+        "Asustor",
+        "Western Digital"
+      ],
+      "modelPatterns": [
+        "DiskStation",
+        "TS",
+        "Lockerstor",
+        "My Cloud"
+      ],
+      "symptoms": {
+        "tr": [
+          "hata kodu veriyor",
+          "ekranda uyarı var",
+          "error code"
+        ],
+        "en": [
+          "shows error code",
+          "warning message",
+          "device error"
+        ]
+      },
+      "aliases": [
+        "nas depolama hata kodu veya uyarı gösteriyor",
+        "hata kodu veriyor",
+        "ekranda uyarı var",
+        "error code",
+        "shows error code",
+        "warning message",
+        "device error"
+      ],
+      "typoVariants": [],
+      "negativeSignals": [],
+      "errorCodes": [],
+      "tags": [
+        "storage",
+        "nas",
+        "error",
+        "code"
+      ],
+      "questions": [
+        {
+          "id": "nas-error-message-repeat",
+          "text": "Bu belirti cihazın her kullanımında tekrar ediyor mu?",
+          "options": [
+            {
+              "id": "always",
+              "label": "Her seferinde",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "sometimes",
+              "label": "Ara sıra",
+              "next": "solution:0",
+              "boostTags": [
+                "intermittent"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nas-error-message-basic-check",
+          "text": "Normal yeniden başlatma veya bağlantıyı yenileme adımını denedin mi?",
+          "options": [
+            {
+              "id": "not-tried",
+              "label": "Henüz denemedim",
+              "next": "solution:0",
+              "boostTags": [
+                "error",
+                "code"
+              ]
+            },
+            {
+              "id": "tried",
+              "label": "Denedim, sürüyor",
+              "next": "solution:1",
+              "boostTags": [
+                "service-threshold"
+              ]
+            }
+          ]
+        }
+      ],
+      "solutions": [
+        {
+          "id": "nas-error-message-safe-check",
+          "title": "Hata bilgisini güvenle kaydet",
+          "description": "Kodu değiştirmeden kaydedip güç ve temel kullanım koşullarını kontrol et.",
+          "duration": "3-8 dakika",
+          "steps": [
+            {
+              "title": "Kodu aynen not et",
+              "detail": "Harf, sayı ve yanıp sönme düzenini fotoğraf veya notla kaydet."
+            },
+            {
+              "title": "Normal koşulları kontrol et",
+              "detail": "Kapak, güç, ağ veya sarf uyarısı gibi dış koşulları doğrula."
+            },
+            {
+              "title": "Bir kez normal yeniden başlat",
+              "detail": "Veri kaybı riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+            }
+          ]
+        },
+        {
+          "id": "nas-error-message-official-diagnostic",
+          "title": "Resmî tanılama ve servis eşiğini uygula",
+          "description": "İlk güvenli kontroller sonuç vermediyse rastgele müdahale yerine üreticinin modeline özel tanılama yolunu kullan.",
+          "duration": "5 dakika",
+          "steps": [
+            {
+              "title": "Model ve görünen hatayı kaydet",
+              "detail": "Model kodunu, yazılım sürümünü ve varsa hata metnini değiştirmeden not et."
+            },
+            {
+              "title": "Resmî destek kaynağını kullan",
+              "detail": "Synology Bilgi Merkezi içinde tam model ve belirtiyle arama yap; yalnızca kullanıcıya açık adımları uygula."
+            },
+            {
+              "title": "Servis sınırında dur",
+              "detail": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur."
+            }
+          ]
+        }
+      ],
+      "safety": "caution",
+      "serviceThreshold": "İki güvenli denemeden sonra sorun sürerse üreticinin yetkili desteğine başvur.",
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10",
+      "generatedFrom": "storage/error-message"
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "external-drive-safe-fallback",
+      "deviceType": "storage",
+      "subType": "external-drive",
+      "title": "Harici disk / SSD için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "usb-drive-safe-fallback",
+      "deviceType": "storage",
+      "subType": "usb-drive",
+      "title": "USB bellek için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "memory-card-safe-fallback",
+      "deviceType": "storage",
+      "subType": "memory-card",
+      "title": "Hafıza kartı için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "wd-support",
+          "title": "Western Digital Destek",
+          "url": "https://support-en.wd.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    },
+    {
+      "id": "nas-safe-fallback",
+      "deviceType": "storage",
+      "subType": "nas",
+      "title": "NAS depolama için güvenli genel kontrol",
+      "safety": "caution",
+      "serviceThreshold": "Belirti devam ederse tam model ve hata koduyla yetkili üretici desteğine başvur.",
+      "steps": [
+        {
+          "title": "Tehlike belirtisini ele",
+          "detail": "Duman, yanık kokusu, şişme, kıvılcım, gaz veya su-elektrik teması varsa cihazı kullanma."
+        },
+        {
+          "title": "Bilgiyi kaydet",
+          "detail": "Tam model, görünen hata, ne zaman başladığı ve son yapılan değişikliği not et."
+        },
+        {
+          "title": "Normal yeniden başlatmayı bir kez dene",
+          "detail": "Veri veya güvenlik riski yoksa üreticinin normal kapatma ve açma yöntemini uygula."
+        }
+      ],
+      "sources": [
+        {
+          "id": "synology-support",
+          "title": "Synology Bilgi Merkezi",
+          "url": "https://kb.synology.com/",
+          "official": true,
+          "version": "Üretici destek içeriği · 2026-10",
+          "lastVerifiedAt": "2026-10-10"
+        }
+      ],
+      "verifiedAt": "2026-10-10"
+    }
+  ]
+}
